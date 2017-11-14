@@ -13,12 +13,12 @@ public class Grid : MonoBehaviour {
 	public DepthMesh mesh;
 
 	float nodeDiameter;
-	int gridSizeX, gridSizeZ;
+	int gridSizeX, gridSizeY;
 
 	void Start(){
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt( gridWorldSize.x / nodeDiameter);
-		gridSizeZ = Mathf.RoundToInt( gridWorldSize.y / nodeDiameter);
+		gridSizeY = Mathf.RoundToInt( gridWorldSize.y / nodeDiameter);
 		//CreateGrid ();
 	}
 
@@ -37,14 +37,14 @@ public class Grid : MonoBehaviour {
 
 
 	void CreateGrid(){
-		grid = new Node[gridSizeX, gridSizeZ];
-		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x/2 - Vector3.forward*gridWorldSize.y/2;
+		grid = new Node[gridSizeX, gridSizeY];
+		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x/2 - Vector3.up*gridWorldSize.y/2;
 		for (int x = 0; x< gridSizeX; x++){
-			for (int y = 0; y < gridSizeZ; y++) {
-				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
+			for (int y = 0; y < gridSizeY; y++) {
+				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter+nodeRadius);
 				bool walkable = true;
-				if (x < gridSizeX-1 && y < gridSizeZ-1) {
-				walkable = (mesh.GetPixelLayer (Mathf.RoundToInt (worldPoint.x), Mathf.RoundToInt (worldPoint.z)) != 1);
+				if (x < gridSizeX-1 && y < gridSizeY-1) {
+				walkable = (mesh.GetPixelLayer (Mathf.RoundToInt (worldPoint.x), Mathf.RoundToInt (worldPoint.y)) != 4);
 				
 				
 				}
@@ -63,12 +63,12 @@ public class Grid : MonoBehaviour {
 		percentY = Mathf.Clamp01 (percentY);
 
 		int x =Mathf.RoundToInt ((gridSizeX - 1) * percentX);
-		int y =Mathf.RoundToInt ((gridSizeZ - 1) * percentY);
+		int y =Mathf.RoundToInt ((gridSizeY - 1) * percentY);
 		return grid [x, y];
 	}
 
 	public Node PositionTarget(Vector3 tr){
-		return grid [Mathf.RoundToInt (tr.x/nodeDiameter), Mathf.RoundToInt (tr.z/nodeDiameter)];
+		return grid [Mathf.RoundToInt (tr.x/nodeDiameter), Mathf.RoundToInt (tr.y/nodeDiameter)];
 	}
 
 
@@ -82,7 +82,7 @@ public class Grid : MonoBehaviour {
 				int checkX = node.gridX + x;
 				int checkY = node.gridY + y;
 
-				if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeZ) {
+				if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY) {
 					neighbours.Add (grid [checkX, checkY]);
 				}
 
@@ -95,7 +95,7 @@ public class Grid : MonoBehaviour {
 
 
 	void OnDrawGizmos(){
-		Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
+		Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
 
 		if (grid != null) {
 			//Node playerNode = PositionTarget(player.transform.position);

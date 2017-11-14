@@ -14,7 +14,7 @@ public class Pathfinding: MonoBehaviour {
 	}
 
 	void Update(){
-		FillBox (10, 10, 20, 20);
+		//FillBox (10, 10, 20, 20);
 			FindPath (seeker.position, target.position);
 		
 	}
@@ -102,14 +102,7 @@ public class Pathfinding: MonoBehaviour {
 
 		grid.path = path;
 
-		seeker.position = Vector3.MoveTowards (seeker.position, new Vector3(path [1].worldPosition.x, seeker.position.y, path [1].worldPosition.z), 10 * Time.deltaTime); 
-
-
-
-
-		seeker.LookAt(target);
-		seeker.rotation = Quaternion.FromToRotation(transform.right, Vector3.right) * seeker.rotation;
-
+		seeker.position = Vector3.MoveTowards (seeker.position, new Vector3(path [1].worldPosition.x,path [1].worldPosition.y, seeker.position.z), 10 * Time.deltaTime); 
 
 	}
 
