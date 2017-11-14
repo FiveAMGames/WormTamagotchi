@@ -134,7 +134,7 @@ MonoBehaviour:
   MinDepthValue: -32000
   MaxDepthValue: 32000
   MeshHeigth: 100
-  prefab: {fileID: 1000012130934226, guid: ffd346fc763705a4bb4adcec064facba, type: 2}
+  prefab: {fileID: 4096, guid: ffd346fc763705a4bb4adcec064facba, type: 2}
   MinDepthValueBuffer: 0
   MaxDepthValueBuffer: 0
   _WaterLevel: 51.63
@@ -779,7 +779,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 55
+  orthographic size: 75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -799,8 +799,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1280905249}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 80, y: 104, z: 55}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 115, y: 42, z: -10}
+>>>>>>> 73b8d9620158e3e77f21bee8f877b2a718bf822d
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
