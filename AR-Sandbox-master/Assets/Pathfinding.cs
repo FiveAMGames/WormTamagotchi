@@ -10,11 +10,12 @@ public class Pathfinding: MonoBehaviour {
 
 
 	void Awake(){
+		
 		grid = GetComponent<Grid> ();
 	}
 
 	void Update(){
-		FillBox (10, 10, 20, 20);
+		//FillBox (10, 10, 20, 20);
 			FindPath (seeker.position, target.position);
 		
 	}

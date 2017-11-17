@@ -26,12 +26,12 @@ public class CameraCalibration : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W))
         {
-            camera.transform.position += Vector3.up;
+			camera.transform.position += Vector3.forward;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            camera.transform.position += Vector3.down;
+            camera.transform.position += Vector3.back;
         }
 
         if (Input.GetKey(KeyCode.A))
