@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    [StateType(State.Object | State.Player)]
+    [StateType(State.Player | State.Entity | State.Object)]
     public class Jump : BaseState
     {
         protected float height = 5f;
@@ -12,7 +12,7 @@
         protected float time = 0f;
 
         // Calling base constructor
-        public Jump(object caller) : base(caller) {}
+        public Jump(object caller) : base(caller) { }
 
         // Override update
         public override void Update()

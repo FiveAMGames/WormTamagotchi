@@ -8,16 +8,17 @@
 
     public class StateMachine : MonoBehaviour
     {
+        [SerializeField] protected State stateType;
         [SerializeField] protected string initialState;
         protected Dictionary<string, IState> allStates;
 
         /// <summary>
         /// Gets the current state.
         /// </summary>
-        public IState State
+        public IState CurrentState
         {
             get;
-            private set;
+            protected set;
         }
 
         /// <summary>
@@ -28,13 +29,22 @@
         {
             IState newState;
 
-            if(allStates.TryGetValue(state, out newState))
+            // Clear state
+            if(state == null)
             {
-                if(State != null)
-                    State.OnDisable();
+                if(CurrentState != null)
+                    CurrentState.OnDisable();
+
+                CurrentState = null;
+            }
+            // Change state
+            else if(allStates.TryGetValue(state, out newState))
+            {
+                if(CurrentState != null)
+                    CurrentState.OnDisable();
 
                 newState.Awake();
-                State = newState;
+                CurrentState = newState;
                 newState.Start();
             }
             else
@@ -66,7 +76,8 @@
         /// </summary>
         protected void Update()
         {
-            State.Update();
+            if(CurrentState != null)
+                CurrentState.Update();
         }
 
         /// <summary>
@@ -74,7 +85,8 @@
         /// </summary>
         protected void LateUpdate()
         {
-            State.LateUpdate();
+            if(CurrentState != null)
+                CurrentState.LateUpdate();
         }
 
         /// <summary>
@@ -82,7 +94,8 @@
         /// </summary>
         protected void FixedUpdate()
         {
-            State.FixedUpdate();
+            if(CurrentState != null)
+                CurrentState.FixedUpdate();
         }
 
         /// <summary>
