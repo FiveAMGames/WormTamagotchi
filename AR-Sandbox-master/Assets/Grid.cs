@@ -14,7 +14,12 @@ public class Grid : MonoBehaviour {
 
 	float nodeDiameter;
 	int gridSizeX, gridSizeZ;
+	float timeTimer = 0f;
 
+
+	void Awake(){
+		CreateGrid ();
+	}
 	void Start(){
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt( gridWorldSize.x / nodeDiameter);
@@ -24,9 +29,15 @@ public class Grid : MonoBehaviour {
 
 
 	void Update(){
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		timeTimer += Time.deltaTime;
+
+		if (timeTimer>0.3f){
 			CreateGrid ();
+			timeTimer = 0;
 		}
+
+			
+
 	}
 
 	public void SetNode(int x, int y, bool walk){
@@ -44,7 +55,7 @@ public class Grid : MonoBehaviour {
 				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
 				bool walkable = true;
 				if (x < gridSizeX-1 && y < gridSizeZ-1) {
-				walkable = (mesh.GetPixelLayer (Mathf.RoundToInt (worldPoint.x), Mathf.RoundToInt (worldPoint.z)) != 1);
+				walkable = (mesh.GetPixelLayer (Mathf.RoundToInt (worldPoint.x), Mathf.RoundToInt (worldPoint.z)) == 1);
 				
 				
 				}
