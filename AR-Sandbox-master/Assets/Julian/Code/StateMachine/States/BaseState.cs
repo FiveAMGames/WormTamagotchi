@@ -4,12 +4,12 @@
 
     public abstract class BaseState : IState
     {
-        protected MonoBehaviour baseObject;
+        protected StateMachine baseObject;
         protected bool active = false;
 
         public BaseState(object caller)
         {
-            this.baseObject = caller as MonoBehaviour;
+            this.baseObject = caller as StateMachine;
         }
 
         public bool IsActive
