@@ -8,17 +8,22 @@
 
     public class StateMachine : MonoBehaviour
     {
-        public static StateMachine Instance;
-
         [SerializeField] protected string initialState;
         protected Dictionary<string, IState> allStates;
 
+        /// <summary>
+        /// Gets the current state.
+        /// </summary>
         public IState State
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Changes the state.
+        /// </summary>
+        /// <param name="state">State name of the new state.</param>
         public void ChangeState(string state)
         {
             IState newState;
@@ -43,16 +48,6 @@
         /// </summary>
         protected void Awake()
         {
-            if(StateMachine.Instance == null)
-            {
-                StateMachine.Instance = gameObject.GetComponent<StateMachine>();
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
             // Gather all states
             PrefillStateDictionary();
         }
@@ -83,6 +78,14 @@
         }
 
         /// <summary>
+        /// Fixed update.
+        /// </summary>
+        protected void FixedUpdate()
+        {
+            State.FixedUpdate();
+        }
+
+        /// <summary>
         /// Prefills the game states dictionary.
         /// </summary>
         private void PrefillStateDictionary()
@@ -91,15 +94,21 @@
             var type = typeof(IState);
             var types = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(x => x.GetTypes())
-                .Where(x => x.IsClass && type.IsAssignableFrom(x));
+                .Where(
+                    x =>
+                    type.IsAssignableFrom(x) &&
+                    x.IsDefined(typeof(StateType), false) &&
+                    x.IsClass &&
+                    !x.IsAbstract
+                );
 
             allStates = new Dictionary<string, IState>(types.Count<Type>() - 1);
 
             foreach(var t in types)
             {
                 // Ignore base state
-                if(t.ToString() != "BaseState")
-                    allStates.Add(t.ToString(), (IState)Activator.CreateInstance(t));
+                if(t.Name != "BaseState")
+                    allStates.Add(t.Name, (IState)Activator.CreateInstance(t, new[] { this }));
             }
         }
     }

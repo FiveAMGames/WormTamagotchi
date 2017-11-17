@@ -53,10 +53,16 @@ namespace StateMachine
             int i = 1;
 
             // Reflection to gather all game states
-            var type = typeof(BaseState);
+            var type = typeof(IState);
             var types = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(x => x.GetTypes())
-                .Where(x => x.IsClass && type.IsAssignableFrom(x));
+                .Where(
+                    x =>
+                    type.IsAssignableFrom(x) &&
+                    x.IsDefined(typeof(StateType), false) &&
+                    x.IsClass &&
+                    !x.IsAbstract
+                );
 
             stateNames = new string[types.Count<Type>() + 1];
             stateNames[0] = "None";
@@ -64,11 +70,8 @@ namespace StateMachine
             // List all found states except the base state
             foreach(var t in types)
             {
-                if(t.ToString() != "BaseState")
-                {
-                    stateNames[i] = t.ToString();
-                    i++;
-                }
+                stateNames[i] = t.Name;
+                i++;
             }
 
             return stateNames;

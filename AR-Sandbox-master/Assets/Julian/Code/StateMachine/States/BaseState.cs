@@ -1,12 +1,21 @@
 ﻿namespace StateMachine
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
 
-    public class BaseState : IState
+    public abstract class BaseState : IState
     {
+        protected MonoBehaviour baseObject;
         protected bool active = false;
+
+        public BaseState(object caller)
+        {
+            this.baseObject = caller as MonoBehaviour;
+        }
+
+        public bool IsActive
+        {
+            get { return active; }
+        }
 
         public virtual void Awake()
         {
@@ -28,14 +37,14 @@
             // Empty...
         }
 
+        public virtual void FixedUpdate()
+        {
+            // Empty...
+        }
+
         public virtual void OnDisable()
         {
             active = false;
-        }
-
-        public bool IsActive
-        {
-            get { return active; }
         }
     }
 }
