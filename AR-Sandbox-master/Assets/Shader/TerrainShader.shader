@@ -30,7 +30,7 @@
 				float4 blend: COLOR;
 			};
       
-			fragmentInput vert (appdata_base v)
+			fragmentInput vert (appdata_full v)
 			{
 				float NumOfTextures = 4;
 				fragmentInput o;
@@ -49,6 +49,8 @@
 
 				o.blend.xyz = 0;
 				o.blend.w = Blend;
+
+				o.blend.x = v.color.a;  //S alpha from Depth Mesh as value for Layer
 				return o;
 			}
 			
@@ -67,7 +69,9 @@
 			float4 frag (fragmentInput i) : COLOR0 
 			{ 	
 				float NumOfTextures = 4;
-				float TextureFloat = i.blend.w * NumOfTextures;
+				//float TextureFloat = i.blend.w * NumOfTextures; //old
+				float TextureFloat = i.blend.x * 256;         // new from DepthMesh
+
 
 				if(TextureFloat < 1)
 				{

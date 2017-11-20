@@ -32,9 +32,13 @@ public class DepthMesh : MonoBehaviour
 
     public short MinDepthValueBuffer;
     public short MaxDepthValueBuffer;
+
     short[] DepthImage;
     short[] FilterdAndCroppedDepthImage;
     float[] FloatValues;
+
+	byte[] LayerValues;
+
 
     int WidthBuffer;
     int HeightBuffer;
@@ -58,6 +62,7 @@ public class DepthMesh : MonoBehaviour
         GetComponent<MeshFilter>().mesh = MyMesh;
 
         SetupArrays();
+		UpdateLayerValue ();
     }
 
     // Update is called once per frame
@@ -77,16 +82,18 @@ public class DepthMesh : MonoBehaviour
 
     void Update()
     {
-        if (KinectDepth.pollDepth())
+		if ((KinectDepth.pollDepth()))
         {
             DepthImage = KinectDepth.depthImg;
             CheckArrays();
             CropImage();
             FilerImage();
             CalculateFloatValues();
+			UpdateLayerValue ();
             UpdateMesh();
         }
 		if (Input.GetKeyDown (KeyCode.Space)) {
+			
 			print ("Layer number is " + GetPixelLayer (0, 0));
 			if (GetPixelLayer (0, 0) == 2) {
 				Instantiate (prefab, Vector3.zero, Quaternion.identity);
@@ -94,7 +101,21 @@ public class DepthMesh : MonoBehaviour
 			}
 
 		}
+
+
     }
+
+	void UpdateLayerValue(){
+		for (int H = 0; H < Height; H++) {
+			for (int W = 0; W < Width; W++) {
+				int Index = GetArrayIndex (W, H);
+				//LayerValues [Index] = (byte) (H * 4 / Height);    //(byte) GetPixelLayer (W, H); 
+				LayerValues [Index] = (byte) GetPixelLayer (W, H); 
+			}
+		}
+	
+	
+	}
 
     void CheckArrays()
     {
@@ -109,6 +130,7 @@ public class DepthMesh : MonoBehaviour
     void SetupArrays()
     {
         FilterdAndCroppedDepthImage = new short[Width * Height];
+		LayerValues = new byte[Width*Height];
         FloatValues = new float[Width * Height];
         newVertices = new Vector3[Width * Height];
         newNormals = new Vector3[Width * Height];
@@ -235,9 +257,9 @@ public class DepthMesh : MonoBehaviour
         }
 
 		int CenterIndex = GetArrayIndex(Width/2, Height/2);
-		Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
-		Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
-		Debug.Log ("Float value: " + FloatValues [CenterIndex]);
+		//Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
+		//Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
+		//Debug.Log ("Float value: " + FloatValues [CenterIndex]);
     }
 
     void UpdateMesh()
@@ -261,8 +283,8 @@ public class DepthMesh : MonoBehaviour
 
 
 
-	//So we can get layer of sand on the point. Need to get layer size and water level from shader somehow... or define it all here
-	// TODO test
+	//So we can get layer of sand on the point from the kinect. Need to get layer size and water level from shader somehow... or define it all here
+
 
 	public int GetPixelLayer(int W, int H) {
 		int Index = GetArrayIndex(W, H);
@@ -274,6 +296,12 @@ public class DepthMesh : MonoBehaviour
 		float Blend = MaxValue - vertexZ;
 		Blend = Mathf.Clamp01(Blend / (NumOfTextures *_LayerSize));
 		float TextureFloat = Blend * NumOfTextures;
+
+		float LastLayer = LayerValues [Index];
+		const float StickyMargin = 0.2f; // Allowed deviation that doesn't trigger layer change
+		if ((TextureFloat > LastLayer - StickyMargin) || (TextureFloat < LastLayer + 1 + StickyMargin)) {
+			return (int)LastLayer;
+		}
 		return (int)TextureFloat;
 	}
 
@@ -302,7 +330,7 @@ public class DepthMesh : MonoBehaviour
         //0 = 0; 127 = 255; 255 = 0
         byte G = (byte)(127 + (Mathf.Sign(127 - ByteValue) * ByteValue / 2));
         byte B = (byte)(255 - Mathf.Clamp(ByteValue * 2, 0, 255));
-        newColors[Index] = new Color32(R, G, B, 255);
+		newColors[Index] = new Color32(R, G, B, LayerValues[Index]);
     }
 
     int GetImageIndex(int W, int H)
@@ -321,12 +349,12 @@ public class DepthMesh : MonoBehaviour
     int GetImageValue(int W, int H)
     {
         int Index = GetImageIndex(W, H);
-        if (Index < 0)
+		if (Index < 0 || DepthImage==null || DepthImage.Length <= Index)
         {
             return (int)short.MaxValue;
         }
 
-        int Value = DepthImage[Index];
+        int Value = DepthImage[Index]; 
 
         if (Value == 0)
         {
