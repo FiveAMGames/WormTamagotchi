@@ -34,6 +34,10 @@ public class Pathfinding: MonoBehaviour {
 		Node startNode = grid.PositionTarget (startPos);
 		Node targetNode = grid.PositionTarget (targetPos);
 
+        // Failsave - Julian 21/11/2017
+        if((startNode == null) || (targetNode == null))
+            return;
+
 		HashSet<Node> openSet = new HashSet<Node> ();
 		HashSet<Node> closedSet = new HashSet<Node> ();
 

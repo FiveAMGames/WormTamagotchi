@@ -9,7 +9,6 @@ public class Grid : MonoBehaviour {
 	Node[,] grid;
 	public Vector2 gridWorldSize;
 	public float nodeRadius;
-	public LayerMask unwalkableMask;
 	public DepthMesh mesh;
 
 	float nodeDiameter;
@@ -66,20 +65,11 @@ public class Grid : MonoBehaviour {
 		}
  	}
 
-
-	public Node NodeFromWorldPoint(Vector3 worldPosition){
-		float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-		float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
-		percentX = Mathf.Clamp01 (percentX);
-		percentY = Mathf.Clamp01 (percentY);
-
-		int x =Mathf.RoundToInt ((gridSizeX - 1) * percentX);
-		int y =Mathf.RoundToInt ((gridSizeZ - 1) * percentY);
-		return grid [x, y];
-	}
-
 	public Node PositionTarget(Vector3 tr){
-		return grid [Mathf.RoundToInt (tr.x/nodeDiameter), Mathf.RoundToInt (tr.z/nodeDiameter)];
+        if(grid.Length == 0)
+            return null;
+        
+        return grid [(int)(tr.x/nodeDiameter), (int)(tr.z/nodeDiameter)];
 	}
 
 
