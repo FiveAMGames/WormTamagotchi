@@ -114,7 +114,8 @@ public class DepthMesh : MonoBehaviour
 			}
 		}
 	
-	
+		int CenterIndex = GetArrayIndex (Width / 2, Height / 2);
+		Debug.Log ("Layer Index: " + LayerValues [CenterIndex]);
 	}
 
     void CheckArrays()
@@ -257,9 +258,9 @@ public class DepthMesh : MonoBehaviour
         }
 
 		int CenterIndex = GetArrayIndex(Width/2, Height/2);
-		//Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
-		//Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
-		//Debug.Log ("Float value: " + FloatValues [CenterIndex]);
+		Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
+		Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
+		Debug.Log ("Float value: " + FloatValues [CenterIndex]);
     }
 
     void UpdateMesh()
@@ -299,7 +300,7 @@ public class DepthMesh : MonoBehaviour
 
 		float LastLayer = LayerValues [Index];
 		const float StickyMargin = 0.2f; // Allowed deviation that doesn't trigger layer change
-		if ((TextureFloat > LastLayer - StickyMargin) || (TextureFloat < LastLayer + 1 + StickyMargin)) {
+		if ((TextureFloat > LastLayer - StickyMargin) && (TextureFloat < LastLayer + 1 + StickyMargin)) {
 			return (int)LastLayer;
 		}
 		return (int)TextureFloat;
