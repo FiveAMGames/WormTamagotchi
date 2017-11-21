@@ -302,7 +302,7 @@ public class DepthMesh : MonoBehaviour
 		const float StickyMargin = 0.2f; // Allowed deviation that doesn't trigger layer change
 		if ((TextureFloat > LastLayer - StickyMargin) && (TextureFloat < LastLayer + 1 + StickyMargin)) {
 			return (int)LastLayer;
-		}
+        }
 		return (int)TextureFloat;
 	}
 

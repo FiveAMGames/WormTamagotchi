@@ -16,14 +16,12 @@ public class Grid : MonoBehaviour {
 	float timeTimer = 0f;
 
 
-	void Awake(){
-		CreateGrid ();
-	}
+	
 	void Start(){
 		nodeDiameter = nodeRadius * 2;
-		gridSizeX = Mathf.RoundToInt( gridWorldSize.x / nodeDiameter);
-		gridSizeZ = Mathf.RoundToInt( gridWorldSize.y / nodeDiameter);
-		//CreateGrid ();
+        gridSizeX = (int)(gridWorldSize.x / nodeDiameter);
+        gridSizeZ = (int)(gridWorldSize.y / nodeDiameter);
+		CreateGrid ();
 	}
 
 
@@ -31,7 +29,7 @@ public class Grid : MonoBehaviour {
 		timeTimer += Time.deltaTime;
 
 		if (timeTimer>0.3f){
-			CreateGrid ();
+            UpdateGrid ();
 			timeTimer = 0;
 		}
 
@@ -39,31 +37,42 @@ public class Grid : MonoBehaviour {
 
 	}
 
-	public void SetNode(int x, int y, bool walk){
-		grid [x, y].walkable = walk;
-
-	}
-
 
 
 	void CreateGrid(){
-		grid = new Node[gridSizeX, gridSizeZ];
+        grid = new Node[gridSizeX, gridSizeZ];
+        
 		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x/2 - Vector3.forward*gridWorldSize.y/2;
-		for (int x = 0; x< gridSizeX; x++){
+        Vector3 worldPoint;
+        int layer;
+
+		for (int x = 0; x < gridSizeX; x++){
 			for (int y = 0; y < gridSizeZ; y++) {
-				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
-				bool walkable = true;
-				if (x < gridSizeX-1 && y < gridSizeZ-1) {
-				walkable = (mesh.GetPixelLayer (Mathf.RoundToInt (worldPoint.x), Mathf.RoundToInt (worldPoint.z)) == 1);
-				
-				
-				}
+				worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
 
-
-				grid [x, y] = new Node (walkable, worldPoint, x, y);
+                layer = 1 << mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z);
+                grid [x, y] = new Node ((Node.TerrainLayer)layer, worldPoint, x, y);
 			}
 		}
  	}
+
+    void UpdateGrid(){
+        Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x/2 - Vector3.forward*gridWorldSize.y/2;
+        Vector3 worldPoint;
+        int layer;
+
+        for (int x = 0; x < gridSizeX; x++){
+            for (int y = 0; y < gridSizeZ; y++) {
+                worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
+
+                layer = 1 << mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z);
+                grid[x, y].layer = (Node.TerrainLayer)layer;
+                grid[x, y].worldPosition = worldPoint;
+                grid[x, y].gridX = x;
+                grid[x, y].gridY = y;
+            }
+        }
+    }
 
 	public Node PositionTarget(Vector3 tr){
         if(grid.Length == 0)
@@ -101,7 +110,7 @@ public class Grid : MonoBehaviour {
 		if (grid != null) {
 			//Node playerNode = PositionTarget(player.transform.position);
 			foreach (Node n in grid) {
-				Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                Gizmos.color = (n.layer == Node.TerrainLayer.Sand) ? Color.white : Color.red;
 
 				if (path.Contains (n)) {
 					Gizmos.color = Color.black;
