@@ -1,4 +1,4 @@
-﻿namespace StateMachine
+﻿namespace StateManagement
 {
     using System;
 
@@ -42,8 +42,8 @@
     public enum State : uint
     {
         GameMode    = 0x01,
-        Player      = 0x02,
-        Entity      = 0x04,
-        Object      = 0x08
+        Worm        = 0x02,
+        Dodo        = 0x04,
+        Phenomenon  = 0x08
     }
 }

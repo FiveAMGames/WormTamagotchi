@@ -20,12 +20,13 @@ public class Pathfinding: MonoBehaviour {
 		
 	}
 
+    /*
 	void FillBox(int x1, int y1, int x2, int y2) {
 		for (int i = x1; i <= x2; ++i)
 			for (int j = y1; j <= y2; ++j)
 				grid.SetNode (i, j, false);
 	}
-
+*/
 
 
 
@@ -33,6 +34,10 @@ public class Pathfinding: MonoBehaviour {
 	void FindPath(Vector3 startPos, Vector3 targetPos){
 		Node startNode = grid.PositionTarget (startPos);
 		Node targetNode = grid.PositionTarget (targetPos);
+
+        // Failsave - Julian 21/11/2017
+        if((startNode == null) || (targetNode == null))
+            return;
 
 		HashSet<Node> openSet = new HashSet<Node> ();
 		HashSet<Node> closedSet = new HashSet<Node> ();
@@ -66,7 +71,7 @@ public class Pathfinding: MonoBehaviour {
 			}
 
 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
-				if (!neighbour.walkable || closedSet.Contains (neighbour)) {
+                if (!(neighbour.layer == Node.TerrainLayer.Sand) || closedSet.Contains (neighbour)) {
 					continue;
 				}
 				int newMovementCostToNeighbour = currentNode.gCost + GetDistance (currentNode, neighbour);

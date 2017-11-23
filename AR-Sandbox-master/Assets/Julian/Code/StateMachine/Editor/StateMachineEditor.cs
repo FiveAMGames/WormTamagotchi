@@ -1,5 +1,5 @@
 ﻿#if UNITY_EDITOR
-namespace StateMachine
+namespace StateManagement
 {
     using System;
     using System.Linq;
