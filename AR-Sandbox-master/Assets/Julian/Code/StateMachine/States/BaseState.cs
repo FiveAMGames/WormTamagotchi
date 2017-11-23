@@ -1,4 +1,4 @@
-﻿namespace StateMachine
+﻿namespace StateManagement
 {
     using UnityEngine;
 
