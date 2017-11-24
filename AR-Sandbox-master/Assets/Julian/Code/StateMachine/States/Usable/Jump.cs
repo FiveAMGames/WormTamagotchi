@@ -10,7 +10,7 @@
     // Define the type(s) of the state
     // This state will be available for the following object types: 'Worm' and 'Dodo'
     [StateType(State.Worm | State.Dodo)]
-    public class Jump : BaseState   // <- You must inherit from 'BaseState'
+	public class Jump : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
     {
         protected float height = 5f;
         protected float speed = 5f;

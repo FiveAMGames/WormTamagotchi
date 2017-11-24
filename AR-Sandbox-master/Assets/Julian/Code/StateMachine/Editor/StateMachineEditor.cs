@@ -158,7 +158,7 @@ namespace StateManagement
                 if(i >= 32)
                     return 0;
             }
-
+			Debug.Log (i);
             return i;
         }
     }
