@@ -110,44 +110,112 @@ public class Grid : MonoBehaviour {
 	}
 
 
-    // Get biggest terrain cluster of a specific layer
-    /*public IEnumerable<GridPoint> GetBiggestCluster(Node.TerrainLayer layer)
+    public IEnumerable<GridPoint> GetClusterOutline(GridPoint[] cluster)
     {
-        IList<GridPoint> cluster = new List<GridPoint>();
-        IList<GridPoint> done = new List<GridPoint>();
+        List<GridPoint> points = new List<GridPoint>();
 
-        int size = 0;
-        int oldSize = 0;
+        GridPoint temp;
 
-        bool counting = false;
-        bool upper = false;
-        bool previous = false;
+        // Find all outline points
+        for(int i = 0; i < cluster.Length; i++)
+        {
+            if(cluster[i].X < gridSizeX)
+            {
+                temp = new GridPoint(cluster[i].X + 1, cluster[i].Y);
+
+                if(!cluster.Contains(temp))
+                    points.Add(temp);
+            }
+
+            if(cluster[i].Y < gridSizeZ)
+            {
+                temp = new GridPoint(cluster[i].X, cluster[i].Y + 1);
+
+                if(!cluster.Contains(temp))
+                    points.Add(temp);
+            }
+
+            if(cluster[i].X > 0)
+            {
+                temp = new GridPoint(cluster[i].X - 1, cluster[i].Y);
+
+                if(!cluster.Contains(temp))
+                    points.Add(temp);
+            }
+
+            if(cluster[i].Y > 0)
+            {
+                temp = new GridPoint(cluster[i].X, cluster[i].Y - 1);
+
+                if(!cluster.Contains(temp))
+                    points.Add(temp);
+            }
+        }
+
+        return points.AsEnumerable();
+    }
+
+    // Get terrain clusters of a specific layer
+    public IEnumerable<GridPoint[]> GetClusters(Node.TerrainLayer layer)
+    {
+        int[,] floodfill = new int[gridSizeX, gridSizeZ];
+        List<GridPoint[]> clusters = new List<GridPoint[]>();
+        IList<GridPoint> current = new List<GridPoint>();
 
         for(int x = 0; x < gridSizeX; x++)
         {
             for(int y = 0; y < gridSizeZ; y++)
             {
-                // Already done?
-                if(done.Contains(new GridPoint(x, y)))
-                    continue;
-
-                // Perform floodfill
-                FloodFill(x, y, ref cluster);
+                // Prefill array
+                if((layer & grid[x, y].layer) == layer)
+                    floodfill[x, y] = 1;
             }
         }
-    }*/
+
+        for(int x = 0; x < gridSizeX; x++)
+        {
+            for(int y = 0; y < gridSizeZ; y++)
+            {
+                // Run floodfill for every node
+                FloodFill(x, y, ref floodfill, ref current);
+
+                // If this new cluster is bigger than any currently saved clusters
+                //if(!clusters.Exists(points => points.Length > current.Count))
+                if(current.Count > 0)
+                {
+                    clusters.Add(current.ToArray());
+                    current.Clear();
+                }
+            }
+        }
+
+        return clusters.AsEnumerable();
+    }
 
     // Floodfill used for cluster algorithm
-    private void FloodFill(int x, int y, Node.TerrainLayer layer, ref IList<GridPoint> cluster, ref IList<GridPoint> done)
+    private void FloodFill(int x, int y, ref int[,] map, ref IList<GridPoint> cluster)
     {
-        // Already done?
-        if(cluster.Contains(new GridPoint(x, y)))
+        // Not correct terrain?
+        if(map[x, y] == 0)
             return;
 
-        // Correct layer?
-        if((layer & grid[x, y].layer) == layer)
+        if(map[x, y] == 1)
         {
+            map[x, y] = 2;
             cluster.Add(new GridPoint(x, y));
+
+            // Recursive floodfill
+            if(x < gridSizeX)
+                FloodFill(x + 1, y, ref map, ref cluster);
+
+            if(y < gridSizeZ)
+                FloodFill(x, y + 1, ref map, ref cluster);
+
+            if(x > 0)
+                FloodFill(x - 1, y, ref map, ref cluster);
+
+            if(y > 0)
+                FloodFill(x, y - 1, ref map, ref cluster);
         }
     }
 
@@ -185,7 +253,7 @@ public class Grid : MonoBehaviour {
 
 // Represents a coordinate on the grid
 // Can be used as indexer.
-struct GridPoint : System.IEquatable<GridPoint>
+public struct GridPoint : System.IEquatable<GridPoint>
 {
     private readonly int x, y;
 
