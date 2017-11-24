@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Grid : MonoBehaviour {
 
@@ -11,14 +13,15 @@ public class Grid : MonoBehaviour {
 	public float nodeRadius;
 	public DepthMesh mesh;
 
+    public UnityEvent onGridCreated;
+
 	float nodeDiameter;
 	int gridSizeX, gridSizeZ;
 	float timeTimer = 0f;
 
-
 	
 	void Start(){
-		nodeDiameter = nodeRadius * 2;
+        nodeDiameter = nodeRadius * 2;
         gridSizeX = (int)(gridWorldSize.x / nodeDiameter);
         gridSizeZ = (int)(gridWorldSize.y / nodeDiameter);
 		CreateGrid ();
@@ -32,9 +35,6 @@ public class Grid : MonoBehaviour {
             UpdateGrid ();
 			timeTimer = 0;
 		}
-
-			
-
 	}
 
 
@@ -54,6 +54,9 @@ public class Grid : MonoBehaviour {
                 grid [x, y] = new Node ((Node.TerrainLayer)layer, worldPoint, x, y);
 			}
 		}
+
+        if(onGridCreated == null)
+            onGridCreated.Invoke();
  	}
 
     void UpdateGrid(){
@@ -101,6 +104,48 @@ public class Grid : MonoBehaviour {
 		return neighbours;
 	}
 
+
+    // Get biggest terrain cluster of a specific layer
+    /*public IEnumerable<GridPoint> GetBiggestCluster(Node.TerrainLayer layer)
+    {
+        IList<GridPoint> cluster = new List<GridPoint>();
+        IList<GridPoint> done = new List<GridPoint>();
+
+        int size = 0;
+        int oldSize = 0;
+
+        bool counting = false;
+        bool upper = false;
+        bool previous = false;
+
+        for(int x = 0; x < gridSizeX; x++)
+        {
+            for(int y = 0; y < gridSizeZ; y++)
+            {
+                // Already done?
+                if(done.Contains(new GridPoint(x, y)))
+                    continue;
+
+                // Perform floodfill
+                FloodFill(x, y, ref cluster);
+            }
+        }
+    }*/
+
+    // Floodfill used for cluster algorithm
+    private void FloodFill(int x, int y, Node.TerrainLayer layer, ref IList<GridPoint> cluster, ref IList<GridPoint> done)
+    {
+        // Already done?
+        if(cluster.Contains(new GridPoint(x, y)))
+            return;
+
+        // Correct layer?
+        if((layer & grid[x, y].layer) == layer)
+        {
+            cluster.Add(new GridPoint(x, y));
+        }
+    }
+
 	public List<Node> path = new List<Node>();
 
 
@@ -128,5 +173,31 @@ public class Grid : MonoBehaviour {
 			}
 		}
 	}
+}
 
+
+// Represents a coordinate on the grid
+// Can be used as indexer.
+struct GridPoint : System.IEquatable<GridPoint>
+{
+    private readonly int x, y;
+
+    public GridPoint(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int X {
+        get { return x; }
+    }
+
+    public int Y {
+        get { return y; }
+    }
+
+    public bool Equals(GridPoint other)
+    {
+        return (other.x == x) && (other.y == y);
+    }
 }
