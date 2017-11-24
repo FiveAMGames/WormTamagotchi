@@ -65,7 +65,7 @@ namespace StateManagement
             if(!EditorApplication.isPlaying)
             {
                 // Can only change state type while NOT in playmode
-                selectedType = (State)EditorGUILayout.EnumPopup("Type", (Enum)selectedType);
+                selectedType = (State)EditorGUILayout.EnumPopup("Type", selectedType);
                 stateTypeProp.enumValueIndex = BitPosition((uint)selectedType);
 
                 // Can only change initial state while NOT in playmode
@@ -158,7 +158,7 @@ namespace StateManagement
                 if(i >= 32)
                     return 0;
             }
-			Debug.Log (i);
+
             return i;
         }
     }
