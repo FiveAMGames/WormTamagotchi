@@ -39,6 +39,7 @@
     /// State types.
     /// </summary>
     [Flags]
+    [Serializable]
     public enum State : uint
     {
         GameMode    = 0x01,
