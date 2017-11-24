@@ -352,7 +352,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 519511902}
   - 114: {fileID: 519511901}
-  - 114: {fileID: 519511903}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -388,20 +387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
---- !u!114 &519511903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519511900}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e96a3dc4118c048bb4c7ccab98fd38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetDodo: {fileID: 0}
-  targetWondering: {fileID: 0}
-  onWandering: 0
 --- !u!1 &728931400
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +811,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743067634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa68f928a30a39c4199df56ae2fb6def, type: 3}
   m_Name: 

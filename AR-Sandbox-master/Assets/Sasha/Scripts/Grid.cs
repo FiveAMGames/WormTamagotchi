@@ -50,7 +50,7 @@ public class Grid : MonoBehaviour {
 			for (int y = 0; y < gridSizeZ; y++) {
 				worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
 
-                layer = 1 << mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z);
+				layer = 1 << (mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z) -1);
                 grid [x, y] = new Node ((Node.TerrainLayer)layer, worldPoint, x, y);
 			}
 		}
@@ -70,7 +70,7 @@ public class Grid : MonoBehaviour {
             for (int y = 0; y < gridSizeZ; y++) {
                 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter+nodeRadius);
 
-				layer = 1 << mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z); //bit shift to left (multiply by two)
+				layer = 1 << (mesh.GetPixelLayer((int)worldPoint.x, (int)worldPoint.z) -1); //bit shift to left (multiply by two)
                 grid[x, y].layer = (Node.TerrainLayer)layer;
                 grid[x, y].worldPosition = worldPoint;
                 grid[x, y].gridX = x;
