@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using StateManagement;
 
 public class Pathfinding: MonoBehaviour {
 
 	Grid grid;
+	public float speed = 10f;
 
 	public Transform  targetDodo;
-	[HideInInspector] public Transform targetWondering;
+	[HideInInspector] public Vector3 targetWandering;
 	protected Transform seeker;
 
 	public bool onWandering = false;
 
 	void Awake(){
-		targetWondering = transform;  //for debug
+		RandomWanderingTarget ();
 		seeker = transform;
 		grid = GameObject.Find("A*").GetComponent<Grid> ();
 	}
@@ -21,7 +23,7 @@ public class Pathfinding: MonoBehaviour {
 	void Update(){
 		FillBox (10, 10, 20, 20);
 		if (onWandering) {
-			FindPath(seeker.position, targetWondering.position);
+			FindPath (seeker.position, targetWandering);
 		}
 
 			FindPath (seeker.position, targetDodo.position);
@@ -77,6 +79,7 @@ public class Pathfinding: MonoBehaviour {
 
 				if (targetPos == targetDodo.position) {
 					onWandering = false;
+					GetComponent<StateMachine> ().ChangeState ("FollowTarget");
 					RetracePath (startNode, targetNode, true);
 
 					return;
@@ -109,15 +112,23 @@ public class Pathfinding: MonoBehaviour {
 
 		}
 
-		//if (onWandering) {
+		if (onWandering && targetPos != targetDodo.position) {
 
-		//	LookForOtherRandomTarget ();
-		//} else State.Wondering
+			RandomWanderingTarget ();
+		} else 
 		onWandering = true;
+		GetComponent<StateMachine> ().ChangeState ("Wandering");
 
 
 
 	}
+
+	void RandomWanderingTarget(){
+		Debug.Log ("random");
+		targetWandering = new Vector3 (Random.Range(1f, 159f), transform.position.y, Random.Range (1f, 109f));
+	}
+
+
 
 
 
@@ -140,14 +151,21 @@ public class Pathfinding: MonoBehaviour {
 			grid.pathForWandering = path;
 		}
 
-			if (path.Count > 0) {
-				seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), 10 * Time.deltaTime); 
+		if (path.Count > 0) {
+			seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), speed * Time.deltaTime); 
+			Vector3 targetDir =new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z) - transform.position;
+			float step = 3f * Time.deltaTime;
+			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+			transform.rotation = Quaternion.LookRotation(newDir);
+		} else {
+			if (onWandering) {
+				RandomWanderingTarget ();
 			}
+		}
 
 
 
-			seeker.LookAt (targetDodo);
-			seeker.rotation = Quaternion.FromToRotation (transform.right, Vector3.right) * seeker.rotation;
+			
 
 
 

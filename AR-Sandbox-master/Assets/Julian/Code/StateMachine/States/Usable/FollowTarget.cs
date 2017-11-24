@@ -28,7 +28,7 @@ namespace StateManagement
 			// Do some dodo following
 
 
-
+			baseObject.GetComponent<Pathfinding> ().speed = 10f;
 			baseObject.GetComponent<Pathfinding> ().onWandering = false;
 
 		}

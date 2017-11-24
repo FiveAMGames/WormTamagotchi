@@ -17,16 +17,14 @@
 		// Calling base constructor
 		public Wandering(object caller) : base(caller) { }   // <- Base constructor must be called!
 		// Initialization happens before rendering first frame
-		public GameObject targetToFollow;
+
 		// Override update method
 		public override void Start()
 		{
 			// Do some wandering
 
-			targetToFollow = null;  //TODO random node at sand layer
+			baseObject.GetComponent<Pathfinding> ().speed = 6f;
 
-
-			baseObject.GetComponent<Pathfinding>().targetWondering = targetToFollow.transform;
 			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
 		}
 

@@ -295,7 +295,7 @@ public class DepthMesh : MonoBehaviour
 		float MinValue = _WaterLevel - (NumOfTextures - 1) * _LayerSize; 
 		float MaxValue = (_WaterLevel + _LayerSize); 
 		float Blend = MaxValue - vertexZ;
-		Blend = Mathf.Clamp01(Blend / (NumOfTextures *_LayerSize));  //can return 1 again (no 16 return in terrain layer anymore
+		Blend = Mathf.Clamp(Blend / (NumOfTextures *_LayerSize), 0f, 0.999f);  //can return 1 again (no 16 return in terrain layer anymore
 		float TextureFloat = Blend * NumOfTextures;
 
 		float LastLayer = LayerValues [Index];

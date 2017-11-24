@@ -10,27 +10,13 @@ public class TargetPositionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.UpArrow))
-		{
-			transform.Translate (Vector3.back * 10* Time.deltaTime);
-		}
+		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
+		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		if (Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.Translate (Vector3.forward *10* Time.deltaTime);
-		}
-
-		if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			transform.Translate (Vector3.right *10* Time.deltaTime);
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
-			transform.Translate (Vector3.left *10* Time.deltaTime);
-		}
+		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		transform.rotation = Quaternion.LookRotation (movement);
 
 
+		transform.Translate (movement * 10f * Time.deltaTime, Space.World);
 	}
-
 }
