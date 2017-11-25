@@ -6,6 +6,8 @@ using System.Linq;
 
 public class Grid : MonoBehaviour {
 
+    public bool updateGrid = true;
+
 	public Transform player;
 
 	Node[,] grid;
@@ -31,7 +33,7 @@ public class Grid : MonoBehaviour {
 	void Update(){
 		timeTimer += Time.deltaTime;
 
-		if (timeTimer>0.3f){
+        if (timeTimer>0.3f && updateGrid){
             UpdateGrid ();
 			timeTimer = 0;
 		}
@@ -55,14 +57,18 @@ public class Grid : MonoBehaviour {
 			}
 		}
 
-        if(onGridCreated == null)
+        if(onGridCreated != null)
             onGridCreated.Invoke();
  	}
 
 
-	public void SetNode(int _x, int _y, Node.TerrainLayer _layer){
-		grid [_x, _y].layer = _layer;
-	}
+    public void SetNode(int _x, int _y, Node.TerrainLayer _layer){
+        grid [_x, _y].layer = _layer;
+    }
+
+    public Node GetNode(int _x, int _y){
+        return grid [_x, _y];
+    }
 
     void UpdateGrid(){
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x/2 - Vector3.forward*gridWorldSize.y/2;
@@ -80,6 +86,9 @@ public class Grid : MonoBehaviour {
                 grid[x, y].gridY = y;
             }
         }
+
+        if(onGridCreated != null)
+            onGridCreated.Invoke();
     }
 
 	public Node PositionTarget(Vector3 tr){
@@ -230,19 +239,33 @@ public class Grid : MonoBehaviour {
 		if (grid != null) {
 			//Node playerNode = PositionTarget(player.transform.position);
 			foreach (Node n in grid) {
-				Gizmos.color = (n.layer == Node.TerrainLayer.Mountain) ? Color.white : Color.red;
+
+				switch(n.layer)
+				{
+					case Node.TerrainLayer.Mountain:
+						Gizmos.color = Color.red;
+						break;
+
+					case Node.TerrainLayer.Grass:
+						Gizmos.color = Color.green;
+						break;
+
+					case Node.TerrainLayer.Sand:
+						Gizmos.color = Color.yellow;
+						break;
+
+					case Node.TerrainLayer.Water:
+						Gizmos.color = Color.blue;
+						break;
+
+					default:
+						break;
+				}
 
 				if (pathForDodo.Contains (n)) {
 					Gizmos.color = Color.black;
 
 				}
-
-
-
-				//if (playerNode == n) {
-				//	Gizmos.color = Color.blue;
-				//}
-
 
 				Gizmos.DrawCube(n.worldPosition, Vector3.one*(nodeDiameter-0.1f));
 			}
