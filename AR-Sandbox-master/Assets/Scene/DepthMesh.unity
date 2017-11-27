@@ -524,6 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519511902}
   - component: {fileID: 519511901}
+  - component: {fileID: 519511903}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -542,10 +543,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  updateGrid: 1
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5
   mesh: {fileID: 112241529}
+  onGridCreated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519511903}
+        m_MethodName: CreateOasis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!4 &519511902
 Transform:
   m_ObjectHideFlags: 0
@@ -557,8 +575,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &519511903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519511900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a47fd5a6f435c48aea4ed74efb3e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 0.2
+  minArea: 8
+  assets:
+  - {fileID: 1240616558571624, guid: c914ef32ae6538c49b9f14272fdf8ab5, type: 2}
+  debugSwitch: 0
 --- !u!1 &728931400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,52 +1125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 132.27899, y: -30.015991, z: 0}
---- !u!1 &1737329968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1737329970}
-  - component: {fileID: 1737329969}
-  m_Layer: 0
-  m_Name: SharkPopulation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1737329969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1737329968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f26704dee5f4e459934005749a766b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SharkPrefab: {fileID: 100018, guid: ee4fb6821a4ef7c42b1812c4b8546d7c, type: 2}
-  Terrain: {fileID: 112241529}
-  SharksPerSquare: 0.1
-  MaxSharks: 30
-  SharkLayer: 55
-  SharkLayerWidth: 10
---- !u!4 &1737329970
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1737329968}
-  m_LocalRotation: {x: 0.65786463, y: -0, z: -0, w: 0.7531362}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 82.25201, y: 0, z: 0}
 --- !u!1 &1743067634
 GameObject:
   m_ObjectHideFlags: 0
