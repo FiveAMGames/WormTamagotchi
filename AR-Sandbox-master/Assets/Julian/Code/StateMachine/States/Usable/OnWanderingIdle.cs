@@ -10,25 +10,34 @@
 	// Define the type(s) of the state
 	// This state will be available for the following object types: 'Worm' and 'Dodo'
 	[StateType(State.Worm | State.Dodo)]
-	public class Wandering : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
+	public class OnWanderingIdle : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
 	{
-		
+
+		float timer = 0f;
 
 		// Calling base constructor
-		public Wandering(object caller) : base(caller) { }   // <- Base constructor must be called!
+		public OnWanderingIdle(object caller) : base(caller) { }   // <- Base constructor must be called!
 		// Initialization happens before rendering first frame
 
 		// Override update method
 		public override void Start()
 		{
-			// Do some wandering
+			
+			timer = 0f;
+			baseObject.GetComponentInChildren<Animation> ().Play("idle");
 
-			baseObject.GetComponent<Pathfinding> ().speed = 6f;
 
-			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
 		}
-
-
+		public override void Update(){
+			
+			timer += Time.deltaTime;
+			if (timer > 4f) {
+				
+				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
+				baseObject.GetComponent<Pathfinding> ().stayOnPlace = false;
+				baseObject.GetComponent<Pathfinding> ().RandomWanderingTarget ();
+			}
+		}
 
 		// You can also override other 'MonoBehaviour' methods:
 		/*
@@ -40,4 +49,3 @@
         */
 	}
 }
-

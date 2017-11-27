@@ -118,10 +118,13 @@ public class Grid : MonoBehaviour {
 			foreach (Node n in grid) {
 				Gizmos.color = (n.layer == Node.TerrainLayer.Mountain) ? Color.white : Color.red;
 
+
+
 				if (pathForDodo.Contains (n)) {
 					Gizmos.color = Color.black;
 
 				}
+
 
 
 

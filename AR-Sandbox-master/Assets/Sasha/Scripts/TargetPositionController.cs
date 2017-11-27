@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TargetPositionController : MonoBehaviour {
-
+	public float speed = 10f;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,9 +14,11 @@ public class TargetPositionController : MonoBehaviour {
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-		transform.rotation = Quaternion.LookRotation (movement);
+		if (movement != Vector3.zero) {
+			transform.rotation = Quaternion.LookRotation (movement);
+		}
 
 
-		transform.Translate (movement * 10f * Time.deltaTime, Space.World);
+		transform.Translate (movement * speed * Time.deltaTime, Space.World);
 	}
 }

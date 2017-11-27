@@ -13,6 +13,7 @@ public class Pathfinding: MonoBehaviour {
 	protected Transform seeker;
 
 	public bool onWandering = false;
+	public bool stayOnPlace = false;
 
 	void Awake(){
 		RandomWanderingTarget ();
@@ -22,13 +23,16 @@ public class Pathfinding: MonoBehaviour {
 
 	void Update(){
 		FillBox (10, 10, 20, 20);
-		if (onWandering) {
-			FindPath (seeker.position, targetWandering);
-		}
+		if (!stayOnPlace) {
+			if (onWandering) {
+				FindPath (seeker.position, targetWandering);
+			}
 
-			FindPath (seeker.position, targetDodo.position);
+
 
 		
+		}
+		FindPath (seeker.position, targetDodo.position);
 	}
 
     
@@ -75,7 +79,7 @@ public class Pathfinding: MonoBehaviour {
 			closedSet.Add (currentNode);
 
 
-			if (currentNode == targetNode) {  //found
+			if (currentNode == targetNode) {  //found the path to target
 
 				if (targetPos == targetDodo.position) {
 					onWandering = false;
@@ -83,7 +87,10 @@ public class Pathfinding: MonoBehaviour {
 					RetracePath (startNode, targetNode, true);
 
 					return;
-				} else {
+				}
+
+				else {
+					
 					RetracePath (startNode, targetNode, false);
 
 					return;
@@ -112,19 +119,28 @@ public class Pathfinding: MonoBehaviour {
 
 		}
 
-		if (onWandering && targetPos != targetDodo.position) {
+		//can't find the path to target
 
-			RandomWanderingTarget ();
-		} else 
-		onWandering = true;
-		GetComponent<StateMachine> ().ChangeState ("Wandering");
+		if (onWandering && targetPos != targetDodo.position) {
+			GetComponent<StateMachine> ().ChangeState ("OnWanderingIdle");
+			stayOnPlace = true;
+
+		} else if (!onWandering) {
+			GetComponent<StateMachine> ().ChangeState ("DodoLost");  
+			stayOnPlace = true;
+			onWandering = true;
+		} 
+		
+
+
+
 
 
 
 	}
 
-	void RandomWanderingTarget(){
-		Debug.Log ("random");
+	public void RandomWanderingTarget(){
+		
 		targetWandering = new Vector3 (Random.Range(1f, 159f), transform.position.y, Random.Range (1f, 109f));
 	}
 
@@ -157,9 +173,14 @@ public class Pathfinding: MonoBehaviour {
 			float step = 3f * Time.deltaTime;
 			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
 			transform.rotation = Quaternion.LookRotation(newDir);
-		} else {
+		} else {   //found the target
 			if (onWandering) {
-				RandomWanderingTarget ();
+				GetComponent<StateMachine> ().ChangeState ("OnWanderingIdle");
+				stayOnPlace = true;
+
+
+			} else {
+				Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
 			}
 		}
 
