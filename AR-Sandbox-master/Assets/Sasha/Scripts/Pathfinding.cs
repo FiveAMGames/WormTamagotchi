@@ -1,32 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using StateManagement;
 
 public class Pathfinding: MonoBehaviour {
 
 	Grid grid;
+	public float speed = 10f;
 
 	public Transform  targetDodo;
-	[HideInInspector] public Transform targetWondering;
+	[HideInInspector] public Vector3 targetWandering;
 	protected Transform seeker;
 
 	public bool onWandering = false;
+	public bool stayOnPlace = false;
 
 	void Awake(){
-		targetWondering = transform;  //for debug
+		RandomWanderingTarget ();
 		seeker = transform;
 		grid = GameObject.Find("A*").GetComponent<Grid> ();
 	}
 
 	void Update(){
-		FillBox (10, 10, 20, 20);
-		if (onWandering) {
-			FindPath(seeker.position, targetWondering.position);
-		}
+		//FillBox (10, 10, 20, 20);
+		if (!stayOnPlace) {
+			if (onWandering) {
+				FindPath (seeker.position, targetWandering);
+			}
 
-			FindPath (seeker.position, targetDodo.position);
+
 
 		
+		}
+		FindPath (seeker.position, targetDodo.position);
 	}
 
     
@@ -73,14 +79,18 @@ public class Pathfinding: MonoBehaviour {
 			closedSet.Add (currentNode);
 
 
-			if (currentNode == targetNode) {  //found
+			if (currentNode == targetNode) {  //found the path to target
 
 				if (targetPos == targetDodo.position) {
 					onWandering = false;
+					GetComponent<StateMachine> ().ChangeState ("FollowTarget");
 					RetracePath (startNode, targetNode, true);
 
 					return;
-				} else {
+				}
+
+				else {
+					
 					RetracePath (startNode, targetNode, false);
 
 					return;
@@ -88,7 +98,7 @@ public class Pathfinding: MonoBehaviour {
 			}
 
 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
-				if (!(neighbour.layer == Node.TerrainLayer.Mountain) || closedSet.Contains (neighbour)) {   //Moutain layer is set up for dubugging
+				if (!(neighbour.layer == Node.TerrainLayer.Sand) || closedSet.Contains (neighbour)) {   //Moutain layer is set up for dubugging
 					continue;
 				}
 				int newMovementCostToNeighbour = currentNode.gCost + GetDistance (currentNode, neighbour);
@@ -109,15 +119,32 @@ public class Pathfinding: MonoBehaviour {
 
 		}
 
-		//if (onWandering) {
+		//can't find the path to target
 
-		//	LookForOtherRandomTarget ();
-		//} else State.Wondering
-		onWandering = true;
+		if (onWandering && targetPos != targetDodo.position) {
+			GetComponent<StateMachine> ().ChangeState ("OnWanderingIdle");
+			stayOnPlace = true;
+
+		} else if (!onWandering) {
+			GetComponent<StateMachine> ().ChangeState ("DodoLost");  
+			stayOnPlace = true;
+			onWandering = true;
+		} 
+		
+
+
+
 
 
 
 	}
+
+	public void RandomWanderingTarget(){
+		
+		targetWandering = new Vector3 (Random.Range(1f, 159f), transform.position.y, Random.Range (1f, 109f));
+	}
+
+
 
 
 
@@ -140,14 +167,26 @@ public class Pathfinding: MonoBehaviour {
 			grid.pathForWandering = path;
 		}
 
-			if (path.Count > 0) {
-				seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), 10 * Time.deltaTime); 
+		if (path.Count > 0) {
+			seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), speed * Time.deltaTime); 
+			Vector3 targetDir =new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z) - transform.position;
+			float step = 3f * Time.deltaTime;
+			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+			transform.rotation = Quaternion.LookRotation(newDir);
+		} else {   //found the target
+			if (onWandering) {
+				GetComponent<StateMachine> ().ChangeState ("OnWanderingIdle");
+				stayOnPlace = true;
+
+
+			} else {
+				Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
 			}
+		}
 
 
 
-			seeker.LookAt (targetDodo);
-			seeker.rotation = Quaternion.FromToRotation (transform.right, Vector3.right) * seeker.rotation;
+			
 
 
 

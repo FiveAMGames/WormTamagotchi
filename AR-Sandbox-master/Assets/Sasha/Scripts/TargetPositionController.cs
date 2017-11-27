@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TargetPositionController : MonoBehaviour {
-
+	public float speed = 10f;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,27 +10,15 @@ public class TargetPositionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.UpArrow))
-		{
-			transform.Translate (Vector3.back * 10* Time.deltaTime);
-		}
+		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
+		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		if (Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.Translate (Vector3.forward *10* Time.deltaTime);
-		}
-
-		if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			transform.Translate (Vector3.right *10* Time.deltaTime);
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
-			transform.Translate (Vector3.left *10* Time.deltaTime);
+		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		if (movement != Vector3.zero) {
+			transform.rotation = Quaternion.LookRotation (movement);
 		}
 
 
+		transform.Translate (movement * speed * Time.deltaTime, Space.World);
 	}
-
 }
