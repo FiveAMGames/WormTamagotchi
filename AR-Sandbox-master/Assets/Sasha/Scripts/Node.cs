@@ -37,7 +37,7 @@ public class Node  {
         Water = 0x01,
         Sand = 0x02,
         Grass = 0x04,
-        Mountain = 0x08,
+		Mountain = 0x08,
 
     }
 

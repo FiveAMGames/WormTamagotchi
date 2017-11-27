@@ -1,7 +1,4 @@
-﻿
-
-
-namespace StateManagement
+﻿namespace StateManagement
 {
 	// This is a demo state
 	// Wrap the state inside a 'StateManagement' namespace or include it with 'using StateManagement;'
@@ -13,25 +10,32 @@ namespace StateManagement
 	// Define the type(s) of the state
 	// This state will be available for the following object types: 'Worm' and 'Dodo'
 	[StateType(State.Worm | State.Dodo)]
-	public class FollowTarget : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
+	public class DodoLost : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
 	{
-		
-		public GameObject targetToFollow;
+
+		float timer = 0f;
 
 		// Calling base constructor
-		public FollowTarget(object caller) : base(caller) { }   // <- Base constructor must be called!
+		public DodoLost(object caller) : base(caller) { }   // <- Base constructor must be called!
 		// Initialization happens before rendering first frame
 
 		// Override update method
 		public override void Start()
 		{
-			// Do some dodo following
+			Debug.Log ("lost");
+			timer = 0f;
+			//baseObject.GetComponent<Pathfinding> ().stayOnPlace = true;
+			baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
 
 
-			baseObject.GetComponent<Pathfinding> ().speed = 10f;
-			baseObject.GetComponent<Pathfinding> ().onWandering = false;
-			baseObject.GetComponentInChildren<Animation> ().Play("run");
+		}
+		public override void Update(){
+			timer += Time.deltaTime;
+			if (timer > 2f) {
+				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
+				baseObject.GetComponent<Pathfinding> ().stayOnPlace = false;
 
+			}
 		}
 
 		// You can also override other 'MonoBehaviour' methods:
@@ -44,4 +48,3 @@ namespace StateManagement
         */
 	}
 }
-
