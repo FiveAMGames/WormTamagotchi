@@ -167,7 +167,7 @@ public class Oasis : MonoBehaviour
         // Create lake
         for(int x = 26; x < 45; x++)
         {
-            for(int y = 16; y < 30; y++)
+            for(int y = 15; y < 36; y++)
             {
                 // Set some nodes to water
                 gridRef.SetNode(x, y, Node.TerrainLayer.Water);

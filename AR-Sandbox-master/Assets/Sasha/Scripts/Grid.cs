@@ -128,7 +128,7 @@ public class Grid : MonoBehaviour {
         // Find all outline points
         for(int i = 0; i < cluster.Length; i++)
         {
-            if(cluster[i].X < gridSizeX)
+            if(cluster[i].X < (gridSizeX - 1))
             {
                 temp = new GridPoint(cluster[i].X + 1, cluster[i].Y);
 
@@ -136,7 +136,7 @@ public class Grid : MonoBehaviour {
                     points.Add(temp);
             }
 
-            if(cluster[i].Y < gridSizeZ)
+            if(cluster[i].Y < (gridSizeZ - 1))
             {
                 temp = new GridPoint(cluster[i].X, cluster[i].Y + 1);
 
@@ -214,10 +214,10 @@ public class Grid : MonoBehaviour {
             cluster.Add(new GridPoint(x, y));
 
             // Recursive floodfill
-            if(x < gridSizeX)
+            if(x < (gridSizeX - 1))
                 FloodFill(x + 1, y, ref map, ref cluster);
 
-            if(y < gridSizeZ)
+            if(y < (gridSizeZ - 1))
                 FloodFill(x, y + 1, ref map, ref cluster);
 
             if(x > 0)
