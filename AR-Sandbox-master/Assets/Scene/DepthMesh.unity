@@ -589,9 +589,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chance: 0.2
-  minArea: 8
+  minArea: 24
   assets:
-  - {fileID: 1240616558571624, guid: c914ef32ae6538c49b9f14272fdf8ab5, type: 2}
+  - {fileID: 1500860182875562, guid: fc1f4c822acaef84c949da2d8ec7cda0, type: 2}
+  updateInterval: 20
   debugSwitch: 0
 --- !u!1 &728931400
 GameObject:

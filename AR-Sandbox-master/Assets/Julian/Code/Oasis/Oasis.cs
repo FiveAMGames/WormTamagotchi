@@ -8,7 +8,8 @@ public class Oasis : MonoBehaviour
 {
     [SerializeField][Range(0f, 1f)] protected float chance = 0.2f;
     [SerializeField] protected int minArea = 8;
-    [SerializeField] protected GameObject[] assets;
+	[SerializeField] protected GameObject[] assets;
+	[SerializeField][Range(1f, 60f)] protected int updateInterval = 10;
     [SerializeField] private bool debugSwitch;
 
     protected bool exists = false;
@@ -19,6 +20,7 @@ public class Oasis : MonoBehaviour
     protected GridPoint[] waterOutline;
 
     private bool running = false;
+	private int updateCount = 0;
 
     public bool IsExisting
     {
@@ -50,14 +52,24 @@ public class Oasis : MonoBehaviour
     // grid component
     public void CreateOasis()
     {
-        StartCoroutine(OasisAlgorithm());
+		if (!running)
+			return;
+
+		if(updateCount >= updateInterval)
+		{
+			StartCoroutine(OasisAlgorithm());
+			updateCount = 0;
+		}
+		else
+		{
+			updateCount++;
+		}
+			
+        
     }
 
     IEnumerator OasisAlgorithm()
     {
-        if(!running)
-            yield break;
-        
         GridPoint[] cluster = null;
         IEnumerable<GridPoint> outline;
         int lastSize = 0;
@@ -110,9 +122,9 @@ public class Oasis : MonoBehaviour
             // Opt out handle
             //yield return null;
         }
-
+		print(numberOfEqual);
         // Not the same oasis! Let old die or create new...
-        if(numberOfEqual < (int)(waterOutline.Length * 0.7f))
+        if(numberOfEqual < (int)(waterOutline.Length * 0.6f))
         {
             waterOutline = outline.ToArray();
             BuildOasis();
@@ -145,7 +157,7 @@ public class Oasis : MonoBehaviour
             // Chance to build a new one...
             for(int i = 0; i < waterOutline.Length; i++)
             {
-                if(Random.Range(0f, 1f) < 0.7f)
+                if(Random.Range(0f, 1f) < 0.3f)
                 {
                     oasisAssets.Add(
                         GameObject.Instantiate(
