@@ -22,7 +22,7 @@ public class Pathfinding: MonoBehaviour {
 	}
 
 	void Update(){
-		FillBox (10, 10, 20, 20);
+		//FillBox (10, 10, 20, 20);
 		if (!stayOnPlace) {
 			if (onWandering) {
 				FindPath (seeker.position, targetWandering);
@@ -98,7 +98,7 @@ public class Pathfinding: MonoBehaviour {
 			}
 
 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
-				if (!(neighbour.layer == Node.TerrainLayer.Mountain) || closedSet.Contains (neighbour)) {   //Moutain layer is set up for dubugging
+				if (!(neighbour.layer == Node.TerrainLayer.Sand) || closedSet.Contains (neighbour)) {   //Moutain layer is set up for dubugging
 					continue;
 				}
 				int newMovementCostToNeighbour = currentNode.gCost + GetDistance (currentNode, neighbour);

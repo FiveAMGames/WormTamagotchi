@@ -116,7 +116,7 @@ public class Grid : MonoBehaviour {
 		if (grid != null) {
 			//Node playerNode = PositionTarget(player.transform.position);
 			foreach (Node n in grid) {
-				Gizmos.color = (n.layer == Node.TerrainLayer.Mountain) ? Color.white : Color.red;
+				Gizmos.color = (n.layer == Node.TerrainLayer.Sand) ? Color.white : Color.red;
 
 
 
