@@ -5,6 +5,8 @@ using StateManagement;
 
 public class Pathfinding: MonoBehaviour {
 
+	public bool DodoOnSand = true;
+
 	Grid grid;
 	public float speed = 10f;
 
@@ -22,6 +24,7 @@ public class Pathfinding: MonoBehaviour {
 	}
 
 	void Update(){
+		
 		//FillBox (10, 10, 20, 20);
 		if (!stayOnPlace) {
 			if (onWandering) {
@@ -32,7 +35,12 @@ public class Pathfinding: MonoBehaviour {
 
 		
 		}
-		FindPath (seeker.position, targetDodo.position);
+		if (DodoOnSand) {
+			FindPath (seeker.position, targetDodo.position);
+			if (onWandering) {
+				Debug.Log ("Searching of two paths");
+			}
+		}
 	}
 
     
@@ -126,6 +134,7 @@ public class Pathfinding: MonoBehaviour {
 			stayOnPlace = true;
 
 		} else if (!onWandering) {
+			DodoOnSand = false;
 			GetComponent<StateMachine> ().ChangeState ("DodoLost");  
 			stayOnPlace = true;
 			onWandering = true;
