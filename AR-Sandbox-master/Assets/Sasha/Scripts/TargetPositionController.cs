@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class TargetPositionController : MonoBehaviour {
 	public float speed = 10f;
+	Grid grid;
+	public Pathfinding pathfinfingScript;
 	// Use this for initialization
 	void Start () {
-	
+		grid = GameObject.Find("A*").GetComponent<Grid> ();
+
 	}
 	
 	// Update is called once per frame
@@ -20,5 +24,19 @@ public class TargetPositionController : MonoBehaviour {
 
 
 		transform.Translate (movement * speed * Time.deltaTime, Space.World);
+
+		SandCheck ();
 	}
+
+	void SandCheck(){
+		
+			if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {
+				pathfinfingScript.DodoOnSand = true;
+
+			} else {
+			
+				
+			}
+		}
+
 }
