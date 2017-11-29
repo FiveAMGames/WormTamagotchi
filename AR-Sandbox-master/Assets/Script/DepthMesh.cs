@@ -256,12 +256,7 @@ public class DepthMesh : MonoBehaviour
                 FloatValues[outIndex] = FloatValue;
             }
         }
-		/*
-		int CenterIndex = GetArrayIndex(Width/2, Height/2);
-		Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
-		Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
-		Debug.Log ("Float value: " + FloatValues [CenterIndex]);
-		*/
+
     }
 
     void UpdateMesh()
