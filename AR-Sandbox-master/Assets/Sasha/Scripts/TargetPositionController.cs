@@ -19,11 +19,19 @@ public class TargetPositionController : MonoBehaviour {
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 		if (movement != Vector3.zero) {
-			transform.rotation = Quaternion.LookRotation (movement);
+			GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
+			//transform.rotation = Quaternion.LookRotation (movement);
 		}
 
 
-		transform.Translate (movement * speed * Time.deltaTime, Space.World);
+		//transform.Translate (movement * speed * Time.deltaTime, Space.World);
+
+
+
+		GetComponent<Rigidbody> ().velocity = movement * speed;
+
+
+
 
 		SandCheck ();
 	}

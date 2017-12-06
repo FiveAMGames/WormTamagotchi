@@ -18,7 +18,7 @@ Material:
     - first:
         name: _Grass
       second:
-        m_Texture: {fileID: 2800000, guid: 9901c3f5657c55c49813ac1657087bc3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 615d73acb6b7a6241b983d51c73e2cb2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -30,20 +30,20 @@ Material:
     - first:
         name: _Rock
       second:
-        m_Texture: {fileID: 2800000, guid: 092197036cd612247a48b87725eabc7f, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Texture: {fileID: 2800000, guid: f5de6780104f7c94c98fcb99e012bc6c, type: 3}
+        m_Scale: {x: 4, y: 2}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Sand
       second:
-        m_Texture: {fileID: 2800000, guid: 0f0cbf46a126c6442b05f34951cb8dd8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 117cd844597b2cd4ba4a2cb4bda4813b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Water
       second:
-        m_Texture: {fileID: 2800000, guid: 4978d8ba99ef02f4996895fe8445ab3f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 6f143e7e1027c884eaa8ee9129eb02bc, type: 3}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Water1
