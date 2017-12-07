@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 5886cd0cbaaa03a45b0b29dcc15538b0
+timeCreated: 1512585146
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Head
+    100004: LowerMouth1.L
+    100006: LowerMouth1.R
+    100008: LowerMouth2.L
+    100010: LowerMouth2.L_end
+    100012: LowerMouth2.R
+    100014: LowerMouth2.R_end
+    100016: Root
+    100018: UpperMouth1.L
+    100020: UpperMouth1.R
+    100022: UpperMouth2.L
+    100024: UpperMouth2.L_end
+    100026: UpperMouth2.R
+    100028: UpperMouth2.R_end
+    100030: Worm
+    100032: Worm 1
+    100034: Worm.001
+    100036: Worm.002
+    100038: Worm.003
+    100040: Worm.004
+    100042: Worm.005
+    100044: Worm.006
+    100046: Worm.007
+    100048: Worm.008
+    100050: Worm.009
+    100052: Worm.010
+    100054: Worm.011
+    100056: Worm.012
+    100058: Worm.013
+    100060: //RootNode
+    400000: Armature
+    400002: Head
+    400004: LowerMouth1.L
+    400006: LowerMouth1.R
+    400008: LowerMouth2.L
+    400010: LowerMouth2.L_end
+    400012: LowerMouth2.R
+    400014: LowerMouth2.R_end
+    400016: Root
+    400018: UpperMouth1.L
+    400020: UpperMouth1.R
+    400022: UpperMouth2.L
+    400024: UpperMouth2.L_end
+    400026: UpperMouth2.R
+    400028: UpperMouth2.R_end
+    400030: Worm
+    400032: Worm 1
+    400034: Worm.001
+    400036: Worm.002
+    400038: Worm.003
+    400040: Worm.004
+    400042: Worm.005
+    400044: Worm.006
+    400046: Worm.007
+    400048: Worm.008
+    400050: Worm.009
+    400052: Worm.010
+    400054: Worm.011
+    400056: Worm.012
+    400058: Worm.013
+    400060: //RootNode
+    4300000: Worm
+    7400000: Move
+    7400002: Armature|DeformPathAction
+    7400004: Armature|Move
+    7400006: Armature|Start
+    9500000: //RootNode
+    13700000: Worm
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Move
+      takeName: Armature|Move
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Worm 1
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L/LowerMouth2.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L/LowerMouth2.L/LowerMouth2.L_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R/LowerMouth2.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R/LowerMouth2.R/LowerMouth2.R_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L/UpperMouth2.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L/UpperMouth2.L/UpperMouth2.L_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R/UpperMouth2.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R/UpperMouth2.R/UpperMouth2.R_end
+        weight: 1
+      - path: Worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Start
+      takeName: Armature|Start
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Worm 1
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L/LowerMouth2.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.L/LowerMouth2.L/LowerMouth2.L_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R/LowerMouth2.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/LowerMouth1.R/LowerMouth2.R/LowerMouth2.R_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L/UpperMouth2.L
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.L/UpperMouth2.L/UpperMouth2.L_end
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R/UpperMouth2.R
+        weight: 1
+      - path: Armature/Root/Worm 1/Worm.001/Worm.002/Worm.003/Worm.004/Worm.005/Worm.006/Worm.007/Worm.008/Worm.009/Worm.010/Worm.011/Worm.012/Worm.013/Head/UpperMouth1.R/UpperMouth2.R/UpperMouth2.R_end
+        weight: 1
+      - path: Worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
