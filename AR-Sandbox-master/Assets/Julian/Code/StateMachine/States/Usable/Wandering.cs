@@ -24,7 +24,7 @@
 			// Do some wandering
 
 			baseObject.GetComponent<Pathfinding> ().speed = 6f;
-			baseObject.GetComponentInChildren<Animation> ().Play("walk");
+			//baseObject.GetComponentInChildren<Animation> ().Play("walk");
 
 			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
 		}

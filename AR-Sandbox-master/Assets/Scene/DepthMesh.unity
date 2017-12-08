@@ -412,6 +412,52 @@ Transform:
   m_Father: {fileID: 175888907}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1001 &285215897
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 36.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 42.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128469611070376, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766241324078316, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+      propertyPath: m_Name
+      value: Worm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b8ea4b01557d4d949aaf6dadf793b73e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &313047052
 Prefab:
   m_ObjectHideFlags: 0
@@ -680,7 +726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5ca2d53c06c0ab24d9a9970d352c080e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 5ca2d53c06c0ab24d9a9970d352c080e, type: 2}
       propertyPath: sensorHeight
@@ -717,6 +763,42 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ca2d53c06c0ab24d9a9970d352c080e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &389618601 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1766241324078316, guid: b8ea4b01557d4d949aaf6dadf793b73e,
+    type: 2}
+  m_PrefabInternal: {fileID: 285215897}
+--- !u!114 &389618602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389618601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e96a3dc4118c048bb4c7ccab98fd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DodoOnSand: 1
+  speed: 10
+  targetDodo: {fileID: 728931401}
+  targetWandering: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 2024569045}
+  onWandering: 0
+  stayOnPlace: 0
+--- !u!114 &389618603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389618601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa68f928a30a39c4199df56ae2fb6def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateType: 2
+  initialState: FollowTarget
 --- !u!1 &519511900
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +908,7 @@ Transform:
   m_Children:
   - {fileID: 161571481}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &728931402
 MonoBehaviour:
@@ -965,7 +1047,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1280905255
 MonoBehaviour:
@@ -1126,12 +1208,12 @@ GameObject:
   - component: {fileID: 1743067636}
   - component: {fileID: 1743067637}
   m_Layer: 0
-  m_Name: Worm
+  m_Name: WormPenguin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1743067635
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,7 +1226,7 @@ Transform:
   m_Children:
   - {fileID: 1255987039}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1743067636
 MonoBehaviour:
@@ -1161,6 +1243,7 @@ MonoBehaviour:
   speed: 10
   targetDodo: {fileID: 728931401}
   targetWandering: {x: 0, y: 0, z: 0}
+  seeker: {fileID: 0}
   onWandering: 0
   stayOnPlace: 0
 --- !u!114 &1743067637
@@ -1424,3 +1507,8 @@ Transform:
   m_Father: {fileID: 175888907}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2024569045 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4113032953102078, guid: b8ea4b01557d4d949aaf6dadf793b73e,
+    type: 2}
+  m_PrefabInternal: {fileID: 285215897}

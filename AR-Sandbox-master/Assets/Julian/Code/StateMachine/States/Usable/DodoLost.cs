@@ -25,7 +25,7 @@
 			Debug.Log ("lost");
 			timer = 0f;
 			//baseObject.GetComponent<Pathfinding> ().stayOnPlace = true;
-			baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
+			//baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
 
 
 		}

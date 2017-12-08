@@ -24,7 +24,7 @@
 		{
 			
 			timer = 0f;
-			baseObject.GetComponentInChildren<Animation> ().Play("idle");
+			//baseObject.GetComponentInChildren<Animation> ().Play("idle");
 
 
 		}

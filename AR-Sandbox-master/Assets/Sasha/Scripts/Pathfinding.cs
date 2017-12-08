@@ -12,14 +12,13 @@ public class Pathfinding: MonoBehaviour {
 
 	public Transform  targetDodo;
 	[HideInInspector] public Vector3 targetWandering;
-	protected Transform seeker;
+	public Transform seeker;
 
 	public bool onWandering = false;
 	public bool stayOnPlace = false;
 
 	void Awake(){
 		RandomWanderingTarget ();
-		seeker = transform;
 		grid = GameObject.Find("A*").GetComponent<Grid> ();
 	}
 
@@ -177,11 +176,13 @@ public class Pathfinding: MonoBehaviour {
 		}
 
 		if (path.Count > 0) {
+            /*
 			seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), speed * Time.deltaTime); 
 			Vector3 targetDir =new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z) - transform.position;
 			float step = 3f * Time.deltaTime;
 			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
 			transform.rotation = Quaternion.LookRotation(newDir);
+            */         
 		} else {   //found the target
 			if (onWandering) {
 				GetComponent<StateMachine> ().ChangeState ("OnWanderingIdle");
