@@ -31,7 +31,7 @@ Material:
         name: _Rock
       second:
         m_Texture: {fileID: 2800000, guid: f5de6780104f7c94c98fcb99e012bc6c, type: 3}
-        m_Scale: {x: 4, y: 2}
+        m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Sand

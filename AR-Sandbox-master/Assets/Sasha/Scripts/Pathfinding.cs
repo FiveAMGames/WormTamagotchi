@@ -16,6 +16,7 @@ public class Pathfinding: MonoBehaviour {
 
 	public bool onWandering = false;
 	public bool stayOnPlace = false;
+	public bool WormNotAtSand = false;
 
 	void Awake(){
 		RandomWanderingTarget ();
@@ -40,6 +41,15 @@ public class Pathfinding: MonoBehaviour {
 			if (onWandering) {
 				Debug.Log ("Searching of two paths");
 			}
+		}
+	
+		if (grid.PositionTarget (transform.position).layer != Node.TerrainLayer.Sand) {
+			WormNotAtSand = true;
+			GetComponent<StateMachine> ().ChangeState ("WormNotAtSand");
+		} else {
+			
+			//WormNotAtSand = false;
+
 		}
 	}
 
