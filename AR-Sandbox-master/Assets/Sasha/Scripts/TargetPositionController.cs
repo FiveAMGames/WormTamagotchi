@@ -32,7 +32,7 @@ public class TargetPositionController : MonoBehaviour
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		Vector3 movement = new Vector3 (-moveHorizontal, 0.0f, -moveVertical);   //flip for the projector
 		if (movement != Vector3.zero) {
 			GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
 
