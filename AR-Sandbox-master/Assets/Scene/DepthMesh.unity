@@ -138,7 +138,7 @@ MonoBehaviour:
   prefab: {fileID: 1000012130934226, guid: ffd346fc763705a4bb4adcec064facba, type: 2}
   MinDepthValueBuffer: 0
   MaxDepthValueBuffer: 0
-  _WaterLevel: 51.63
+  _WaterLevel: 51.37
   NumOfTextures: 4
   _LayerSize: 0.03
 --- !u!4 &112241530
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   targetWandering: {x: 0, y: 0, z: 0}
   onWandering: 0
   stayOnPlace: 0
+  WormNotAtSand: 0
 --- !u!114 &1743067637
 MonoBehaviour:
   m_ObjectHideFlags: 0
