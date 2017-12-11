@@ -57,6 +57,20 @@ public class TargetPositionController : MonoBehaviour
 
 		SandCheck ();
 
+		if (onWater)
+		{
+
+			GetComponentInChildren<Animator> ().SetBool ("OnWater", true);
+
+
+		}
+		else{
+
+			GetComponentInChildren<Animator> ().SetBool ("OnWater", false);
+
+
+		}
+
 
 		 
 
@@ -80,6 +94,7 @@ public class TargetPositionController : MonoBehaviour
 
 		} else if (layer == Node.TerrainLayer.Water) {
 			onWater = true;
+
 			currentSpeed = speed / 2f;
 
 		} else if (layer == Node.TerrainLayer.Grass) {
