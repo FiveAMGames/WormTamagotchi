@@ -253,7 +253,9 @@ public class DepthMesh : MonoBehaviour
                 float FloatValue = (ImageValue - MinDepthValue) / (float)(MaxDepthValue - MinDepthValue);
 
 				int outIndex = GetArrayIndex(Width - 1 - W, Height -1 - H);    ///drehen zueruck
-                FloatValues[outIndex] = FloatValue;
+				FloatValues[outIndex] = Mathf.Abs(FloatValue - FloatValues[outIndex]) > 0.00002f ?
+					FloatValue :
+					FloatValues[outIndex];
             }
         }
 
@@ -293,12 +295,13 @@ public class DepthMesh : MonoBehaviour
 		float Blend = MaxValue - vertexZ;
 		Blend = Mathf.Clamp(Blend / (NumOfTextures *_LayerSize), 0f, 0.999f);  //can return 1 again (no 16 return in terrain layer anymore
 		float TextureFloat = Blend * NumOfTextures;
-
+		/*
 		float LastLayer = LayerValues [Index];
 		const float StickyMargin = 0.2f; // Allowed deviation that doesn't trigger layer change
 		if ((TextureFloat > LastLayer - StickyMargin) && (TextureFloat < LastLayer + 1 + StickyMargin)) {
 			return (int)LastLayer;
         }
+        */
 		return (int)TextureFloat;
 	}
 
