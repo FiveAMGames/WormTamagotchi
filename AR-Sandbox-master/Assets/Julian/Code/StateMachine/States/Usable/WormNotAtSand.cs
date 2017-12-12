@@ -24,7 +24,8 @@
 			// Do some wandering
 			grid = GameObject.Find("A*").GetComponent<Grid> ();
 			baseObject.GetComponent<Pathfinding> ().speed = 6f;
-			baseObject.GetComponentInChildren<Animation> ().Play("walk");
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
 
 			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
 		}
