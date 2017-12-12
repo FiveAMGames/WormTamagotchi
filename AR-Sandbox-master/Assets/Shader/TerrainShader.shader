@@ -2,7 +2,7 @@
 	Properties {
 		_Water ("Water", 2D) = "white" {}
 		_Sand ("Sand", 2D) = "white" {}
-		_Grass ("Rock", 2D) = "white" {}
+		_Grass ("Grass", 2D) = "white" {}
 		_Rock ("Rock", 2D) = "white" {}
 		_WaterLevel ("Water Level", Float) = 0
 		_LayerSize ("Layer Size", Float) = 20
@@ -74,8 +74,8 @@
 			float4 frag (fragmentInput i) : COLOR0 
 			{ 	
 				float NumOfTextures = 4;
-				//float TextureFloat = i.blend.w * NumOfTextures; //old
-				float TextureFloat = i.blend.x * 256;         // new from DepthMesh
+				float TextureFloat = i.blend.w * NumOfTextures; //old
+				//float TextureFloat = i.blend.x * 255;         // new from DepthMesh
 
 
 				if(TextureFloat < 1)
