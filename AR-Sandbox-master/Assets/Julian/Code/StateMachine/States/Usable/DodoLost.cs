@@ -25,7 +25,10 @@
 			Debug.Log ("lost");
 			timer = 0f;
 			//baseObject.GetComponent<Pathfinding> ().stayOnPlace = true;
-			baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
+			//baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
+			// Questionmark animation...
 
 
 		}
