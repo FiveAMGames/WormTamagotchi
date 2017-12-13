@@ -1121,7 +1121,7 @@ MonoBehaviour:
   speed: 10
   attackCooldown: 2
   targetDodo: {fileID: 728931401}
-  targetWandering: {x: 0, y: 0, z: 0}
+  targetWandering: {x: 49.3, y: 0.7, z: 79.1}
   onWandering: 0
   stayOnPlace: 0
   WormNotAtSand: 0
