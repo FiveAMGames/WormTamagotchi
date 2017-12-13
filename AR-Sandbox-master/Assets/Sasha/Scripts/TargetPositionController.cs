@@ -9,14 +9,18 @@ public class TargetPositionController : MonoBehaviour
 	Grid grid;
 	public Pathfinding pathfinfingScript;
 
+	public GameObject Sandfootprint;
+	public GameObject Waterfootprints;
+
 
 	// Use this for initialization
 
 
 	private bool onWater = false;
 
-	float timerForIdle = 3f;
+	float timerForFootsteps = 0.8f;
 	private float timer = 0f;
+
 
 
 	void Start ()
@@ -37,12 +41,23 @@ public class TargetPositionController : MonoBehaviour
 			GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
 
 			GetComponentInChildren<Animator> ().SetBool ("Walk", true);
-
-
+			timer += Time.deltaTime;
+			if (timer > timerForFootsteps) {
+				if (!onWater) {
+					GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
+					foots.transform.SetParent (null);
+				} else {
+					GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
+					foots.transform.SetParent (null);
+				}
+					
+					timer = 0f;
+				
+			}
 		} else {
 			
 			GetComponentInChildren<Animator> ().SetBool ("Walk", false);
-			
+			timer = 0f;
 		
 		}
 
@@ -61,6 +76,7 @@ public class TargetPositionController : MonoBehaviour
 		{
 
 			GetComponentInChildren<Animator> ().SetBool ("OnWater", true);
+
 
 
 		}

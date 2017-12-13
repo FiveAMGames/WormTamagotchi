@@ -12,7 +12,8 @@
 	[StateType(State.Worm | State.Dodo)]
 	public class WormNotAtSand : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
 	{
-
+		public float DeadTimer = 3f;
+		private float timer = 0f;
 		Grid grid;
 		// Calling base constructor
 		public WormNotAtSand(object caller) : base(caller) { }   // <- Base constructor must be called!
@@ -21,21 +22,26 @@
 		// Override update method
 		public override void Start()
 		{
-			// Do some wandering
+			// Do some dead timer
 			grid = GameObject.Find("A*").GetComponent<Grid> ();
+
 			baseObject.GetComponent<Pathfinding> ().speed = 6f;
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
 
-			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
+
+	
 		}
 
 
 
 		public override void Update ()
 		{
-			
-
+			timer += Time.deltaTime;
+			if (timer > DeadTimer) {
+				Debug.Log ("Game Over Skorpion!");
+			}
+ 
 
 			if (grid.PositionTarget (baseObject.transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
 
