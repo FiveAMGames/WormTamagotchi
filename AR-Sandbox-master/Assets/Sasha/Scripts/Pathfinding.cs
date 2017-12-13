@@ -30,6 +30,15 @@ public class Pathfinding: MonoBehaviour {
 	void Update(){
 		
 		//FillBox (10, 10, 20, 20);
+		if (WormNotAtSand){
+		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
+
+			onWandering = true;
+			WormNotAtSand = false;
+			GetComponent<StateMachine> ().ChangeState ("Wandering");
+		  }
+		}
+
 		if (!stayOnPlace) {
 			if (onWandering) {
 				FindPath (seeker.position, targetWandering);

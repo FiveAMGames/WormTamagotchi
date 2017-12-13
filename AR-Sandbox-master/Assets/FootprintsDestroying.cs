@@ -20,11 +20,12 @@ public class FootprintsDestroying : MonoBehaviour {
 		Debug.Log (timer);
 		if (timer > 2f && footR == null && FootprintR != null) {
 
+			if (!GameObject.Find ("Dodo").GetComponent<TargetPositionController>().onWater){
 
 			footR = Instantiate (FootprintR, GameObject.Find ("Dodo").transform) as GameObject;
 			footR.transform.SetParent (null);
+		  }
 		}
-
 
 
 		if (timer > deadTimer) {

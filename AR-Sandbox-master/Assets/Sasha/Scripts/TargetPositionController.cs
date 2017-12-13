@@ -16,7 +16,7 @@ public class TargetPositionController : MonoBehaviour
 	// Use this for initialization
 
 
-	private bool onWater = false;
+	public bool onWater = false;
 
 	float timerForFootsteps = 0.8f;
 	private float timer = 0f;

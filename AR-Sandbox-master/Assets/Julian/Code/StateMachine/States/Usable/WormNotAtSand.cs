@@ -43,12 +43,12 @@
 			}
  
 
-			if (grid.PositionTarget (baseObject.transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
+			/*if (grid.PositionTarget (baseObject.transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
 
 				baseObject.GetComponent<Pathfinding> ().onWandering = true;
 				baseObject.GetComponent<Pathfinding> ().WormNotAtSand = false;
 				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
-			}
+			}*/
 		}
 
 
