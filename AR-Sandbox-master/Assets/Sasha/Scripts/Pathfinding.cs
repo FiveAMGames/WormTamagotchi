@@ -28,8 +28,12 @@ public class Pathfinding: MonoBehaviour {
 	}
 
 	void Update(){
-		
-		//FillBox (10, 10, 20, 20);
+		//FillBoxSand Sand (
+
+		//FillBoxSand (0, 0, 40, 30);
+		//FillBoxWater(0, 10,20, 20);
+	
+
 		if (WormNotAtSand){
 		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
 
@@ -70,14 +74,28 @@ public class Pathfinding: MonoBehaviour {
 	}
 
     
-	void FillBox(int x1, int y1, int x2, int y2) {
+	void FillBoxGrass(int x1, int y1, int x2, int y2) {
 		for (int i = x1; i <= x2; ++i)
 			for (int j = y1; j <= y2; ++j)
 				grid.SetNode (i, j, Node.TerrainLayer.Grass);
 	}
 
+	void FillBoxWater(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Water);
+	}
 
-
+	void FillBoxMountains(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Mountain);
+	}
+	void FillBoxSand(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Sand);
+	}
 
 
 	void FindPath(Vector3 startPos, Vector3 targetPos){

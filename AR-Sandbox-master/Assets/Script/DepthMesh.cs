@@ -63,6 +63,7 @@ public class DepthMesh : MonoBehaviour
 
         SetupArrays();
 		UpdateLayerValue ();
+
     }
 
     // Update is called once per frame
@@ -84,6 +85,7 @@ public class DepthMesh : MonoBehaviour
     {
 		if ((KinectDepth.pollDepth()))
         {
+			
             DepthImage = KinectDepth.depthImg;
             CheckArrays();
             CropImage();
@@ -104,6 +106,11 @@ public class DepthMesh : MonoBehaviour
 
 
     }
+
+
+
+
+
 
 	void UpdateLayerValue(){
 		for (int H = 0; H < Height; H++) {
