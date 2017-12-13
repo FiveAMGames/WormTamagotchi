@@ -43,7 +43,7 @@ public class Pathfinding: MonoBehaviour {
 			}
 		}
 	
-		if (grid.PositionTarget (transform.position).layer != Node.TerrainLayer.Sand) {
+		if (!WormNotAtSand && grid.PositionTarget (transform.position).layer != Node.TerrainLayer.Sand ) {
 			WormNotAtSand = true;
 			GetComponent<StateMachine> ().ChangeState ("WormNotAtSand");
 		} else {
