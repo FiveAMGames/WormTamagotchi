@@ -9,6 +9,7 @@ public class Pathfinding: MonoBehaviour {
 
 	Grid grid;
 	public float speed = 10f;
+	public float attackCooldown = 0.5f;
 
 	public Transform  targetDodo;
 	[HideInInspector] public Vector3 targetWandering;
@@ -17,6 +18,8 @@ public class Pathfinding: MonoBehaviour {
 	public bool onWandering = false;
 	public bool stayOnPlace = false;
 	public bool WormNotAtSand = false;
+
+	private float timeCount = 0f;
 
 	void Awake(){
 		RandomWanderingTarget ();
@@ -51,6 +54,10 @@ public class Pathfinding: MonoBehaviour {
 			//WormNotAtSand = false;
 
 		}
+
+		// Count time
+		if (timeCount <= attackCooldown)
+			timeCount += Time.deltaTime;
 	}
 
     
@@ -186,7 +193,9 @@ public class Pathfinding: MonoBehaviour {
 			grid.pathForWandering = path;
 		}
 
-		if (path.Count > 0) {
+		// Edit Julian - 3 grid nodes offset, so that scorpion attacks not only if it lies exactly over the dodo,
+		// but a little bit earlier.
+		if ((path.Count - 3) > 0) {
 			seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), speed * Time.deltaTime); 
 			Vector3 targetDir =new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z) - transform.position;
 			float step = 3f * Time.deltaTime;
@@ -200,19 +209,20 @@ public class Pathfinding: MonoBehaviour {
 
 			} else {
 				Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
+
+				if (timeCount >= attackCooldown)
+				{
+					GetComponentInChildren<Animator> ().SetTrigger ("Attack");
+					timeCount = 0f;
+				}
 			}
 		}
-
-
-
-			
-
-
-
-
 	}
 
-
+	// Animation event - when scorpion has stung the dodo...
+	public void Stung() {
+		Debug.Log("Die dodo, die......");
+	}
 
 
 	int GetDistance(Node nodeA, Node nodeB){

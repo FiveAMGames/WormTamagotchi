@@ -24,8 +24,11 @@
 		{
 			// Do some dead timer
 			grid = GameObject.Find("A*").GetComponent<Grid> ();
-			//baseObject.GetComponent<Pathfinding> ().speed = 6f;
-			//baseObject.GetComponentInChildren<Animation> ().Play("walk");
+
+			baseObject.GetComponent<Pathfinding> ().speed = 6f;
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
+
 
 	
 		}

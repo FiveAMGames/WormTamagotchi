@@ -24,7 +24,8 @@
 		{
 			
 			timer = 0f;
-			baseObject.GetComponentInChildren<Animation> ().Play("idle");
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
 
 
 		}
