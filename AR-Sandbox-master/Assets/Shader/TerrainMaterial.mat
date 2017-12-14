@@ -18,8 +18,8 @@ Material:
     - first:
         name: _Grass
       second:
-        m_Texture: {fileID: 2800000, guid: 79755b9396c25c143ab8ed83556ce1e2, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 615d73acb6b7a6241b983d51c73e2cb2, type: 3}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
@@ -30,20 +30,20 @@ Material:
     - first:
         name: _Rock
       second:
-        m_Texture: {fileID: 2800000, guid: 3bc656358df2c804ba1ecfefd23056b6, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: f5de6780104f7c94c98fcb99e012bc6c, type: 3}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Sand
       second:
-        m_Texture: {fileID: 2800000, guid: 62678e2f726b7f741b9aa33d36005ca3, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 117cd844597b2cd4ba4a2cb4bda4813b, type: 3}
+        m_Scale: {x: 6, y: 6}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Water
       second:
-        m_Texture: {fileID: 2800000, guid: ac5b9e8fc4dd93543ba0ecbb6fa78eac, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Water1
@@ -66,7 +66,7 @@ Material:
     m_Floats:
     - first:
         name: _BlendRange
-      second: 0.425
+      second: 0.062
     - first:
         name: _LayerSize
       second: 0.03
@@ -78,7 +78,7 @@ Material:
       second: 0
     - first:
         name: _WaterLevel
-      second: 51.63
+      second: 51.368
     m_Colors:
     - first:
         name: _Color

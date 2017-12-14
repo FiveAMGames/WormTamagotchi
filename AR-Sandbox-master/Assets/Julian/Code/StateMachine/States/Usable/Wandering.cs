@@ -22,9 +22,10 @@
 		public override void Start()
 		{
 			// Do some wandering
-
-			baseObject.GetComponent<Pathfinding> ().speed = 6f;
-			baseObject.GetComponentInChildren<Animation> ().Play("walk");
+			baseObject.GetComponent<Pathfinding> ().stayOnPlace = false;
+			baseObject.GetComponent<Pathfinding> ().speed = 15f;
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", true);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
 
 			//baseObject.GetComponent<Pathfinding> ().onWandering = true;
 		}

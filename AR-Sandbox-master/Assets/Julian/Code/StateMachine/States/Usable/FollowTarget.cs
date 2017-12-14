@@ -28,9 +28,10 @@ namespace StateManagement
 			// Do some dodo following
 
 
-			baseObject.GetComponent<Pathfinding> ().speed = 10f;
+			baseObject.GetComponent<Pathfinding> ().speed = 20f;
 			baseObject.GetComponent<Pathfinding> ().onWandering = false;
-			baseObject.GetComponentInChildren<Animation> ().Play("run");
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", true);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", true);
 
 		}
 

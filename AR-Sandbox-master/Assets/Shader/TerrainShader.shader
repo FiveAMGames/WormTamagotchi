@@ -2,7 +2,7 @@
 	Properties {
 		_Water ("Water", 2D) = "white" {}
 		_Sand ("Sand", 2D) = "white" {}
-		_Grass ("Rock", 2D) = "white" {}
+		_Grass ("Grass", 2D) = "white" {}
 		_Rock ("Rock", 2D) = "white" {}
 		_WaterLevel ("Water Level", Float) = 0
 		_LayerSize ("Layer Size", Float) = 20
@@ -19,6 +19,11 @@
             uniform sampler2D _Sand;
             uniform sampler2D _Grass;
             uniform sampler2D _Rock;
+			
+			uniform float4 _Water_ST;
+            uniform float4 _Sand_ST;
+            uniform float4 _Grass_ST;
+            uniform float4 _Rock_ST;
 
             uniform float _WaterLevel;
             uniform float _LayerSize;
@@ -69,43 +74,40 @@
 			float4 frag (fragmentInput i) : COLOR0 
 			{ 	
 				float NumOfTextures = 4;
-				//float TextureFloat = i.blend.w * NumOfTextures; //old
-				float TextureFloat = i.blend.x * 256;         // new from DepthMesh
+				float TextureFloat = i.blend.w * NumOfTextures; //old
+				//float TextureFloat = i.blend.x * 255;         // new from DepthMesh
 
 
 				if(TextureFloat < 1)
 				{
-					fixed4 WaterColor = tex2D(_Water, i.texcoord);
-					fixed4 SandColor = tex2D(_Sand, i.texcoord);
+					fixed4 WaterColor = tex2D(_Water, i.texcoord * _Water_ST.xy + _Water_ST.zw);
+					fixed4 SandColor = tex2D(_Sand, i.texcoord * _Sand_ST.xy + _Sand_ST.zw);
 
 					return DoBlending(0, TextureFloat, WaterColor, SandColor);
 				} 
 				else if(TextureFloat < 2)
 				{
-					fixed4 SandColor = tex2D(_Sand, i.texcoord);
-					fixed4 GrassColor = tex2D(_Grass, i.texcoord);
+					fixed4 SandColor = tex2D(_Sand, i.texcoord * _Sand_ST.xy + _Sand_ST.zw);
+					fixed4 GrassColor = tex2D(_Grass, i.texcoord * _Grass_ST.xy + _Grass_ST.zw);
 
 					return DoBlending(1, TextureFloat, SandColor, GrassColor);
 				} 
 				else if(TextureFloat < 3)
 				{
-					fixed4 GrassColor = tex2D(_Grass, i.texcoord);
-					fixed4 RockColor = tex2D(_Rock, i.texcoord);
+					fixed4 GrassColor = tex2D(_Grass, i.texcoord * _Grass_ST.xy + _Grass_ST.zw);
+					fixed4 RockColor = tex2D(_Rock, i.texcoord * _Rock_ST.xy + _Rock_ST.zw);
 
 					return DoBlending(2, TextureFloat, GrassColor, RockColor);
 				}
 				
-				fixed4 RockColor = tex2D(_Rock, i.texcoord);
+				fixed4 RockColor = tex2D(_Rock, i.texcoord * _Rock_ST.xy + _Rock_ST.zw);
 
 				return RockColor;
 
-				fixed4 WaterColor = tex2D(_Water, i.texcoord);
-				fixed4 SandColor = tex2D(_Sand, i.texcoord);
+				fixed4 WaterColor = tex2D(_Water, i.texcoord * _Water_ST.xy + _Water_ST.zw);
+				fixed4 SandColor = tex2D(_Sand, i.texcoord * _Sand_ST.xy + _Sand_ST.zw);
 
 				return lerp(WaterColor, SandColor, i.blend.w);
-
-				//return i.texcoord;	
-                //return tex2D(_Water, i.texcoord);
 			}
 
       ENDCG

@@ -63,6 +63,7 @@ public class DepthMesh : MonoBehaviour
 
         SetupArrays();
 		UpdateLayerValue ();
+
     }
 
     // Update is called once per frame
@@ -84,6 +85,7 @@ public class DepthMesh : MonoBehaviour
     {
 		if ((KinectDepth.pollDepth()))
         {
+			
             DepthImage = KinectDepth.depthImg;
             CheckArrays();
             CropImage();
@@ -105,6 +107,11 @@ public class DepthMesh : MonoBehaviour
 
     }
 
+
+
+
+
+
 	void UpdateLayerValue(){
 		for (int H = 0; H < Height; H++) {
 			for (int W = 0; W < Width; W++) {
@@ -115,7 +122,7 @@ public class DepthMesh : MonoBehaviour
 		}
 	
 		int CenterIndex = GetArrayIndex (Width / 2, Height / 2);
-		Debug.Log ("Layer Index: " + LayerValues [CenterIndex]);
+		//Debug.Log ("Layer Index: " + LayerValues [CenterIndex]);
 	}
 
     void CheckArrays()
@@ -253,14 +260,12 @@ public class DepthMesh : MonoBehaviour
                 float FloatValue = (ImageValue - MinDepthValue) / (float)(MaxDepthValue - MinDepthValue);
 
 				int outIndex = GetArrayIndex(Width - 1 - W, Height -1 - H);    ///drehen zueruck
-                FloatValues[outIndex] = FloatValue;
+				FloatValues[outIndex] = Mathf.Abs(FloatValue - FloatValues[outIndex]) > 0.00002f ?
+					FloatValue :
+					FloatValues[outIndex];
             }
         }
 
-		int CenterIndex = GetArrayIndex(Width/2, Height/2);
-		Debug.Log ("Raw value: " + DepthImage [CenterIndex]);
-		Debug.Log ("Filtered value: " + FilterdAndCroppedDepthImage [CenterIndex]);
-		Debug.Log ("Float value: " + FloatValues [CenterIndex]);
     }
 
     void UpdateMesh()
@@ -297,12 +302,13 @@ public class DepthMesh : MonoBehaviour
 		float Blend = MaxValue - vertexZ;
 		Blend = Mathf.Clamp(Blend / (NumOfTextures *_LayerSize), 0f, 0.999f);  //can return 1 again (no 16 return in terrain layer anymore
 		float TextureFloat = Blend * NumOfTextures;
-
+		/*
 		float LastLayer = LayerValues [Index];
 		const float StickyMargin = 0.2f; // Allowed deviation that doesn't trigger layer change
 		if ((TextureFloat > LastLayer - StickyMargin) && (TextureFloat < LastLayer + 1 + StickyMargin)) {
 			return (int)LastLayer;
         }
+        */
 		return (int)TextureFloat;
 	}
 

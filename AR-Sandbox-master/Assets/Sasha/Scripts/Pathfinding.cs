@@ -2,11 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using StateManagement;
+using UnityEngine.UI;
 
 public class Pathfinding: MonoBehaviour {
 
+	public Text score;
+
+
+	[HideInInspector] public bool DodoOnSand = true;
+
 	Grid grid;
 	public float speed = 10f;
+	public float attackCooldown = 0.5f;
+	public bool TestGrid = false;
 
 	public Transform  targetDodo;
 	[HideInInspector] public Vector3 targetWandering;
@@ -14,6 +22,11 @@ public class Pathfinding: MonoBehaviour {
 
 	public bool onWandering = false;
 	public bool stayOnPlace = false;
+	public bool WormNotAtSand = false;
+
+	public bool followDodo = false;
+	private float timeCount = 0f;
+
 
 	void Awake(){
 		RandomWanderingTarget ();
@@ -22,7 +35,21 @@ public class Pathfinding: MonoBehaviour {
 	}
 
 	void Update(){
-		//FillBox (10, 10, 20, 20);
+		//FillBoxSand Sand (
+		if (TestGrid){
+		FillBoxSand (0, 0, 40, 30);
+		FillBoxWater(0, 10,20, 20);
+		}
+
+		if (WormNotAtSand){
+		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
+
+			onWandering = true;
+			WormNotAtSand = false;
+			GetComponent<StateMachine> ().ChangeState ("Wandering");
+		  }
+		}
+
 		if (!stayOnPlace) {
 			if (onWandering) {
 				FindPath (seeker.position, targetWandering);
@@ -32,18 +59,50 @@ public class Pathfinding: MonoBehaviour {
 
 		
 		}
-		FindPath (seeker.position, targetDodo.position);
+		if (DodoOnSand) {
+			FindPath (seeker.position, targetDodo.position);
+			if (onWandering) {
+				//Debug.Log ("Searching of two paths");
+			}
+		}
+	
+		if (!WormNotAtSand && grid.PositionTarget (transform.position).layer != Node.TerrainLayer.Sand ) {
+			WormNotAtSand = true;
+			GetComponent<StateMachine> ().ChangeState ("WormNotAtSand");
+		} else {
+			
+			//WormNotAtSand = false;
+
+		}
+
+		// Count time
+		if (timeCount <= attackCooldown)
+			timeCount += Time.deltaTime;
 	}
 
     
-	void FillBox(int x1, int y1, int x2, int y2) {
+	void FillBoxGrass(int x1, int y1, int x2, int y2) {
 		for (int i = x1; i <= x2; ++i)
 			for (int j = y1; j <= y2; ++j)
 				grid.SetNode (i, j, Node.TerrainLayer.Grass);
 	}
 
+	void FillBoxWater(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Water);
+	}
 
-
+	void FillBoxMountains(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Mountain);
+	}
+	void FillBoxSand(int x1, int y1, int x2, int y2) {
+		for (int i = x1; i <= x2; ++i)
+			for (int j = y1; j <= y2; ++j)
+				grid.SetNode (i, j, Node.TerrainLayer.Sand);
+	}
 
 
 	void FindPath(Vector3 startPos, Vector3 targetPos){
@@ -82,6 +141,7 @@ public class Pathfinding: MonoBehaviour {
 			if (currentNode == targetNode) {  //found the path to target
 
 				if (targetPos == targetDodo.position) {
+					followDodo = true;
 					onWandering = false;
 					GetComponent<StateMachine> ().ChangeState ("FollowTarget");
 					RetracePath (startNode, targetNode, true);
@@ -126,6 +186,8 @@ public class Pathfinding: MonoBehaviour {
 			stayOnPlace = true;
 
 		} else if (!onWandering) {
+			DodoOnSand = false;
+			followDodo = false;
 			GetComponent<StateMachine> ().ChangeState ("DodoLost");  
 			stayOnPlace = true;
 			onWandering = true;
@@ -141,7 +203,7 @@ public class Pathfinding: MonoBehaviour {
 
 	public void RandomWanderingTarget(){
 		
-		targetWandering = new Vector3 (Random.Range(1f, 159f), transform.position.y, Random.Range (1f, 109f));
+		targetWandering = new Vector3 (Random.Range(4f, 150f), transform.position.y, Random.Range (4f, 105f));
 	}
 
 
@@ -167,7 +229,9 @@ public class Pathfinding: MonoBehaviour {
 			grid.pathForWandering = path;
 		}
 
-		if (path.Count > 0) {
+		// Edit Julian - 3 grid nodes offset, so that scorpion attacks not only if it lies exactly over the dodo,
+		// but a little bit earlier.
+		if ((path.Count - 3) > 0) {
 			seeker.position = Vector3.MoveTowards (seeker.position, new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z), speed * Time.deltaTime); 
 			Vector3 targetDir =new Vector3 (path [0].worldPosition.x, seeker.position.y, path [0].worldPosition.z) - transform.position;
 			float step = 3f * Time.deltaTime;
@@ -180,20 +244,21 @@ public class Pathfinding: MonoBehaviour {
 
 
 			} else {
-				Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
+				//Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
+
+				if (timeCount >= attackCooldown)
+				{
+					GetComponentInChildren<Animator> ().SetTrigger ("Attack");
+					timeCount = 0f;
+				}
 			}
 		}
-
-
-
-			
-
-
-
-
 	}
 
-
+	// Animation event - when scorpion has stung the dodo...
+	public void Stung() {
+		//score.text = "Scorpio rulezzzz!";
+	}
 
 
 	int GetDistance(Node nodeA, Node nodeB){
