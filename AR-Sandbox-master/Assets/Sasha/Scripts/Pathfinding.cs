@@ -2,14 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using StateManagement;
+using UnityEngine.UI;
 
 public class Pathfinding: MonoBehaviour {
 
-	public bool DodoOnSand = true;
+	public Text score;
+
+
+	[HideInInspector] public bool DodoOnSand = true;
 
 	Grid grid;
 	public float speed = 10f;
 	public float attackCooldown = 0.5f;
+	public bool TestGrid = false;
 
 	public Transform  targetDodo;
 	[HideInInspector] public Vector3 targetWandering;
@@ -22,6 +27,7 @@ public class Pathfinding: MonoBehaviour {
 	public bool followDodo = false;
 	private float timeCount = 0f;
 
+
 	void Awake(){
 		RandomWanderingTarget ();
 		seeker = transform;
@@ -30,10 +36,10 @@ public class Pathfinding: MonoBehaviour {
 
 	void Update(){
 		//FillBoxSand Sand (
-
-		//FillBoxSand (0, 0, 40, 30);
-		//FillBoxWater(0, 10,20, 20);
-	
+		if (TestGrid){
+		FillBoxSand (0, 0, 40, 30);
+		FillBoxWater(0, 10,20, 20);
+		}
 
 		if (WormNotAtSand){
 		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
@@ -56,7 +62,7 @@ public class Pathfinding: MonoBehaviour {
 		if (DodoOnSand) {
 			FindPath (seeker.position, targetDodo.position);
 			if (onWandering) {
-				Debug.Log ("Searching of two paths");
+				//Debug.Log ("Searching of two paths");
 			}
 		}
 	
@@ -238,7 +244,7 @@ public class Pathfinding: MonoBehaviour {
 
 
 			} else {
-				Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
+				//Debug.Log ("The worm eats the dodo. Like, last worm has eaten the last dodo");
 
 				if (timeCount >= attackCooldown)
 				{
@@ -251,7 +257,7 @@ public class Pathfinding: MonoBehaviour {
 
 	// Animation event - when scorpion has stung the dodo...
 	public void Stung() {
-		Debug.Log("Die dodo, die......");
+		//score.text = "Scorpio rulezzzz!";
 	}
 
 
