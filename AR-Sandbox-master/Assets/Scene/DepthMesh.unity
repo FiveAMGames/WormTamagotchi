@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateGrid: 1
+  updateGrid: 0
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5

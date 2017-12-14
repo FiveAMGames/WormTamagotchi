@@ -30,8 +30,8 @@ public class Pathfinding: MonoBehaviour {
 	void Update(){
 		//FillBoxSand Sand (
 
-		//FillBoxSand (0, 0, 40, 30);
-		//FillBoxWater(0, 10,20, 20);
+		FillBoxSand (0, 0, 40, 30);
+		FillBoxWater(0, 10,20, 20);
 	
 
 		if (WormNotAtSand){
