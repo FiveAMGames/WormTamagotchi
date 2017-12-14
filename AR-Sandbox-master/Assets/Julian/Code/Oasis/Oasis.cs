@@ -9,6 +9,7 @@ public class Oasis : MonoBehaviour
     [SerializeField][Range(0f, 1f)] protected float chance = 0.2f;
     [SerializeField] protected int minArea = 8;
 	[SerializeField] protected GameObject[] assets;
+    [SerializeField][Range(0f, 1f)] protected float assetsAmount = 0.2f;
 	[SerializeField][Range(1f, 60f)] protected int updateInterval = 10;
     [SerializeField] private bool debugSwitch;
 
@@ -157,7 +158,7 @@ public class Oasis : MonoBehaviour
             // Chance to build a new one...
             for(int i = 0; i < waterOutline.Length; i++)
             {
-                if(Random.Range(0f, 1f) < 0.3f)
+                if(Random.Range(0f, 1f) < (assetsAmount * assetsAmount))
                 {
                     oasisAssets.Add(
                         GameObject.Instantiate(
