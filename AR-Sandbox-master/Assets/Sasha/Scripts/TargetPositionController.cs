@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FMOD;
+using FMODUnity;
 
 
 public class TargetPositionController : MonoBehaviour
@@ -46,6 +48,7 @@ public class TargetPositionController : MonoBehaviour
 				if (!onWater) {
 					GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
 					foots.transform.SetParent (null);
+					GetComponent<StudioEventEmitter> ().Play ();
 				} else {
 					GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
 					foots.transform.SetParent (null);

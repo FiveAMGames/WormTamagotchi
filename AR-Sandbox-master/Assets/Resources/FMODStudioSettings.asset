@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets\Fmod\MegaTolleFmodZeug\MegaTolleFmodZeug.fspro
-  SourceProjectPathUnformatted: Assets\Fmod\MegaTolleFmodZeug\MegaTolleFmodZeug.fspro
-  SourceBankPathUnformatted: Assets\Fmod\MegaTolleFmodZeug\Build
+  sourceProjectPath: Assets\Fmod\DodoScorpion1\DodoScorpion1.fspro
+  SourceProjectPathUnformatted: Assets\Fmod\DodoScorpion1\DodoScorpion1.fspro
+  SourceBankPathUnformatted: Assets\Fmod\DodoScorpion1\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

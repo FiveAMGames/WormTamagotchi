@@ -19,6 +19,7 @@ public class Pathfinding: MonoBehaviour {
 	public bool stayOnPlace = false;
 	public bool WormNotAtSand = false;
 
+	public bool followDodo = false;
 	private float timeCount = 0f;
 
 	void Awake(){
@@ -134,6 +135,7 @@ public class Pathfinding: MonoBehaviour {
 			if (currentNode == targetNode) {  //found the path to target
 
 				if (targetPos == targetDodo.position) {
+					followDodo = true;
 					onWandering = false;
 					GetComponent<StateMachine> ().ChangeState ("FollowTarget");
 					RetracePath (startNode, targetNode, true);
@@ -179,6 +181,7 @@ public class Pathfinding: MonoBehaviour {
 
 		} else if (!onWandering) {
 			DodoOnSand = false;
+			followDodo = false;
 			GetComponent<StateMachine> ().ChangeState ("DodoLost");  
 			stayOnPlace = true;
 			onWandering = true;

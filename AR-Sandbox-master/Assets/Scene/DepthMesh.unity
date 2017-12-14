@@ -1431,7 +1431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4431109871217048, guid: b4ad1628bfcbb5c4a99ff9c6ab86d941, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431109871217048, guid: b4ad1628bfcbb5c4a99ff9c6ab86d941, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1490,7 +1490,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 728931400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.3, y: 0.7, z: 79.1}
+  m_LocalPosition: {x: 49.3, y: 0, z: 79.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 161571481}
@@ -1556,17 +1556,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: 
+  Event: event:/DodoSteps
   PlayEvent: 0
   StopEvent: 12
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Volume
+    Value: 0.78
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &801748209 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400008, guid: 5ca2d53c06c0ab24d9a9970d352c080e,
@@ -1649,6 +1651,8 @@ GameObject:
   - component: {fileID: 1280905250}
   - component: {fileID: 1280905255}
   - component: {fileID: 1280905256}
+  - component: {fileID: 1280905258}
+  - component: {fileID: 1280905257}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1747,6 +1751,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &1280905257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280905249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3abc9a7ab2f6c4597f931134ab8bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodo: {fileID: 728931401}
+  skorpion: {fileID: 1743067635}
+--- !u!114 &1280905258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280905249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Musik
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1350826781
 Prefab:
   m_ObjectHideFlags: 0
@@ -1760,7 +1799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 1273c55726601914bb119d1167475b9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.763
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 1273c55726601914bb119d1167475b9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2172,7 +2211,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743067634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.8, y: 11.5, z: 38.3}
+  m_LocalPosition: {x: 130, y: 10.2, z: 28.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1255987039}
@@ -2199,6 +2238,7 @@ MonoBehaviour:
   onWandering: 0
   stayOnPlace: 0
   WormNotAtSand: 0
+  followDodo: 0
 --- !u!114 &1743067637
 MonoBehaviour:
   m_ObjectHideFlags: 0
