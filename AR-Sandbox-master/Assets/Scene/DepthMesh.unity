@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateGrid: 0
+  updateGrid: 1
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5
@@ -1412,10 +1412,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a47fd5a6f435c48aea4ed74efb3e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 0.2
+  chance: 0.5
   minArea: 24
   assets:
-  - {fileID: 1500860182875562, guid: fc1f4c822acaef84c949da2d8ec7cda0, type: 2}
+  - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
+  - {fileID: 1238459077770262, guid: 542e33ad085f06646bfbfdd2fd115440, type: 2}
+  - {fileID: 1668644801665144, guid: 9fa51e63d6f322c4292f528fa1cdb071, type: 2}
+  - {fileID: 1896595697651536, guid: f402e420b4f42e046a160fc0682e98b2, type: 2}
+  - {fileID: 1166568850715182, guid: 997d985d4075f524fa614f641e067d06, type: 2}
+  assetsAmount: 0.55
   updateInterval: 20
   debugSwitch: 0
 --- !u!1001 &640641838

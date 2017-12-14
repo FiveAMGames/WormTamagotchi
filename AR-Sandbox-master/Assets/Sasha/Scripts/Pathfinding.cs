@@ -31,8 +31,8 @@ public class Pathfinding: MonoBehaviour {
 	void Update(){
 		//FillBoxSand Sand (
 
-		FillBoxSand (0, 0, 40, 30);
-		FillBoxWater(0, 10,20, 20);
+		//FillBoxSand (0, 0, 40, 30);
+		//FillBoxWater(0, 10,20, 20);
 	
 
 		if (WormNotAtSand){
@@ -197,7 +197,7 @@ public class Pathfinding: MonoBehaviour {
 
 	public void RandomWanderingTarget(){
 		
-		targetWandering = new Vector3 (Random.Range(1f, 159f), transform.position.y, Random.Range (1f, 109f));
+		targetWandering = new Vector3 (Random.Range(4f, 150f), transform.position.y, Random.Range (4f, 105f));
 	}
 
 

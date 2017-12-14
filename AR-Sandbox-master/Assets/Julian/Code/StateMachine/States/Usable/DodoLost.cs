@@ -34,7 +34,7 @@
 		}
 		public override void Update(){
 			timer += Time.deltaTime;
-			if (timer > 2f) {
+			if (timer > 0f) {
 				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
 				baseObject.GetComponent<Pathfinding> ().stayOnPlace = false;
 

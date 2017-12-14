@@ -135,7 +135,7 @@ public class Oasis : MonoBehaviour
     // Let current oasis die and maybe build a new one...
     // Instantiate vegetation, objects and stuff
     protected void BuildOasis()
-    {print("build");
+    {
         // Oasis exists?
         if(exists)
         {
@@ -163,7 +163,11 @@ public class Oasis : MonoBehaviour
                     oasisAssets.Add(
                         GameObject.Instantiate(
                             assets[Random.Range(0, assets.Length)],
-                            gridRef.GetNode(waterOutline[i].X, waterOutline[i].Y).worldPosition,
+							gridRef.GetNode(waterOutline[i].X, waterOutline[i].Y).worldPosition + new Vector3(
+								Random.Range(-1.5f, 1.5f),
+								0f,
+								Random.Range(-1.5f, 1.5f)
+							),
                             Quaternion.Euler(0f, Random.Range(0f, 360f), 0f)
                         )
                     );
