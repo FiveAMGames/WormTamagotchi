@@ -10,6 +10,9 @@ public class TargetPositionController : MonoBehaviour
 	public float speed = 10f;
 	private float currentSpeed;
 	Grid grid;
+
+	public GameObject waterParticles;
+
 	public Pathfinding pathfinfingScript;
 
 	public GameObject Sandfootprint;
@@ -73,6 +76,7 @@ public class TargetPositionController : MonoBehaviour
 		} else {
 			
 			GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+			waterParticles.SetActive (false);
 			timer = 0f;
 		
 		}
@@ -92,14 +96,14 @@ public class TargetPositionController : MonoBehaviour
 		{
 
 			GetComponentInChildren<Animator> ().SetBool ("OnWater", true);
-
+			waterParticles.SetActive (true);
 
 
 		}
 		else{
 
 			GetComponentInChildren<Animator> ().SetBool ("OnWater", false);
-
+			waterParticles.SetActive (false);
 
 		}
 

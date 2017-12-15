@@ -51,11 +51,11 @@ Material:
       second: 0.02
     - first:
         name: _Shininess
-      second: 0.7
+      second: 0.326
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.7941176, g: 0.16933392, b: 0.16933392, a: 1}
     - first:
         name: _Emission
       second: {r: 0, g: 0, b: 0, a: 0}

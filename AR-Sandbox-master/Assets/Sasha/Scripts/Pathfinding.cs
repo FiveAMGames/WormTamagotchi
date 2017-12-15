@@ -13,6 +13,7 @@ public class Pathfinding: MonoBehaviour {
 
 	public Text score;
 
+	public GameObject sandTrail;
 
 	[HideInInspector] public bool DodoOnSand = true;
 
@@ -57,8 +58,8 @@ public class Pathfinding: MonoBehaviour {
 		}
 
 		if (!stayOnPlace) {
-			if (!GetComponent<StudioEventEmitter> ().IsPlaying()){
-
+			if (!GetComponent<StudioEventEmitter> ().IsPlaying ()) {
+				sandTrail.SetActive (true);
 				GetComponent<StudioEventEmitter> ().Play ();
 			}
 			if (onWandering) {
@@ -68,7 +69,8 @@ public class Pathfinding: MonoBehaviour {
 
 
 		
-		}
+		} else
+			sandTrail.SetActive (false);
 
 		if (DodoOnSand) {
 			FindPath (seeker.position, targetDodo.position);
