@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{f9a56bb5-6e3f-461f-b604-c3f747367f70}">
+        <property name="assetPath">
+            <value>Geräuschen/Dodo/Voice/Not/DodoVoice_01-16.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.9317006802721088</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{b783b174-d73c-4a18-a104-4c266912d4fb}</destination>
+        </relationship>
+    </object>
+</objects>

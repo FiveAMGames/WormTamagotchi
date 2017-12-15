@@ -3,8 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using StateManagement;
 using UnityEngine.UI;
+using FMOD;
+using FMODUnity;
 
 public class Pathfinding: MonoBehaviour {
+
+	StudioEventEmitter soundScript;
+
 
 	public Text score;
 
@@ -29,6 +34,7 @@ public class Pathfinding: MonoBehaviour {
 
 
 	void Awake(){
+		soundScript = GetComponent<StudioEventEmitter> ();
 		RandomWanderingTarget ();
 		seeker = transform;
 		grid = GameObject.Find("A*").GetComponent<Grid> ();
@@ -51,6 +57,10 @@ public class Pathfinding: MonoBehaviour {
 		}
 
 		if (!stayOnPlace) {
+			if (!GetComponent<StudioEventEmitter> ().IsPlaying()){
+
+				GetComponent<StudioEventEmitter> ().Play ();
+			}
 			if (onWandering) {
 				FindPath (seeker.position, targetWandering);
 			}
@@ -59,6 +69,7 @@ public class Pathfinding: MonoBehaviour {
 
 		
 		}
+
 		if (DodoOnSand) {
 			FindPath (seeker.position, targetDodo.position);
 			if (onWandering) {

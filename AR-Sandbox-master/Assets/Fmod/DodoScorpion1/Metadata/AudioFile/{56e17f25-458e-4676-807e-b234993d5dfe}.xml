@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{56e17f25-458e-4676-807e-b234993d5dfe}">
+        <property name="assetPath">
+            <value>Geräuschen/Dodo/Steps/RecFootsteps-Vari-16.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.17961451247165533</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{b783b174-d73c-4a18-a104-4c266912d4fb}</destination>
+        </relationship>
+    </object>
+</objects>

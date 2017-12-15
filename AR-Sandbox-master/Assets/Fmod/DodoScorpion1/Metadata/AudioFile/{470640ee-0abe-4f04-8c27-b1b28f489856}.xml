@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{470640ee-0abe-4f04-8c27-b1b28f489856}">
+        <property name="assetPath">
+            <value>Geräuschen/Scorpion/Steps/RECScorpio_02-09.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.27240362811791385</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{b783b174-d73c-4a18-a104-4c266912d4fb}</destination>
+        </relationship>
+    </object>
+</objects>

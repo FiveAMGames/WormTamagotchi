@@ -40,6 +40,14 @@ public class TargetPositionController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (Input.GetKeyDown(KeyCode.I)){
+			appleCount = 0;
+			score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
+			currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
+
+		}
+
+
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
