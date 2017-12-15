@@ -2,6 +2,7 @@
 using System.Collections;
 using FMOD;
 using FMODUnity;
+using UnityEngine.UI;
 
 
 public class TargetPositionController : MonoBehaviour
@@ -14,11 +15,14 @@ public class TargetPositionController : MonoBehaviour
 	public GameObject Sandfootprint;
 	public GameObject Waterfootprints;
 
-
+	public GameObject apple;
+	private int appleCount = 0;
+	public Text score;
+	private GameObject currentApple;
 	// Use this for initialization
 
 
-	public bool onWater = false;
+	[HideInInspector] public bool onWater = false;
 
 	public float timerForFootsteps = 0.8f;
 	private float timer = 0f;
@@ -29,6 +33,7 @@ public class TargetPositionController : MonoBehaviour
 	{
 		
 		grid = GameObject.Find ("A*").GetComponent<Grid> ();
+		currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
 
 	}
 	
@@ -128,4 +133,24 @@ public class TargetPositionController : MonoBehaviour
 		}
 	}
 
+
+	void SetApple(){
+		currentApple.transform.position = new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f));
+	}
+
+
+	void OnTriggerEnter(Collider coll){
+		
+		if (coll.CompareTag("Apple")){
+			if (appleCount < 3) {
+				appleCount++;
+				SetApple ();
+				score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
+			} else {
+				score.text = "Dodo wins!";
+				Destroy (currentApple);
+			}
+	}
+			}
+			
 }
