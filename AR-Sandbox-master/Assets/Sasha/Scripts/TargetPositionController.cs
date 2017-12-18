@@ -28,6 +28,7 @@ public class TargetPositionController : MonoBehaviour
 	private int appleCount = 0;
 	public Text score;
 	private GameObject currentApple;
+	public bool dodoDead = false;
 	// Use this for initialization
 
 
@@ -55,6 +56,8 @@ public class TargetPositionController : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.I)){
+			dodoDead = false;
+			GetComponentInChildren<Animator> ().SetBool ("Dead", false);
 			appleCount = 0;
 			for (int i =0; i<5;i++){
 				appleImages [i].sprite = appleGrey;
@@ -64,66 +67,67 @@ public class TargetPositionController : MonoBehaviour
 
 		}
 
+		if (!dodoDead) {
+			float moveHorizontal = Input.GetAxisRaw ("Horizontal");
+			float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-		float moveVertical = Input.GetAxisRaw ("Vertical");
+			Vector3 movement = new Vector3 (-moveHorizontal, 0.0f, -moveVertical);   //flip for the projector
+			if (movement != Vector3.zero) {
+				GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
 
-		Vector3 movement = new Vector3 (-moveHorizontal, 0.0f, -moveVertical);   //flip for the projector
-		if (movement != Vector3.zero) {
-			GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
-
-			GetComponentInChildren<Animator> ().SetBool ("Walk", true);
-			timer += Time.deltaTime;
-			if (timer > timerForFootsteps) {
-				if (!onWater) {
-					GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
-					foots.transform.SetParent (null);
-					GetComponent<StudioEventEmitter> ().Play ();
-				} else {
-					GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
-					foots.transform.SetParent (null);
-				}
+				GetComponentInChildren<Animator> ().SetBool ("Walk", true);
+				timer += Time.deltaTime;
+				if (timer > timerForFootsteps) {
+					if (!onWater) {
+						GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
+						foots.transform.SetParent (null);
+						GetComponent<StudioEventEmitter> ().Play ();
+					} else {
+						GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
+						foots.transform.SetParent (null);
+					}
 					
 					timer = 0f;
 				
-			}
-		} else {
+				}
+			} else {
 			
-			GetComponentInChildren<Animator> ().SetBool ("Walk", false);
-			waterParticles.SetActive (false);
-			timer = 0f;
+				GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+				waterParticles.SetActive (false);
+				timer = 0f;
 		
-		}
+			}
 
 
 
 
 
-		GetComponent<Rigidbody> ().velocity = movement * currentSpeed;
+			GetComponent<Rigidbody> ().velocity = movement * currentSpeed;
 
 
 
 
-		SandCheck ();
+			SandCheck ();
 
-		if (onWater)
-		{
+			if (onWater) {
 
-			GetComponentInChildren<Animator> ().SetBool ("OnWater", true);
-			waterParticles.SetActive (true);
+				GetComponentInChildren<Animator> ().SetBool ("OnWater", true);
+				waterParticles.SetActive (true);
 
 
-		}
-		else{
+			} else {
 
-			GetComponentInChildren<Animator> ().SetBool ("OnWater", false);
-			waterParticles.SetActive (false);
+				GetComponentInChildren<Animator> ().SetBool ("OnWater", false);
+				waterParticles.SetActive (false);
 
-		}
+			}
 
 
 		 
+		} else {
 
+			//dodo is dead
+		}
 
 	}
 

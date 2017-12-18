@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScorpioFootsteps : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,6 @@ public class ScorpioFootsteps : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }

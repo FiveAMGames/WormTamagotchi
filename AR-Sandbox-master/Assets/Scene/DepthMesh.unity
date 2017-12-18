@@ -96,6 +96,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1439989216803628, guid: 6d6d51732b779a446b20b1b8ec1d9098,
     type: 2}
   m_PrefabInternal: {fileID: 504521221}
+--- !u!65 &71443471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71443470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7116995, y: 11.718411, z: 10.722301}
+  m_Center: {x: -0.07230415, y: 5.3591995, z: 3.3364897}
 --- !u!114 &71443472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4117,7 +4129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateGrid: 1
+  updateGrid: 0
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5
@@ -4324,7 +4336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 079954accd64b32419ec069129c81273, type: 2}
@@ -4343,7 +4355,7 @@ GameObject:
   - component: {fileID: 728931405}
   m_Layer: 0
   m_Name: Dodo
-  m_TagString: Untagged
+  m_TagString: Herbert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4394,6 +4406,7 @@ MonoBehaviour:
     type: 2}
   apple: {fileID: 1214747851775838, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
   score: {fileID: 1203324599}
+  dodoDead: 0
   onWater: 0
   timerForFootsteps: 0.6
 --- !u!54 &728931403
@@ -4437,7 +4450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/DodoSteps
   PlayEvent: 0
-  StopEvent: 12
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
@@ -5540,6 +5553,7 @@ GameObject:
   - component: {fileID: 1743067637}
   - component: {fileID: 1743067639}
   - component: {fileID: 1743067638}
+  - component: {fileID: 1743067640}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Untagged
@@ -5578,7 +5592,7 @@ MonoBehaviour:
   DodoOnSand: 1
   speed: 10
   attackCooldown: 0.5
-  TestGrid: 0
+  TestGrid: 1
   targetDodo: {fileID: 728931401}
   targetWandering: {x: 49.3, y: 0.7, z: 79.1}
   onWandering: 0
@@ -5631,6 +5645,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &1743067640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743067634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db81423cd09d78499612ca52015fd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753577505
 GameObject:
   m_ObjectHideFlags: 0

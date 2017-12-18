@@ -23,19 +23,28 @@ public class DodoScript : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-		float d = Vector3.Distance (dodo.position, skorpion.position);
+
+		if (!GetComponentInParent<TargetPositionController> ().dodoDead) {
+
+			GetComponent<StudioEventEmitter> ().Play ();
+
+			float d = Vector3.Distance (dodo.position, skorpion.position);
 
 
 
-		if (skorpion.GetComponent<Pathfinding> ().followDodo) {
+			if (skorpion.GetComponent<Pathfinding> ().followDodo) {
 
-			dist = d * 1.2f;
+				dist = d * 1.2f;
 
+			} else {
+				dist = 100f;
+			}
+
+			soundScript.SetParameter ("Distance", dist);
 		} else {
-			dist = 100f;
+			GetComponent<StudioEventEmitter> ().Stop ();
+		  
 		}
-
-		soundScript.SetParameter ("Distance", dist);
 
 
 	}
