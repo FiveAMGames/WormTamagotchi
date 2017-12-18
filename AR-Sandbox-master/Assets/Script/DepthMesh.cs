@@ -50,6 +50,7 @@ public class DepthMesh : MonoBehaviour
 	public int NumOfTextures = 4;
 	public float _LayerSize;
 
+    public bool outOfBounds = false;
 
 
     // Use this for initialization
@@ -227,6 +228,8 @@ public class DepthMesh : MonoBehaviour
 
     void CalculateFloatValues()
     {
+        bool boundary = false;
+
         for (int H = 0; H < Height; H++)
         {
             for (int W = 0; W < Width; W++)
@@ -263,9 +266,20 @@ public class DepthMesh : MonoBehaviour
 				FloatValues[outIndex] = Mathf.Abs(FloatValue - FloatValues[outIndex]) > 0.00002f ?
 					FloatValue :
 					FloatValues[outIndex];
+
+                if(!boundary && (Mathf.Abs(FloatValue) > 60f))
+                    boundary = true;
             }
         }
 
+        if(!outOfBounds && boundary)
+        {
+            outOfBounds = true;
+        }
+        else if(outOfBounds && !boundary)
+        {
+            outOfBounds = false;
+        }
     }
 
     void UpdateMesh()
