@@ -3,7 +3,7 @@ using System.Collections;
 using FMOD;
 using FMODUnity;
 using UnityEngine.UI;
-
+using StateManagement;
 
 public class TargetPositionController : MonoBehaviour
 {
@@ -58,6 +58,8 @@ public class TargetPositionController : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.I)){
+			GameObject.Find ("Worm").GetComponent<Pathfinding> ().deadScorpio = false;
+			GameObject.Find ("Worm").GetComponent<StateMachine> ().ChangeState ("WormNotAtSand");
 			GameObject.Find ("Worm").GetComponent<Pathfinding> ().deadDodo = false;
 			Camera.main.GetComponent<SoundController> ().dodoIsAlive = true;
 			dodoDead = false;
@@ -67,7 +69,7 @@ public class TargetPositionController : MonoBehaviour
 			for (int i =0; i<5;i++){
 				appleImages [i].sprite = appleGrey;
 			}
-			if (apple == null){
+			if (currentApple == null){
 				currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
 			}
 			else	SetApple ();
@@ -139,6 +141,9 @@ public class TargetPositionController : MonoBehaviour
 
 		 
 		} else {
+			if (waterParticles.activeSelf) {
+				waterParticles.SetActive (false);
+			}
 
 			//dodo is dead
 		}
@@ -207,6 +212,7 @@ public class TargetPositionController : MonoBehaviour
 			} else {
 				appleImages [appleCount].sprite = appleRed;
 				score.text = "Dodo wins!";
+				GameObject.Find ("Worm").GetComponent<StateMachine> ().ChangeState ("ScorpioDead");
 				Destroy (currentApple);
 			}
 	}

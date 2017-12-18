@@ -14,6 +14,7 @@ public class Pathfinding: MonoBehaviour {
 	public Text score;
 
 	public GameObject sandTrail;
+	public ParticleSystem boom;
 
 	[HideInInspector] public bool DodoOnSand = true;
 
@@ -21,6 +22,8 @@ public class Pathfinding: MonoBehaviour {
 	public float speed = 10f;
 	public float attackCooldown = 0.5f;
 	public bool TestGrid = false;
+	public GameObject lost;
+	public GameObject found;
 
 	public Transform  targetDodo;
 	[HideInInspector] public Vector3 targetWandering;
@@ -36,6 +39,7 @@ public class Pathfinding: MonoBehaviour {
 	public bool followDodo = false;
 	private float timeCount = 0f;
 	public bool deadDodo = false;
+	public bool deadScorpio = false;
 
 	void Awake(){
 		soundScript = GetComponent<StudioEventEmitter> ();
@@ -51,6 +55,7 @@ public class Pathfinding: MonoBehaviour {
 		FillBoxWater(0, 10,20, 20);
 		}
 
+		if (!deadScorpio){
 
 		if (WormNotAtSand){
 		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
@@ -96,8 +101,8 @@ public class Pathfinding: MonoBehaviour {
 		// Count time
 		if (timeCount <= attackCooldown)
 			timeCount += Time.deltaTime;
+	  }
 	}
-
     
 	void FillBoxGrass(int x1, int y1, int x2, int y2) {
 		for (int i = x1; i <= x2; ++i)

@@ -13,7 +13,7 @@
 	[StateType(State.Worm | State.Dodo)]
 	public class WormNotAtSand : BaseState   // <- You must inherit from 'BaseState'  //Aye, Captain!
 	{
-		public float DeadTimer = 3f;
+		public float DeadTimer = 4.5f;
 		private float timer = 0f;
 		Grid grid;
 		// Calling base constructor
@@ -52,7 +52,9 @@
 			}
 
 			if (timer > DeadTimer) {
+				
 				UnityEngine.Debug.Log ("Game Over Skorpion!");
+				baseObject.GetComponent<StateMachine> ().ChangeState ("ScorpioDead");
 			}
  
 
@@ -60,7 +62,7 @@
 
 				baseObject.GetComponent<Pathfinding> ().onWandering = true;
 				baseObject.GetComponent<Pathfinding> ().WormNotAtSand = false;
-				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
+
 			}*/
 		}
 
@@ -69,6 +71,7 @@
 		{
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Die", false);
 			baseObject.GetComponent<Pathfinding> ().scorpioCry.GetComponent<StudioEventEmitter> ().Stop ();
+			timer = 0f;
 		}
 
 		// You can also override other 'MonoBehaviour' methods:

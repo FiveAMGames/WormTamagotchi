@@ -26,7 +26,10 @@ namespace StateManagement
 		public override void Start()
 		{
 			// Do some dodo following
-
+			if (baseObject.GetComponent<Pathfinding> ().lost.activeSelf) {
+				baseObject.GetComponent<Pathfinding> ().lost.SetActive (false);
+			}
+			baseObject.GetComponent<Pathfinding> ().found.SetActive (true);
 
 			baseObject.GetComponent<Pathfinding> ().speed = 20f;
 			baseObject.GetComponent<Pathfinding> ().onWandering = false;

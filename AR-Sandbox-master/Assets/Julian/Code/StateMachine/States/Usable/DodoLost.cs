@@ -22,9 +22,12 @@
 		// Override update method
 		public override void Start()
 		{
+			if (baseObject.GetComponent<Pathfinding> ().found.activeSelf) {
+				baseObject.GetComponent<Pathfinding> ().found.SetActive (false);
+			}
 			
 			timer = 0f;
-			//baseObject.GetComponent<Pathfinding> ().stayOnPlace = true;
+			baseObject.GetComponent<Pathfinding> ().lost.SetActive (true);
 			//baseObject.GetComponentInChildren<Animation> ().Play("idleQuestion");
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
