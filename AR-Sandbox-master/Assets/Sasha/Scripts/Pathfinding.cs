@@ -26,13 +26,16 @@ public class Pathfinding: MonoBehaviour {
 	[HideInInspector] public Vector3 targetWandering;
 	protected Transform seeker;
 
+	public GameObject scorpioCry;
+
+
 	public bool onWandering = false;
 	public bool stayOnPlace = false;
 	public bool WormNotAtSand = false;
 
 	public bool followDodo = false;
 	private float timeCount = 0f;
-
+	public bool deadDodo = false;
 
 	void Awake(){
 		soundScript = GetComponent<StudioEventEmitter> ();
@@ -47,6 +50,7 @@ public class Pathfinding: MonoBehaviour {
 		FillBoxSand (0, 0, 40, 30);
 		FillBoxWater(0, 10,20, 20);
 		}
+
 
 		if (WormNotAtSand){
 		if (grid.PositionTarget (transform.position).layer == Node.TerrainLayer.Sand) {  //worm is at the sand layer
@@ -72,7 +76,7 @@ public class Pathfinding: MonoBehaviour {
 		} else
 			sandTrail.SetActive (false);
 
-		if (DodoOnSand) {
+		if (DodoOnSand && !deadDodo) {
 			FindPath (seeker.position, targetDodo.position);
 			if (onWandering) {
 				//Debug.Log ("Searching of two paths");
@@ -82,6 +86,7 @@ public class Pathfinding: MonoBehaviour {
 		if (!WormNotAtSand && grid.PositionTarget (transform.position).layer != Node.TerrainLayer.Sand ) {
 			WormNotAtSand = true;
 			GetComponent<StateMachine> ().ChangeState ("WormNotAtSand");
+
 		} else {
 			
 			//WormNotAtSand = false;
@@ -116,6 +121,18 @@ public class Pathfinding: MonoBehaviour {
 			for (int j = y1; j <= y2; ++j)
 				grid.SetNode (i, j, Node.TerrainLayer.Sand);
 	}
+
+	public void DodoIsDead(){
+		deadDodo = true;
+		DodoOnSand = false;
+		followDodo = false;
+		GetComponent<StateMachine> ().ChangeState ("DodoLost");  
+		stayOnPlace = true;
+		onWandering = true;
+	}
+
+
+
 
 
 	void FindPath(Vector3 startPos, Vector3 targetPos){

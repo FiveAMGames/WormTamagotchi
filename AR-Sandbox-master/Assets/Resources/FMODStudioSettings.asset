@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets\Fmod\DodoScorpion1\DodoScorpion1.fspro
-  SourceProjectPathUnformatted: Assets\Fmod\DodoScorpion1\DodoScorpion1.fspro
-  SourceBankPathUnformatted: Assets\Fmod\DodoScorpion1\Build
+  sourceProjectPath: Assets\Fmod\DodoScorpion2\DodoScorpion2.fspro
+  SourceProjectPathUnformatted: Assets\Fmod\DodoScorpion2\DodoScorpion2.fspro
+  SourceBankPathUnformatted: Assets\Fmod\DodoScorpion2\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

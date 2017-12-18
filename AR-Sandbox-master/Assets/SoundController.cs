@@ -9,7 +9,7 @@ public class SoundController : MonoBehaviour {
 	[FMODUnity.EventRef]
 	StudioEventEmitter soundScript;
 	private float dist = 100f;
-
+	public bool dodoIsAlive = true;
 
 	public Transform dodo;
 	public Transform skorpion;
@@ -23,6 +23,7 @@ public class SoundController : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
+		if (dodoIsAlive){
 		float d = Vector3.Distance (dodo.position, skorpion.position);
 
 	
@@ -36,7 +37,8 @@ public class SoundController : MonoBehaviour {
 		}
 
 		soundScript.SetParameter ("Distance", dist);
-
-
+		soundScript.SetParameter ("DodoLebt", 1f);
+		}
+		else soundScript.SetParameter ("DodoLebt", 0f);
 	}
 }

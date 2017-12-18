@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{bc0f2418-e9e2-4933-8fda-9b81c38c35a6}">
+        <property name="name">
+            <value>DodoLebt</value>
+        </property>
+        <relationship name="folder">
+            <destination>{e70cde08-4ea3-428f-ad4d-65e360031fad}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{896e7b10-1be1-49a9-af29-d333ac902b59}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{896e7b10-1be1-49a9-af29-d333ac902b59}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

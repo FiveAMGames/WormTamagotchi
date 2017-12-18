@@ -1,0 +1,12 @@
+{99c2d03e-05e8-4028-a65a-3c1c009ce812} event:/Ambient
+{d5ce1c50-4d3c-4e89-b94e-8195afe0eb8d} event:/DodoEat
+{325a4aa2-5f82-4646-ac88-945674edee2c} event:/DodoSteps
+{add09655-9ed1-4be3-9522-e37d4583f05d} event:/DodoVoice
+{000d1797-34c3-49a3-bb1a-c4179eb3e3ab} event:/Musik
+{16fa3f34-5638-458a-94ea-ae59b3270393} event:/RockMove
+{f9e16be9-9665-4fd9-8235-b68a4e1af7ce} event:/ScorpioHit
+{df7b3d18-f2fa-4ca4-8b45-8ebdc2e788ff} event:/ScorpioimWasser
+{0d887f11-790d-4a0f-b6fa-2fbaf10d4049} event:/ScorpionSteps
+{9ce2e89b-fc23-4125-9d46-52a3a8babfc3} bus:/
+{43f23fcf-cf9f-4af6-a866-3e2f4386360d} bus:/Reverb
+{36cb2cd7-dbb9-4d78-a10e-cd646236581f} bank:/Master Bank

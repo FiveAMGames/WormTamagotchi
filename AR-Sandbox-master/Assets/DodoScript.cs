@@ -26,7 +26,8 @@ public class DodoScript : MonoBehaviour {
 
 		if (!GetComponentInParent<TargetPositionController> ().dodoDead) {
 
-			GetComponent<StudioEventEmitter> ().Play ();
+
+			//GetComponent<StudioEventEmitter> ().Play ();
 
 			float d = Vector3.Distance (dodo.position, skorpion.position);
 
