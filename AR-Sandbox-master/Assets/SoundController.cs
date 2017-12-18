@@ -11,12 +11,20 @@ public class SoundController : MonoBehaviour {
 	private float dist = 100f;
 	public bool dodoIsAlive = true;
 
+	public StudioEventEmitter sandWaterEmitter;
+	public Oasis oasisReference;
+
 	public Transform dodo;
 	public Transform skorpion;
 	// Use this for initialization
 	void Start () {
 		soundScript = GetComponent<StudioEventEmitter> ();
 
+		if (sandWaterEmitter == null)
+			UnityEngine.Debug.LogError("[SoundController] No sand-water sound emitter assigned!");
+
+		if (oasisReference == null)
+			UnityEngine.Debug.LogError("[SoundController] No oasis reference assigned!");
 
 	}
 	
@@ -40,5 +48,7 @@ public class SoundController : MonoBehaviour {
 		soundScript.SetParameter ("DodoLebt", 1f);
 		}
 		else soundScript.SetParameter ("DodoLebt", 0f);
+
+		sandWaterEmitter.SetParameter ("Sand", 20f - oasisReference.WaterAmount * 20f);
 	}
 }

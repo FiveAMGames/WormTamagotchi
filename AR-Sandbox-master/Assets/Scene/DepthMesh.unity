@@ -191,7 +191,7 @@ MonoBehaviour:
   prefab: {fileID: 1000012130934226, guid: ffd346fc763705a4bb4adcec064facba, type: 2}
   MinDepthValueBuffer: 0
   MaxDepthValueBuffer: 0
-  _WaterLevel: 51.382
+  _WaterLevel: 51.44
   NumOfTextures: 4
   _LayerSize: 0.03
   outOfBounds: 0
@@ -4741,7 +4741,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091077630135844, guid: a7788da0a0c8e054cbe26da9d285fcb2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -51.385
+      value: -51.442
       objectReference: {fileID: 0}
     - target: {fileID: 4091077630135844, guid: a7788da0a0c8e054cbe26da9d285fcb2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4782,6 +4782,10 @@ Prefab:
     - target: {fileID: 4264997466018820, guid: a7788da0a0c8e054cbe26da9d285fcb2, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905809358836876, guid: a7788da0a0c8e054cbe26da9d285fcb2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7788da0a0c8e054cbe26da9d285fcb2, type: 2}
@@ -5183,7 +5187,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 64, y: 104, z: 57}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2132624694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -5222,6 +5227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodoIsAlive: 1
+  sandWaterEmitter: {fileID: 2132624693}
+  oasisReference: {fileID: 519511903}
   dodo: {fileID: 728931401}
   skorpion: {fileID: 1743067635}
 --- !u!114 &1280905258
@@ -6333,3 +6340,54 @@ Transform:
   m_PrefabParentObject: {fileID: 4631760195465074, guid: 6d6d51732b779a446b20b1b8ec1d9098,
     type: 2}
   m_PrefabInternal: {fileID: 504521221}
+--- !u!1 &2132624692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2132624694}
+  - component: {fileID: 2132624693}
+  m_Layer: 0
+  m_Name: SandWaterSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2132624693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132624692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambient
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &2132624694
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132624692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280905254}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114200992122278192}
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   EditorEvents:
   - {fileID: 114626193526705510}
   - {fileID: 114480328346288126}
@@ -24,9 +24,9 @@ MonoBehaviour:
   - {fileID: 114054071651307702}
   - {fileID: 114296834468558922}
   - {fileID: 114197980724278882}
-  MasterBankRef: {fileID: 114862296301079050}
+  MasterBankRef: {fileID: 114598315664238652}
   StringsBankRef: {fileID: 114200992122278192}
-  stringsBankWriteTime: 636492077539210837
+  stringsBankWriteTime: 636492106963133669
   cacheVersion: 2
 --- !u!114 &114011951379384522
 MonoBehaviour:
@@ -136,7 +136,7 @@ MonoBehaviour:
   Path: event:/RockMove
   guid: 343ffa1638568a4594eaae59b3270393
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -188,6 +188,21 @@ MonoBehaviour:
   Name: Distance
   Min: 0
   Max: 100
+  Default: 0
+--- !u!114 &114124733050070882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StepimWasser
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114146970257560300
 MonoBehaviour:
@@ -263,12 +278,12 @@ MonoBehaviour:
   Path: event:/Ambient
   guid: 3ed0c299e8052840a65a3c1c009ce812
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114275312125437078}
+  - {fileID: 114486342341875272}
   MinDistance: 0
   MaxDistance: 0
   Length: 130894
@@ -320,7 +335,7 @@ MonoBehaviour:
   Path: event:/ScorpioHit
   guid: e96be1f96596d94f8235b68a4e1af7ce
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -355,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Fmod\DodoScorpion2\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636492077539210837
+  lastModified: 636492106963133669
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -488,6 +503,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2765504
   Exists: 1
+--- !u!114 &114279272663191556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114296834468558922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +532,7 @@ MonoBehaviour:
   Path: event:/DodoEat
   guid: 501cced53c4d894eb94e8195afe0eb8d
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -569,15 +599,30 @@ MonoBehaviour:
   Path: event:/DodoVoice
   guid: 5596d0add19ee34b9522e37d4583f05d
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114989192417484574}
+  - {fileID: 114279272663191556}
   MinDistance: 0
   MaxDistance: 0
   Length: 2402
+--- !u!114 &114351928849370640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DodoLebt
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114352212875532544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,7 +746,7 @@ MonoBehaviour:
   Path: event:/ScorpionSteps
   guid: 117f880d0d790f4ab6fa2fbaf10d4049
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -783,15 +828,30 @@ MonoBehaviour:
   Path: event:/DodoSteps
   guid: a24a5a32825f4646ac88945674edee2c
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114029481857944026}
+  - {fileID: 114124733050070882}
   MinDistance: 0
   MaxDistance: 0
   Length: 261
+--- !u!114 &114486342341875272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sand
+  Min: 0
+  Max: 20
+  Default: 0
 --- !u!114 &114494793759761156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +1006,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2989472
   Exists: 0
+--- !u!114 &114598315664238652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\GitHub\WormTamagotchi\AR-Sandbox-master\Assets\Fmod\DodoScorpion2\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636492106963123643
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 7555840
+  Exists: 1
 --- !u!114 &114621328189861150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,13 +1058,13 @@ MonoBehaviour:
   Path: event:/Musik
   guid: 97170d00c334a349bb1ac4179eb3e3ab
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114552130523533888}
-  - {fileID: 114858845941879286}
+  - {fileID: 114351928849370640}
+  - {fileID: 114775138343581752}
   MinDistance: 0
   MaxDistance: 0
   Length: 21000
@@ -1022,7 +1101,7 @@ MonoBehaviour:
   Path: event:/ScorpioimWasser
   guid: 183d7bdffaf2a44c8b458ebdc2e788ff
   Banks:
-  - {fileID: 114862296301079050}
+  - {fileID: 114598315664238652}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1185,6 +1264,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114762362305420682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 100
+  Default: 0
+--- !u!114 &114775138343581752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
