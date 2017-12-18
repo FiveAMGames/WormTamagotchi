@@ -68,6 +68,7 @@
 		public override void OnDisable ()
 		{
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Die", false);
+			baseObject.GetComponent<Pathfinding> ().scorpioCry.GetComponent<StudioEventEmitter> ().Stop ();
 		}
 
 		// You can also override other 'MonoBehaviour' methods:

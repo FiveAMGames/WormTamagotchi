@@ -63,6 +63,7 @@ public class TargetPositionController : MonoBehaviour
 			dodoDead = false;
 			GetComponentInChildren<Animator> ().SetBool ("Dead", false);
 			appleCount = 0;
+			_appleTimer = 0f;
 			for (int i =0; i<5;i++){
 				appleImages [i].sprite = appleGrey;
 			}
@@ -82,25 +83,30 @@ public class TargetPositionController : MonoBehaviour
 				GetComponent<Rigidbody> ().rotation = Quaternion.LookRotation (movement);
 
 				GetComponentInChildren<Animator> ().SetBool ("Walk", true);
+
+
 				timer += Time.deltaTime;
 				if (timer > timerForFootsteps) {
 					if (!onWater) {
 						GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
 						foots.transform.SetParent (null);
 						GetComponent<StudioEventEmitter> ().SetParameter ("StepimWasser", 0f);
-						GetComponent<StudioEventEmitter> ().Play ();
+
 					} else {
 						GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
 						foots.transform.SetParent (null);
 						GetComponent<StudioEventEmitter> ().SetParameter ("StepimWasser", 1f);
 					}
-					
+					if (!GetComponent<StudioEventEmitter> ().IsPlaying()){
+						GetComponent<StudioEventEmitter> ().Play ();
+					}
 					timer = 0f;
 				
 				}
 			} else {
-			
+
 				GetComponentInChildren<Animator> ().SetBool ("Walk", false);
+				GetComponent<StudioEventEmitter> ().Stop ();
 				waterParticles.SetActive (false);
 				timer = 0f;
 		

@@ -2,6 +2,8 @@
 using System.Collections;
 using AForge.Imaging.Filters;
 using AForge.Imaging;
+using FMOD;
+using FMODUnity;
 
 public class DepthMesh : MonoBehaviour
 {
@@ -148,9 +150,7 @@ public class DepthMesh : MonoBehaviour
         newTriangles = new int[(Width - 1) * (Height - 1) * 6];
         Bitmap = new System.Drawing.Bitmap(Width, Height, System.Drawing.Imaging.PixelFormat.Format16bppGrayScale);
 
-        Debug.Log(Width * Height);
-        Debug.Log(newTriangles.Length);
-
+        
         for (int H = 0; H < Height; H++)
         {
             for (int W = 0; W < Width; W++)
@@ -267,7 +267,8 @@ public class DepthMesh : MonoBehaviour
 					FloatValue :
 					FloatValues[outIndex];
 
-                if(!boundary && (Mathf.Abs(FloatValue) > 60f))
+                if(!boundary && (Mathf.Abs(FloatValue) > 0.6f))
+					
                     boundary = true;
             }
         }
@@ -275,10 +276,13 @@ public class DepthMesh : MonoBehaviour
         if(!outOfBounds && boundary)
         {
             outOfBounds = true;
+			UnityEngine.Debug.Log (FloatValues[0]);
+			GetComponent<StudioEventEmitter> ().Play ();
         }
         else if(outOfBounds && !boundary)
         {
             outOfBounds = false;
+			GetComponent<StudioEventEmitter> ().Stop ();
         }
     }
 

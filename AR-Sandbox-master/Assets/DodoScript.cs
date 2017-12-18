@@ -23,11 +23,13 @@ public class DodoScript : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-
+		
 		if (!GetComponentInParent<TargetPositionController> ().dodoDead) {
 
 
-			//GetComponent<StudioEventEmitter> ().Play ();
+			if (!GetComponent<StudioEventEmitter> ().IsPlaying()){
+				GetComponent<StudioEventEmitter> ().Play ();
+			}
 
 			float d = Vector3.Distance (dodo.position, skorpion.position);
 

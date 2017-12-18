@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 112241531}
   - component: {fileID: 112241533}
   - component: {fileID: 112241534}
+  - component: {fileID: 112241535}
   m_Layer: 0
   m_Name: DepthMesh
   m_TagString: Untagged
@@ -193,6 +194,7 @@ MonoBehaviour:
   _WaterLevel: 51.382
   NumOfTextures: 4
   _LayerSize: 0.03
+  outOfBounds: 0
 --- !u!4 &112241530
 Transform:
   m_ObjectHideFlags: 0
@@ -266,6 +268,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd5b0f2be23c154f995ad3df847c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &112241535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112241528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/RockMove
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &126928452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,7 +3518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4631760195465074, guid: 6d6d51732b779a446b20b1b8ec1d9098, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.5187
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 4631760195465074, guid: 6d6d51732b779a446b20b1b8ec1d9098, type: 2}
       propertyPath: m_LocalPosition.z
