@@ -10,6 +10,10 @@ public class TargetPositionController : MonoBehaviour
 	public float speed = 10f;
 	public float AppleTimer = 15f;
 	private float _appleTimer = 0f;
+	public Image[] appleImages;
+	public Sprite appleRed;
+	public Sprite appleGrey;
+
 	private float currentSpeed;
 	Grid grid;
 
@@ -46,13 +50,16 @@ public class TargetPositionController : MonoBehaviour
 	void Update ()
 	{
 		_appleTimer += Time.deltaTime;
-		if (_appleTimer > AppleTimer && appleCount>3) {
+		if (_appleTimer > AppleTimer && appleCount>4) {
 			SetApple ();
 		}
 
 		if (Input.GetKeyDown(KeyCode.I)){
 			appleCount = 0;
-			score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
+			for (int i =0; i<5;i++){
+				appleImages [i].sprite = appleGrey;
+			}
+			//score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
 			currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
 
 		}
@@ -159,7 +166,7 @@ public class TargetPositionController : MonoBehaviour
 			newPosition = new Vector3 (Random.Range (10f, 150f), apple.transform.position.y, Random.Range (10f, 100f));
 
 		}
-		print (Vector3.Distance (currentApple.transform.position, newPosition));
+		//print (Vector3.Distance (currentApple.transform.position, newPosition));
 		currentApple.transform.position = newPosition;
 		_appleTimer = 0f;
 	}
@@ -168,11 +175,16 @@ public class TargetPositionController : MonoBehaviour
 	void OnTriggerEnter(Collider coll){
 		
 		if (coll.CompareTag("Apple")){
-			if (appleCount < 3) {
+			if (appleCount < 4) {
+				appleImages [appleCount].sprite = appleRed;
+
 				appleCount++;
 				SetApple ();
-				score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
+
+
+				//score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
 			} else {
+				appleImages [appleCount].sprite = appleRed;
 				score.text = "Dodo wins!";
 				Destroy (currentApple);
 			}
