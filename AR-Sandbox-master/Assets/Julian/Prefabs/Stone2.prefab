@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4601508425608232}
   - component: {fileID: 33071035626712090}
-  - component: {fileID: 23657441307418036}
+  - component: {fileID: 137576995918758508}
+  - component: {fileID: 114010465603130948}
   m_Layer: 0
   m_Name: Stone2
   m_TagString: Untagged
@@ -50,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896595697651536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.54005, y: -50.886715, z: 42.363426}
+  m_LocalPosition: {x: 76.3129, y: 11, z: 15.937874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4601508425608232}
@@ -70,8 +71,31 @@ Transform:
   m_Father: {fileID: 4281956619998774}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23657441307418036
-MeshRenderer:
+--- !u!33 &33071035626712090
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446974011794150}
+  m_Mesh: {fileID: 4300000, guid: b95ec23ff97037d499e6a8d5a5623732, type: 3}
+--- !u!114 &114010465603130948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446974011794150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13faeb80afdf92649ad41e963555aa09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  delay: 0
+  playOnAwake: 1
+  invertBlending: 1
+  resetForm: 0
+--- !u!137 &137576995918758508
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -101,10 +125,16 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33071035626712090
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1446974011794150}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 1
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: b95ec23ff97037d499e6a8d5a5623732, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 100
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.0010249005, y: 0.0022660256, z: 0.005427712}
+    m_Extent: {x: 0.0105348285, y: 0.012478018, z: 0.00602379}
+  m_DirtyAABB: 0
