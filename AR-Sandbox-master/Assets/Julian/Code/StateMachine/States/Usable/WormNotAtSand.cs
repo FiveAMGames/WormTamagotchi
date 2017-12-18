@@ -6,7 +6,8 @@
 	using System.Collections;
 	using System.Collections.Generic;
 	using UnityEngine;
-
+	using FMOD;
+	using FMODUnity;
 	// Define the type(s) of the state
 	// This state will be available for the following object types: 'Worm' and 'Dodo'
 	[StateType(State.Worm | State.Dodo)]
@@ -39,8 +40,19 @@
 		public override void Update ()
 		{
 			timer += Time.deltaTime;
+
+
+			UnityEngine.Debug.Log ("scorpio dies");
+			if (timer > 0.8f){
+
+			if (!baseObject.GetComponent<Pathfinding> ().scorpioCry.GetComponent<StudioEventEmitter> ().IsPlaying()) {
+				baseObject.GetComponent<Pathfinding> ().scorpioCry.GetComponent<StudioEventEmitter> ().Play ();
+			}
+
+			}
+
 			if (timer > DeadTimer) {
-				Debug.Log ("Game Over Skorpion!");
+				UnityEngine.Debug.Log ("Game Over Skorpion!");
 			}
  
 

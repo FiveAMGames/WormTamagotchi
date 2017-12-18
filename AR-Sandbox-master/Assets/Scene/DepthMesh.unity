@@ -119,7 +119,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbe870b7440b214abaedcbe6c62e8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1280905249}
   score: {fileID: 1203324599}
+--- !u!114 &71443474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71443470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/ScorpioHit
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &112241528
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +600,57 @@ Transform:
   m_Father: {fileID: 175888907}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &256108933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 256108934}
+  - component: {fileID: 256108935}
+  m_Layer: 0
+  m_Name: AppleSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256108934
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256108933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 161571481}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256108935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256108933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/DodoEat
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &340200292
 Prefab:
   m_ObjectHideFlags: 0
@@ -3397,7 +3471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/DodoVoice
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
@@ -4129,7 +4203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateGrid: 0
+  updateGrid: 1
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5
@@ -4249,6 +4323,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &548539913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 548539914}
+  - component: {fileID: 548539915}
+  m_Layer: 0
+  m_Name: ScorpioCry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548539914
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548539913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1743067635}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548539915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548539913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/ScorpioimWasser
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &640641838
 Prefab:
   m_ObjectHideFlags: 0
@@ -4404,6 +4529,7 @@ MonoBehaviour:
     type: 2}
   Waterfootprints: {fileID: 1042743907667726, guid: b4ad1628bfcbb5c4a99ff9c6ab86d941,
     type: 2}
+  appleSound: {fileID: 256108933}
   apple: {fileID: 1214747851775838, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
   score: {fileID: 1203324599}
   dodoDead: 0
@@ -5070,6 +5196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3abc9a7ab2f6c4597f931134ab8bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dodoIsAlive: 1
   dodo: {fileID: 728931401}
   skorpion: {fileID: 1743067635}
 --- !u!114 &1280905258
@@ -5553,7 +5680,6 @@ GameObject:
   - component: {fileID: 1743067637}
   - component: {fileID: 1743067639}
   - component: {fileID: 1743067638}
-  - component: {fileID: 1743067640}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Untagged
@@ -5573,6 +5699,7 @@ Transform:
   m_Children:
   - {fileID: 2125125155}
   - {fileID: 1845663147}
+  - {fileID: 548539914}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5592,13 +5719,15 @@ MonoBehaviour:
   DodoOnSand: 1
   speed: 10
   attackCooldown: 0.5
-  TestGrid: 1
+  TestGrid: 0
   targetDodo: {fileID: 728931401}
   targetWandering: {x: 49.3, y: 0.7, z: 79.1}
+  scorpioCry: {fileID: 548539913}
   onWandering: 0
   stayOnPlace: 0
   WormNotAtSand: 0
   followDodo: 0
+  deadDodo: 0
 --- !u!114 &1743067637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5645,17 +5774,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
---- !u!114 &1743067640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743067634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db81423cd09d78499612ca52015fd54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1753577505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6144,23 +6262,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4473530179573228, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.25055632
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4473530179573228, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.027139066
+      value: -0.000069845555
       objectReference: {fileID: 0}
     - target: {fileID: 4473530179573228, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.10397856
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4473530179573228, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.96211934
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4473530179573228, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081687644233936, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.4164509
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081687644233936, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.091568924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081687644233936, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.04217978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081687644233936, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.90355116
       objectReference: {fileID: 0}
     - target: {fileID: 1214747851775838, guid: 6f8ddadd65e2f934eb1a262ccb43cd90, type: 2}
       propertyPath: m_IsActive

@@ -24,6 +24,8 @@ public class TargetPositionController : MonoBehaviour
 	public GameObject Sandfootprint;
 	public GameObject Waterfootprints;
 
+	public GameObject appleSound;
+
 	public GameObject apple;
 	private int appleCount = 0;
 	public Text score;
@@ -56,14 +58,18 @@ public class TargetPositionController : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.I)){
+			GameObject.Find ("Worm").GetComponent<Pathfinding> ().deadDodo = false;
+			Camera.main.GetComponent<SoundController> ().dodoIsAlive = true;
 			dodoDead = false;
 			GetComponentInChildren<Animator> ().SetBool ("Dead", false);
 			appleCount = 0;
 			for (int i =0; i<5;i++){
 				appleImages [i].sprite = appleGrey;
 			}
-			//score.text = "Apples to eat \n \n"  + (4 - appleCount).ToString ();
-			currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
+			if (apple == null){
+				currentApple = Instantiate(apple, new Vector3 (Random.Range(10f, 150f), apple.transform.position.y, Random.Range (10f, 100f)), apple.transform.rotation) as GameObject;
+			}
+			else	SetApple ();
 
 		}
 
@@ -81,10 +87,12 @@ public class TargetPositionController : MonoBehaviour
 					if (!onWater) {
 						GameObject foots =	Instantiate (Sandfootprint, gameObject.transform) as GameObject;
 						foots.transform.SetParent (null);
+						GetComponent<StudioEventEmitter> ().SetParameter ("StepimWasser", 0f);
 						GetComponent<StudioEventEmitter> ().Play ();
 					} else {
 						GameObject foots =	Instantiate (Waterfootprints, gameObject.transform) as GameObject;
 						foots.transform.SetParent (null);
+						GetComponent<StudioEventEmitter> ().SetParameter ("StepimWasser", 1f);
 					}
 					
 					timer = 0f;
@@ -179,6 +187,9 @@ public class TargetPositionController : MonoBehaviour
 	void OnTriggerEnter(Collider coll){
 		
 		if (coll.CompareTag("Apple")){
+			
+			appleSound.GetComponent<StudioEventEmitter> ().Play ();
+
 			if (appleCount < 4) {
 				appleImages [appleCount].sprite = appleRed;
 

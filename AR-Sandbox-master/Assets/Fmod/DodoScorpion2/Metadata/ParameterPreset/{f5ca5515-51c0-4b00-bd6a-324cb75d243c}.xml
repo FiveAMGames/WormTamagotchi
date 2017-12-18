@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{f5ca5515-51c0-4b00-bd6a-324cb75d243c}">
+        <property name="name">
+            <value>StepimWasser</value>
+        </property>
+        <relationship name="folder">
+            <destination>{e70cde08-4ea3-428f-ad4d-65e360031fad}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{35c1f563-4989-411a-af06-0606d8df28e1}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{35c1f563-4989-411a-af06-0606d8df28e1}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
