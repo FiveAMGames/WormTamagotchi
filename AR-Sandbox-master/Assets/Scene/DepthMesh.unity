@@ -4283,7 +4283,8 @@ MonoBehaviour:
   - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
   - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
   assetsAmount: 0.55
-  updateInterval: 20
+  updateInterval: 5
+  meshReference: {fileID: 112241529}
   debugSwitch: 0
 --- !u!1 &522137619
 GameObject:
