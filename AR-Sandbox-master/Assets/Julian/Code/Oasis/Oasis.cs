@@ -161,7 +161,8 @@ public class Oasis : MonoBehaviour
             // Let it die...
             for(int i = 0; i < oasisAssets.Count; i++)
             {
-                GameObject.Destroy(oasisAssets[i], Random.Range(0f, 2f));
+                //GameObject.Destroy(oasisAssets[i], Random.Range(0f, 2f));
+                StartCoroutine(FadeOutAsset(oasisAssets[i]));
             }
 
             oasisAssets.Clear();
@@ -194,6 +195,36 @@ public class Oasis : MonoBehaviour
             }
 
             exists = true;
+        }
+    }
+
+    // Fadeout gameobjects
+    private IEnumerator FadeOutAsset(GameObject asset)
+    {
+        Renderer[] renderers = asset.GetComponentsInChildren<Renderer>();
+        yield return new WaitForSeconds(Random.Range(0f, 1f));
+
+        for(int i = 0; i < renderers.Length; i++)
+        {
+            StartCoroutine(FadeOutMaterial(renderers [i].material));
+        }
+
+        Destroy(asset, 3f);
+    }
+
+    // Fadeout material from gameobject
+    private IEnumerator FadeOutMaterial(Material mat)
+    {
+        while(mat.color.a > 0f)
+        {
+            Color newColor = mat.color;
+            newColor.a -= Time.deltaTime * 2f;
+
+            if(newColor.a < 0f)
+                newColor.a = 0f;
+            
+            mat.color = newColor;
+            yield return null;
         }
     }
 

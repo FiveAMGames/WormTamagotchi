@@ -6596,7 +6596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36898cc4294ddda478e2d80fcfceeff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateGrid: 0
+  updateGrid: 1
   player: {fileID: 0}
   gridWorldSize: {x: 160, y: 110}
   nodeRadius: 1.5
@@ -12087,7 +12087,7 @@ MonoBehaviour:
   DodoOnSand: 1
   speed: 10
   attackCooldown: 0.5
-  TestGrid: 1
+  TestGrid: 0
   lost: {fileID: 1514403583}
   found: {fileID: 1588343818}
   targetDodo: {fileID: 728931401}
