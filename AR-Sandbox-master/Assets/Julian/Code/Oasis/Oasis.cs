@@ -8,12 +8,14 @@ public class Oasis : MonoBehaviour
 {
     [SerializeField][Range(0f, 1f)] protected float chance = 0.2f;
     [SerializeField] protected int minArea = 8;
-	[SerializeField] protected GameObject[] assets;
+    [SerializeField] protected GameObject[] assets;
     [SerializeField][Range(0f, 1f)] protected float assetsAmount = 0.2f;
-	[SerializeField][Range(1f, 60f)] protected int updateInterval = 10;
+    [SerializeField][Range(1f, 60f)] protected int updateInterval = 10;
+    [SerializeField] protected DepthMesh meshReference;
     [SerializeField] private bool debugSwitch;
 
     protected bool exists = false;
+    protected float amount = 0f;
     protected List<GameObject> oasisAssets;
 
     protected Grid gridRef;
@@ -21,7 +23,12 @@ public class Oasis : MonoBehaviour
     protected GridPoint[] waterOutline;
 
     private bool running = false;
-	private int updateCount = 0;
+    private int updateCount = 0;
+
+    public float WaterAmount
+    {
+        get { return amount; }
+    }
 
     public bool IsExisting
     {
@@ -31,6 +38,9 @@ public class Oasis : MonoBehaviour
     private void Awake()
     {
         gridRef = GetComponent<Grid>();
+
+        if(meshReference == null)
+            Debug.LogError("[Oasis] No reference of the DepthMesh component assigned.");
     }
 
     private void Start()
@@ -53,20 +63,20 @@ public class Oasis : MonoBehaviour
     // grid component
     public void CreateOasis()
     {
-		if (!running)
-			return;
+        if(!running)
+            return;
 
-		if(updateCount >= updateInterval)
-		{
-			StartCoroutine(OasisAlgorithm());
-			updateCount = 0;
-		}
-		else
-		{
-			updateCount++;
-		}
-			
-        
+        if(updateCount >= updateInterval)
+        {
+            StartCoroutine(OasisAlgorithm());
+            updateCount = 0;
+        }
+        else
+        {
+            updateCount++;
+        }
+
+
     }
 
     IEnumerator OasisAlgorithm()
@@ -74,11 +84,12 @@ public class Oasis : MonoBehaviour
         GridPoint[] cluster = null;
         IEnumerable<GridPoint> outline;
         int lastSize = 0;
+        int waterCount = 0;
 
         // Create lake for debugging?
         if(debugSwitch)
             DebugOasis();
-        
+
         // Find biggest cluster
         foreach(var c in gridRef.GetClusters(Node.TerrainLayer.Water))
         {
@@ -88,9 +99,14 @@ public class Oasis : MonoBehaviour
                 cluster = c;
             }
 
+            waterCount += c.Length;
+
             // Opt out handle
             yield return null;
         }
+
+        // Calculate the amount of water in the box
+        amount = Mathf.Clamp01((float)waterCount / 500f);
 
         // No cluster found or too small
         if((cluster == null) || (cluster.Length < minArea))
@@ -100,7 +116,7 @@ public class Oasis : MonoBehaviour
 
             yield break;
         }
-        
+
         outline = gridRef.GetClusterOutline(cluster);
 
         if(waterOutline == null)
@@ -123,7 +139,7 @@ public class Oasis : MonoBehaviour
             // Opt out handle
             //yield return null;
         }
-		print(numberOfEqual);
+        print(numberOfEqual);
         // Not the same oasis! Let old die or create new...
         if(numberOfEqual < (int)(waterOutline.Length * 0.6f))
         {
@@ -136,6 +152,9 @@ public class Oasis : MonoBehaviour
     // Instantiate vegetation, objects and stuff
     protected void BuildOasis()
     {
+        if((meshReference != null) && meshReference.outOfBounds)
+            return;
+
         // Oasis exists?
         if(exists)
         {
@@ -154,7 +173,7 @@ public class Oasis : MonoBehaviour
             // Consider chance to build oasis
             if(Random.Range(0f, 1f) > chance)
                 return;
-            
+
             // Chance to build a new one...
             for(int i = 0; i < waterOutline.Length; i++)
             {
@@ -163,11 +182,11 @@ public class Oasis : MonoBehaviour
                     oasisAssets.Add(
                         GameObject.Instantiate(
                             assets[Random.Range(0, assets.Length)],
-							gridRef.GetNode(waterOutline[i].X, waterOutline[i].Y).worldPosition + new Vector3(
-								Random.Range(-1.5f, 1.5f),
-								0f,
-								Random.Range(-1.5f, 1.5f)
-							),
+                            gridRef.GetNode(waterOutline[i].X, waterOutline[i].Y).worldPosition + new Vector3(
+                                Random.Range(-1.5f, 1.5f),
+                                0f,
+                                Random.Range(-1.5f, 1.5f)
+                            ),
                             Quaternion.Euler(0f, Random.Range(0f, 360f), 0f)
                         )
                     );
