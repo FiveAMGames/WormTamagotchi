@@ -4169,7 +4169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a47fd5a6f435c48aea4ed74efb3e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 0.5
+  chance: 0.2
   minArea: 24
   assets:
   - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
@@ -4177,6 +4177,8 @@ MonoBehaviour:
   - {fileID: 1668644801665144, guid: 9fa51e63d6f322c4292f528fa1cdb071, type: 2}
   - {fileID: 1896595697651536, guid: f402e420b4f42e046a160fc0682e98b2, type: 2}
   - {fileID: 1166568850715182, guid: 997d985d4075f524fa614f641e067d06, type: 2}
+  - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
+  - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
   assetsAmount: 0.55
   updateInterval: 20
   debugSwitch: 0

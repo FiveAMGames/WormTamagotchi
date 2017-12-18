@@ -28,6 +28,7 @@
 			baseObject.GetComponent<Pathfinding> ().speed = 6f;
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", false);
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", false);
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Die", true);
 
 
 	
@@ -51,6 +52,11 @@
 			}*/
 		}
 
+
+		public override void OnDisable ()
+		{
+			baseObject.GetComponentInChildren<Animator> ().SetBool ("Die", false);
+		}
 
 		// You can also override other 'MonoBehaviour' methods:
 		/*

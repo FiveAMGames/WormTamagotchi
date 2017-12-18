@@ -1,0 +1,1147 @@
+fileFormatVersion: 2
+guid: 8cd490b96d6696c4291c2b7cda95c453
+timeCreated: 1513353638
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: ArmController.L
+    100004: ArmController.L_end
+    100006: ArmController.R
+    100008: ArmController.R_end
+    100010: Back.1
+    100012: Back.2
+    100014: Back.3
+    100016: Back.4
+    100018: Back.5
+    100020: Back.6
+    100022: Back.7
+    100024: FootFront.L
+    100026: FootFront.L_end
+    100028: FootFront.R
+    100030: FootFront.R_end
+    100032: FootMiddle.L
+    100034: FootMiddle.L_end
+    100036: FootMiddle.R
+    100038: FootMiddle.R_end
+    100040: FootRear.L
+    100042: FootRear.L_end
+    100044: FootRear.R
+    100046: FootRear.R_end
+    100048: FrontLegController.L
+    100050: FrontLegController.L_end
+    100052: FrontLegController.R
+    100054: FrontLegController.R_end
+    100056: Head
+    100058: Head_end
+    100060: LegFront.1.L
+    100062: LegFront.1.R
+    100064: LegFront.2.L
+    100066: LegFront.2.R
+    100068: LegFront.3.L
+    100070: LegFront.3.R
+    100072: LegMiddle.1.L
+    100074: LegMiddle.1.R
+    100076: LegMiddle.2.L
+    100078: LegMiddle.2.R
+    100080: LegMiddle.3.L
+    100082: LegMiddle.3.R
+    100084: LegRear.1.L
+    100086: LegRear.1.R
+    100088: LegRear.2.L
+    100090: LegRear.2.R
+    100092: LegRear.3.L
+    100094: LegRear.3.R
+    100096: LowerArm.L
+    100098: LowerArm.R
+    100100: LowerClaw.L
+    100102: LowerClaw.L_end
+    100104: LowerClaw.R
+    100106: LowerClaw.R_end
+    100108: MiddleArm.L
+    100110: MiddleArm.R
+    100112: MiddleLegController.L
+    100114: MiddleLegController.L_end
+    100116: MiddleLegController.R
+    100118: MiddleLegController.R_end
+    100120: RearLegController.L
+    100122: RearLegController.L_end
+    100124: RearLegController.R
+    100126: RearLegController.R_end
+    100128: Scorpion
+    100130: //RootNode
+    100132: Sting
+    100134: Sting_end
+    100136: TailController
+    100138: TailController_end
+    100140: Torso
+    100142: UpperArm.L
+    100144: UpperArm.R
+    100146: UpperClaw.L
+    100148: UpperClaw.L_end
+    100150: UpperClaw.R
+    100152: UpperClaw.R_end
+    400000: Armature
+    400002: ArmController.L
+    400004: ArmController.L_end
+    400006: ArmController.R
+    400008: ArmController.R_end
+    400010: Back.1
+    400012: Back.2
+    400014: Back.3
+    400016: Back.4
+    400018: Back.5
+    400020: Back.6
+    400022: Back.7
+    400024: FootFront.L
+    400026: FootFront.L_end
+    400028: FootFront.R
+    400030: FootFront.R_end
+    400032: FootMiddle.L
+    400034: FootMiddle.L_end
+    400036: FootMiddle.R
+    400038: FootMiddle.R_end
+    400040: FootRear.L
+    400042: FootRear.L_end
+    400044: FootRear.R
+    400046: FootRear.R_end
+    400048: FrontLegController.L
+    400050: FrontLegController.L_end
+    400052: FrontLegController.R
+    400054: FrontLegController.R_end
+    400056: Head
+    400058: Head_end
+    400060: LegFront.1.L
+    400062: LegFront.1.R
+    400064: LegFront.2.L
+    400066: LegFront.2.R
+    400068: LegFront.3.L
+    400070: LegFront.3.R
+    400072: LegMiddle.1.L
+    400074: LegMiddle.1.R
+    400076: LegMiddle.2.L
+    400078: LegMiddle.2.R
+    400080: LegMiddle.3.L
+    400082: LegMiddle.3.R
+    400084: LegRear.1.L
+    400086: LegRear.1.R
+    400088: LegRear.2.L
+    400090: LegRear.2.R
+    400092: LegRear.3.L
+    400094: LegRear.3.R
+    400096: LowerArm.L
+    400098: LowerArm.R
+    400100: LowerClaw.L
+    400102: LowerClaw.L_end
+    400104: LowerClaw.R
+    400106: LowerClaw.R_end
+    400108: MiddleArm.L
+    400110: MiddleArm.R
+    400112: MiddleLegController.L
+    400114: MiddleLegController.L_end
+    400116: MiddleLegController.R
+    400118: MiddleLegController.R_end
+    400120: RearLegController.L
+    400122: RearLegController.L_end
+    400124: RearLegController.R
+    400126: RearLegController.R_end
+    400128: Scorpion
+    400130: //RootNode
+    400132: Sting
+    400134: Sting_end
+    400136: TailController
+    400138: TailController_end
+    400140: Torso
+    400142: UpperArm.L
+    400144: UpperArm.R
+    400146: UpperClaw.L
+    400148: UpperClaw.L_end
+    400150: UpperClaw.R
+    400152: UpperClaw.R_end
+    4300000: Scorpion
+    7400000: Armature|Die
+    7400002: Armature|Run
+    7400004: Armature|StartDying
+    7400006: Armature|StopDying
+    7400008: Armature|Walk
+    9500000: //RootNode
+    13700000: Scorpion
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Die
+      takeName: Armature|Die
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmController.L
+        weight: 1
+      - path: Armature/ArmController.L/ArmController.L_end
+        weight: 1
+      - path: Armature/ArmController.R
+        weight: 1
+      - path: Armature/ArmController.R/ArmController.R_end
+        weight: 1
+      - path: Armature/FrontLegController.L
+        weight: 1
+      - path: Armature/FrontLegController.L/FrontLegController.L_end
+        weight: 1
+      - path: Armature/FrontLegController.R
+        weight: 1
+      - path: Armature/FrontLegController.R/FrontLegController.R_end
+        weight: 1
+      - path: Armature/MiddleLegController.L
+        weight: 1
+      - path: Armature/MiddleLegController.L/MiddleLegController.L_end
+        weight: 1
+      - path: Armature/MiddleLegController.R
+        weight: 1
+      - path: Armature/MiddleLegController.R/MiddleLegController.R_end
+        weight: 1
+      - path: Armature/RearLegController.L
+        weight: 1
+      - path: Armature/RearLegController.L/RearLegController.L_end
+        weight: 1
+      - path: Armature/RearLegController.R
+        weight: 1
+      - path: Armature/RearLegController.R/RearLegController.R_end
+        weight: 1
+      - path: Armature/TailController
+        weight: 1
+      - path: Armature/TailController/TailController_end
+        weight: 1
+      - path: Armature/Torso
+        weight: 1
+      - path: Armature/Torso/Back.1
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting/Sting_end
+        weight: 1
+      - path: Armature/Torso/Head
+        weight: 1
+      - path: Armature/Torso/Head/Head_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L/FootFront.L_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R/FootFront.R_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L/FootMiddle.L_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R/FootMiddle.R_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L/FootRear.L_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R/FootRear.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L/LowerClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L/UpperClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R/LowerClaw.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R/UpperClaw.R_end
+        weight: 1
+      - path: Scorpion
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Run
+      takeName: Armature|Run
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmController.L
+        weight: 1
+      - path: Armature/ArmController.L/ArmController.L_end
+        weight: 1
+      - path: Armature/ArmController.R
+        weight: 1
+      - path: Armature/ArmController.R/ArmController.R_end
+        weight: 1
+      - path: Armature/FrontLegController.L
+        weight: 1
+      - path: Armature/FrontLegController.L/FrontLegController.L_end
+        weight: 1
+      - path: Armature/FrontLegController.R
+        weight: 1
+      - path: Armature/FrontLegController.R/FrontLegController.R_end
+        weight: 1
+      - path: Armature/MiddleLegController.L
+        weight: 1
+      - path: Armature/MiddleLegController.L/MiddleLegController.L_end
+        weight: 1
+      - path: Armature/MiddleLegController.R
+        weight: 1
+      - path: Armature/MiddleLegController.R/MiddleLegController.R_end
+        weight: 1
+      - path: Armature/RearLegController.L
+        weight: 1
+      - path: Armature/RearLegController.L/RearLegController.L_end
+        weight: 1
+      - path: Armature/RearLegController.R
+        weight: 1
+      - path: Armature/RearLegController.R/RearLegController.R_end
+        weight: 1
+      - path: Armature/TailController
+        weight: 1
+      - path: Armature/TailController/TailController_end
+        weight: 1
+      - path: Armature/Torso
+        weight: 1
+      - path: Armature/Torso/Back.1
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting/Sting_end
+        weight: 1
+      - path: Armature/Torso/Head
+        weight: 1
+      - path: Armature/Torso/Head/Head_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L/FootFront.L_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R/FootFront.R_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L/FootMiddle.L_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R/FootMiddle.R_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L/FootRear.L_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R/FootRear.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L/LowerClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L/UpperClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R/LowerClaw.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R/UpperClaw.R_end
+        weight: 1
+      - path: Scorpion
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|StartDying
+      takeName: Armature|StartDying
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmController.L
+        weight: 1
+      - path: Armature/ArmController.L/ArmController.L_end
+        weight: 1
+      - path: Armature/ArmController.R
+        weight: 1
+      - path: Armature/ArmController.R/ArmController.R_end
+        weight: 1
+      - path: Armature/FrontLegController.L
+        weight: 1
+      - path: Armature/FrontLegController.L/FrontLegController.L_end
+        weight: 1
+      - path: Armature/FrontLegController.R
+        weight: 1
+      - path: Armature/FrontLegController.R/FrontLegController.R_end
+        weight: 1
+      - path: Armature/MiddleLegController.L
+        weight: 1
+      - path: Armature/MiddleLegController.L/MiddleLegController.L_end
+        weight: 1
+      - path: Armature/MiddleLegController.R
+        weight: 1
+      - path: Armature/MiddleLegController.R/MiddleLegController.R_end
+        weight: 1
+      - path: Armature/RearLegController.L
+        weight: 1
+      - path: Armature/RearLegController.L/RearLegController.L_end
+        weight: 1
+      - path: Armature/RearLegController.R
+        weight: 1
+      - path: Armature/RearLegController.R/RearLegController.R_end
+        weight: 1
+      - path: Armature/TailController
+        weight: 1
+      - path: Armature/TailController/TailController_end
+        weight: 1
+      - path: Armature/Torso
+        weight: 1
+      - path: Armature/Torso/Back.1
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting/Sting_end
+        weight: 1
+      - path: Armature/Torso/Head
+        weight: 1
+      - path: Armature/Torso/Head/Head_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L/FootFront.L_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R/FootFront.R_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L/FootMiddle.L_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R/FootMiddle.R_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L/FootRear.L_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R/FootRear.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L/LowerClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L/UpperClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R/LowerClaw.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R/UpperClaw.R_end
+        weight: 1
+      - path: Scorpion
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|StopDying
+      takeName: Armature|StopDying
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmController.L
+        weight: 1
+      - path: Armature/ArmController.L/ArmController.L_end
+        weight: 1
+      - path: Armature/ArmController.R
+        weight: 1
+      - path: Armature/ArmController.R/ArmController.R_end
+        weight: 1
+      - path: Armature/FrontLegController.L
+        weight: 1
+      - path: Armature/FrontLegController.L/FrontLegController.L_end
+        weight: 1
+      - path: Armature/FrontLegController.R
+        weight: 1
+      - path: Armature/FrontLegController.R/FrontLegController.R_end
+        weight: 1
+      - path: Armature/MiddleLegController.L
+        weight: 1
+      - path: Armature/MiddleLegController.L/MiddleLegController.L_end
+        weight: 1
+      - path: Armature/MiddleLegController.R
+        weight: 1
+      - path: Armature/MiddleLegController.R/MiddleLegController.R_end
+        weight: 1
+      - path: Armature/RearLegController.L
+        weight: 1
+      - path: Armature/RearLegController.L/RearLegController.L_end
+        weight: 1
+      - path: Armature/RearLegController.R
+        weight: 1
+      - path: Armature/RearLegController.R/RearLegController.R_end
+        weight: 1
+      - path: Armature/TailController
+        weight: 1
+      - path: Armature/TailController/TailController_end
+        weight: 1
+      - path: Armature/Torso
+        weight: 1
+      - path: Armature/Torso/Back.1
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting/Sting_end
+        weight: 1
+      - path: Armature/Torso/Head
+        weight: 1
+      - path: Armature/Torso/Head/Head_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L/FootFront.L_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R/FootFront.R_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L/FootMiddle.L_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R/FootMiddle.R_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L/FootRear.L_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R/FootRear.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L/LowerClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L/UpperClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R/LowerClaw.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R/UpperClaw.R_end
+        weight: 1
+      - path: Scorpion
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Walk
+      takeName: Armature|Walk
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ArmController.L
+        weight: 1
+      - path: Armature/ArmController.L/ArmController.L_end
+        weight: 1
+      - path: Armature/ArmController.R
+        weight: 1
+      - path: Armature/ArmController.R/ArmController.R_end
+        weight: 1
+      - path: Armature/FrontLegController.L
+        weight: 1
+      - path: Armature/FrontLegController.L/FrontLegController.L_end
+        weight: 1
+      - path: Armature/FrontLegController.R
+        weight: 1
+      - path: Armature/FrontLegController.R/FrontLegController.R_end
+        weight: 1
+      - path: Armature/MiddleLegController.L
+        weight: 1
+      - path: Armature/MiddleLegController.L/MiddleLegController.L_end
+        weight: 1
+      - path: Armature/MiddleLegController.R
+        weight: 1
+      - path: Armature/MiddleLegController.R/MiddleLegController.R_end
+        weight: 1
+      - path: Armature/RearLegController.L
+        weight: 1
+      - path: Armature/RearLegController.L/RearLegController.L_end
+        weight: 1
+      - path: Armature/RearLegController.R
+        weight: 1
+      - path: Armature/RearLegController.R/RearLegController.R_end
+        weight: 1
+      - path: Armature/TailController
+        weight: 1
+      - path: Armature/TailController/TailController_end
+        weight: 1
+      - path: Armature/Torso
+        weight: 1
+      - path: Armature/Torso/Back.1
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting
+        weight: 1
+      - path: Armature/Torso/Back.1/Back.2/Back.3/Back.4/Back.5/Back.6/Back.7/Sting/Sting_end
+        weight: 1
+      - path: Armature/Torso/Head
+        weight: 1
+      - path: Armature/Torso/Head/Head_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L
+        weight: 1
+      - path: Armature/Torso/LegFront.1.L/LegFront.2.L/LegFront.3.L/FootFront.L/FootFront.L_end
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R
+        weight: 1
+      - path: Armature/Torso/LegFront.1.R/LegFront.2.R/LegFront.3.R/FootFront.R/FootFront.R_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.L/LegMiddle.2.L/LegMiddle.3.L/FootMiddle.L/FootMiddle.L_end
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R
+        weight: 1
+      - path: Armature/Torso/LegMiddle.1.R/LegMiddle.2.R/LegMiddle.3.R/FootMiddle.R/FootMiddle.R_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L
+        weight: 1
+      - path: Armature/Torso/LegRear.1.L/LegRear.2.L/LegRear.3.L/FootRear.L/FootRear.L_end
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R
+        weight: 1
+      - path: Armature/Torso/LegRear.1.R/LegRear.2.R/LegRear.3.R/FootRear.R/FootRear.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/LowerClaw.L/LowerClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L
+        weight: 1
+      - path: Armature/Torso/UpperArm.L/MiddleArm.L/LowerArm.L/UpperClaw.L/UpperClaw.L_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/LowerClaw.R/LowerClaw.R_end
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R
+        weight: 1
+      - path: Armature/Torso/UpperArm.R/MiddleArm.R/LowerArm.R/UpperClaw.R/UpperClaw.R_end
+        weight: 1
+      - path: Scorpion
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
