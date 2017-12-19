@@ -7719,7 +7719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b687326f4e8249c44b9bd126e7ba54c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   AppleTimer: 10
   appleImages:
   - {fileID: 1269352678}
@@ -12111,7 +12111,7 @@ MonoBehaviour:
   sandTrail: {fileID: 1845663144}
   boom: {fileID: 1950939958}
   DodoOnSand: 1
-  speed: 10
+  speed: 15
   attackCooldown: 0.5
   TestGrid: 0
   lost: {fileID: 1514403583}

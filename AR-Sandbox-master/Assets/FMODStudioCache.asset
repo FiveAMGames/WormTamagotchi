@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 114696118556341952}
   MasterBankRef: {fileID: 114413662079434686}
   StringsBankRef: {fileID: 114200992122278192}
-  stringsBankWriteTime: 636492797393435831
+  stringsBankWriteTime: 636492845304353476
   cacheVersion: 2
 --- !u!114 &114011951379384522
 MonoBehaviour:
@@ -145,6 +145,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 8219
+--- !u!114 &114057539252237782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114058760430472248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +374,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114651583186283024}
+  - {fileID: 114217398870955440}
   MinDistance: 0
   MaxDistance: 0
   Length: 130894
@@ -461,12 +476,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Fmod\DodoScorpion2\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636492797393435831
+  lastModified: 636492845304353476
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1090
   Exists: 1
+--- !u!114 &114217398870955440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Sand
+  Min: 0
+  Max: 20
+  Default: 0
 --- !u!114 &114237394926344746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +755,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114786719045994694}
+  - {fileID: 114491455666577920}
   MinDistance: 0
   MaxDistance: 0
   Length: 2402
@@ -847,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\GitHub\WormTamagotchi\AR-Sandbox-master\Assets\Fmod\DodoScorpion2\Build\Desktop\Master
     Bank.bank
-  lastModified: 636492797393405812
+  lastModified: 636492845304343464
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1048,7 +1078,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114362659611062804}
+  - {fileID: 114591932228448374}
   MinDistance: 0
   MaxDistance: 0
   Length: 261
@@ -1066,6 +1096,21 @@ MonoBehaviour:
   Name: Sand
   Min: 0
   Max: 20
+  Default: 0
+--- !u!114 &114491455666577920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Distance
+  Min: 0
+  Max: 100
   Default: 0
 --- !u!114 &114494793759761156
 MonoBehaviour:
@@ -1251,6 +1296,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114591932228448374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StepimWasser
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114598315664238652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,8 +1368,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114144796149880392}
-  - {fileID: 114779887151825090}
+  - {fileID: 114659820008780268}
+  - {fileID: 114057539252237782}
   MinDistance: 0
   MaxDistance: 0
   Length: 21000
@@ -1398,6 +1458,21 @@ MonoBehaviour:
   Name: Distance
   Min: 0
   Max: 100
+  Default: 0
+--- !u!114 &114659820008780268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DodoLebt
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114664163963499364
 MonoBehaviour:

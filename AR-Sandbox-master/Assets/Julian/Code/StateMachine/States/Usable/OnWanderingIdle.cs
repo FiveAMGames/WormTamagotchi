@@ -33,10 +33,10 @@
 			
 			timer += Time.deltaTime;
 			if (timer > 1f) {
-				
+				baseObject.GetComponent<Pathfinding> ().RandomWanderingTarget ();
 				baseObject.GetComponent<StateMachine> ().ChangeState ("Wandering");
 				baseObject.GetComponent<Pathfinding> ().stayOnPlace = false;
-				baseObject.GetComponent<Pathfinding> ().RandomWanderingTarget ();
+
 			}
 		}
 

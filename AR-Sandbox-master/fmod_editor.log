@@ -14,7 +14,7 @@
 [LOG] SystemI::init                            : create the stream thread
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000031C4A138 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000002FFA1F48 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,12 +22,342 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSoundInternal             : filename =  : mode 02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7574048
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 56896
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000003524F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD8F3C57A0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD8F3C5770
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD8F3C5870
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD8F3C5920
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000002FD55168
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             : Create as FMOD_CREATESAMPLE
+[LOG] SystemI::createSoundInternal             : Multi-sample sound (1 subsounds), create a sample container.
+[LOG] SystemI::createSoundInternal             : creating subsound 0/1
+[LOG] SystemI::createSample                    : mode 02000202 length 332444 samples, lengthbytes 43616
+[LOG] SystemI::createSample                    : channels = 1
+[LOG] SystemI::createSample                    : output = 000000002FA6EE78
+[LOG] OutputSoftware::createSample             : lengthpcm 332444, lengthbytes 43616, channels 1, format 2, freq 48000, mode 0200020a
+[LOG] SystemI::createSoundInternal             : No name found in file, use filename.
+[LOG] SystemI::createSoundInternal             : done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000162638D8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000162638D8
+[LOG] SystemI::createSoundInternal             : filename =  : mode 02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7574048
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 56896
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000003524F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD8F3C57A0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD8F3C5770
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD8F3C5870
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD8F3C5920
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000002FD54B08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             : Create as FMOD_CREATESAMPLE
+[LOG] SystemI::createSoundInternal             : Multi-sample sound (1 subsounds), create a sample container.
+[LOG] SystemI::createSoundInternal             : creating subsound 0/1
+[LOG] SystemI::createSample                    : mode 02000202 length 138339 samples, lengthbytes 25088
+[LOG] SystemI::createSample                    : channels = 1
+[LOG] SystemI::createSample                    : output = 000000002FA6EE78
+[LOG] OutputSoftware::createSample             : lengthpcm 138339, lengthbytes 25088, channels 1, format 2, freq 48000, mode 0200020a
+[LOG] SystemI::createSoundInternal             : No name found in file, use filename.
+[LOG] SystemI::createSoundInternal             : done.  OpenState now = FMOD_OPENSTATE_READY.
+
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (000000002FF76008)
+[LOG] SoundI::release                          : release subsounds. (000000002FF76008)
+[LOG] SoundI::release                          :     NotScorpioRec_02 (000000002FEF9048)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF76008)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF768A8)
+[LOG] SoundI::release                          : release subsounds. (000000002FF768A8)
+[LOG] SoundI::release                          :     Explosion-SoundBible.com-2019248186 (000000002FEF8EA8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF768A8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5468)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5468)
+[LOG] SoundI::release                          :     Nacchere1 (000000002FFC6908)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5468)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026978)
+[LOG] SoundI::release                          : release subsounds. (0000000030026978)
+[LOG] SoundI::release                          :     Nacchere2 (00000000273C9A98)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026978)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000300270A8)
+[LOG] SoundI::release                          : release subsounds. (00000000300270A8)
+[LOG] SoundI::release                          :     Nacchere3 (000000002FEF9D48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000300270A8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027218)
+[LOG] SoundI::release                          : release subsounds. (0000000030027218)
+[LOG] SoundI::release                          :     Nacchere4 (000000002FEF8688)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027218)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5188)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5188)
+[LOG] SoundI::release                          :     Scorpio1 (000000002FFC58C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5188)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000000DDE3B68)
+[LOG] SoundI::release                          : release subsounds. (000000000DDE3B68)
+[LOG] SoundI::release                          :     Scorpio3 (000000002FFC5F48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000000DDE3B68)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5D08)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5D08)
+[LOG] SoundI::release                          :     Dodo_Not (000000002FFC6768)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5D08)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027948)
+[LOG] SoundI::release                          : release subsounds. (0000000030027948)
+[LOG] SoundI::release                          :     Scorpio_Not (000000002FEF8B68)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027948)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000300274F8)
+[LOG] SoundI::release                          : release subsounds. (00000000300274F8)
+[LOG] SoundI::release                          :     Dodo2 (00000000273C8D98)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000300274F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000300277D8)
+[LOG] SoundI::release                          : release subsounds. (00000000300277D8)
+[LOG] SoundI::release                          :     Dodo3 (000000002FEF89C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000300277D8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027388)
+[LOG] SoundI::release                          : release subsounds. (0000000030027388)
+[LOG] SoundI::release                          :     Dodo4 (00000000004A0698)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027388)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000000DDE35A8)
+[LOG] SoundI::release                          : release subsounds. (000000000DDE35A8)
+[LOG] SoundI::release                          :     CB_Not (000000002FFC5DA8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000000DDE35A8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5B98)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5B98)
+[LOG] SoundI::release                          :     Scorpio2 (000000002FFC5C08)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5B98)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026F38)
+[LOG] SoundI::release                          : release subsounds. (0000000030026F38)
+[LOG] SoundI::release                          :     Dodo1 (000000002FEF9A08)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026F38)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027D98)
+[LOG] SoundI::release                          : release subsounds. (0000000030027D98)
+[LOG] SoundI::release                          :     Base (00000000273C98F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027D98)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : 20 Miscellaneous, Waterfall--Small (000000002FA3C988)
+[LOG] SoundI::release                          : remove stream samples. (000000002FA3C988)
+[LOG] SoundI::release                          :     20 Miscellaneous, Waterfall--Small (00000000273C8F38)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000002FA3C988)
+[LOG] SoundI::release                          :     20 Miscellaneous, Waterfall--Small (00000000162638D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FA3C988)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : 06 Rivers AND Streams, Stream Flowing Down A Drain (000000002FA3C478)
+[LOG] SoundI::release                          : remove stream samples. (000000002FA3C478)
+[LOG] SoundI::release                          :     06 Rivers AND Streams, Stream Flowing Down A Drain (000000002FFC50A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000002FA3C478)
+[LOG] SoundI::release                          :     06 Rivers AND Streams, Stream Flowing Down A Drain (00000000162F3578)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FA3C478)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : 112296__nageor__desertwind1final (000000002FA3BC08)
+[LOG] SoundI::release                          : remove stream samples. (000000002FA3BC08)
+[LOG] SoundI::release                          :     112296__nageor__desertwind1final (000000002FFC6AA8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000002FA3BC08)
+[LOG] SoundI::release                          :     112296__nageor__desertwind1final (000000000053B258)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FA3BC08)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD58B8)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD58B8)
+[LOG] SoundI::release                          :     CB (000000002FFC65C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD58B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF765C8)
+[LOG] SoundI::release                          : release subsounds. (000000002FF765C8)
+[LOG] SoundI::release                          :     RECScorpio_02-02 (000000002FEF96C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF765C8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026808)
+[LOG] SoundI::release                          : release subsounds. (0000000030026808)
+[LOG] SoundI::release                          :     RECScorpio_02-03 (00000000273C95B8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026808)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026AE8)
+[LOG] SoundI::release                          : release subsounds. (0000000030026AE8)
+[LOG] SoundI::release                          :     RECScorpio_02-04 (00000000273C9DD8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026AE8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026528)
+[LOG] SoundI::release                          : release subsounds. (0000000030026528)
+[LOG] SoundI::release                          :     RECScorpio_02-05 (00000000273C9C38)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026528)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF75A48)
+[LOG] SoundI::release                          : release subsounds. (000000002FF75A48)
+[LOG] SoundI::release                          :     RECScorpio_02-06 (000000002FEFA088)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF75A48)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5748)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5748)
+[LOG] SoundI::release                          :     RECScorpio_02-07 (000000002FFC4F08)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5748)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026248)
+[LOG] SoundI::release                          : release subsounds. (0000000030026248)
+[LOG] SoundI::release                          :     RECScorpio_02-08 (000000002FFC6288)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026248)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF75E98)
+[LOG] SoundI::release                          : release subsounds. (000000002FF75E98)
+[LOG] SoundI::release                          :     RECScorpio_02-09 (000000002FEFA228)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF75E98)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027668)
+[LOG] SoundI::release                          : release subsounds. (0000000030027668)
+[LOG] SoundI::release                          :     RECScorpio_02-10 (00000000273C90D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027668)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000300263B8)
+[LOG] SoundI::release                          : release subsounds. (00000000300263B8)
+[LOG] SoundI::release                          :     RECScorpio_02-11 (00000000273C9278)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000300263B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026698)
+[LOG] SoundI::release                          : release subsounds. (0000000030026698)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-05 (00000000273C9418)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026698)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026C58)
+[LOG] SoundI::release                          : release subsounds. (0000000030026C58)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-06 (000000002FEF8828)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026C58)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027C28)
+[LOG] SoundI::release                          : release subsounds. (0000000030027C28)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-07 (00000000273CA118)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027C28)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD5018)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD5018)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-08 (000000002FFC5728)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD5018)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030026DC8)
+[LOG] SoundI::release                          : release subsounds. (0000000030026DC8)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-09 (000000002FEF9BA8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030026DC8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FDD52F8)
+[LOG] SoundI::release                          : release subsounds. (000000002FDD52F8)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-10 (000000002FFC6C48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FDD52F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF75BB8)
+[LOG] SoundI::release                          : release subsounds. (000000002FF75BB8)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-12 (000000002FEF9EE8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF75BB8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027AB8)
+[LOG] SoundI::release                          : release subsounds. (0000000030027AB8)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-13 (000000002FEF9528)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027AB8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030027F08)
+[LOG] SoundI::release                          : release subsounds. (0000000030027F08)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-14 (00000000273CA458)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030027F08)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (000000002FF762E8)
+[LOG] SoundI::release                          : release subsounds. (000000002FF762E8)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-15 (000000002FEF8D08)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000002FF762E8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000030028078)
+[LOG] SoundI::release                          : release subsounds. (0000000030028078)
+[LOG] SoundI::release                          :     DodoVoiceREC_01-04 (00000000273CA798)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000030028078)
+[LOG] SoundI::release                          : done
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] SystemI::close                           : 
+[LOG] SystemI::close                           : Stop all sounds
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] SystemI::close                           : Stream thread destroyed
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Free master channel group.
+[LOG] SystemI::close                           : Remove 'master' sound group.
+[LOG] SystemI::close                           : Free software output.
+[LOG] SystemI::close                           : Free emulated output.
+[LOG] SystemI::close                           : Free channel pool.
+[LOG] SystemI::close                           : done.
+
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
@@ -49,5 +379,7 @@
 [LOG] SystemI::close                           : Free software output.
 [LOG] SystemI::close                           : Free emulated output.
 [LOG] SystemI::close                           : Free channel pool.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : done.
 

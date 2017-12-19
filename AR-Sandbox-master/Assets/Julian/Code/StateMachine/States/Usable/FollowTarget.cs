@@ -31,7 +31,7 @@ namespace StateManagement
 			}
 			baseObject.GetComponent<Pathfinding> ().found.SetActive (true);
 
-			baseObject.GetComponent<Pathfinding> ().speed = 20f;
+			baseObject.GetComponent<Pathfinding> ().speed = 30f;
 			baseObject.GetComponent<Pathfinding> ().onWandering = false;
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Walk", true);
 			baseObject.GetComponentInChildren<Animator> ().SetBool ("Chase", true);
