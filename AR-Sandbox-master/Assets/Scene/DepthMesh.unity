@@ -1839,6 +1839,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212880148}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &232297064 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 2}
+  m_PrefabInternal: {fileID: 728577434}
+--- !u!114 &232297066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232297064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Boom
+  PlayEvent: 1
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &238583814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,7 +6667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a47fd5a6f435c48aea4ed74efb3e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 0.2
+  chance: 1
   minArea: 24
   assets:
   - {fileID: 1728237246147248, guid: 1871155795a7a424696c762f1259a838, type: 2}
@@ -9204,7 +9230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1280905249}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 64, y: 104, z: 57}
+  m_LocalPosition: {x: 66, y: 104, z: 58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2132624694}
