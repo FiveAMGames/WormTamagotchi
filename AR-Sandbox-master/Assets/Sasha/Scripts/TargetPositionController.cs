@@ -53,7 +53,7 @@ public class TargetPositionController : MonoBehaviour
 	void Update ()
 	{
 		_appleTimer += Time.deltaTime;
-		if (_appleTimer > AppleTimer && appleCount>4) {
+		if (_appleTimer > AppleTimer && appleCount<4) {
 			SetApple ();
 		}
 
